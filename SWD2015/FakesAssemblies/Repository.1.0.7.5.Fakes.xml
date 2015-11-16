@@ -1,0 +1,2888 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Repository.1.0.7.5.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1">
+            <summary>Shim type of Repository.ChangeTracking.CallbackEnumerator`1</summary>
+        </member>
+        <member name="M:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.#ctor(Repository.ChangeTracking.CallbackEnumerator{`0})">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.Bind(System.Collections.IEnumerator)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.Bind(System.Collections.Generic.IEnumerator{`0})">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.ConstructorIEnumeratorOfT0ActionOfT0">
+            <summary>Sets the shim of CallbackEnumerator`1.CallbackEnumerator`1(IEnumerator`1&lt;!0&gt; innerEnumerator, Action`1&lt;!0&gt; onEnumerateObject)</summary>
+        </member>
+        <member name="P:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.CurrentGet">
+            <summary>Sets the shim of CallbackEnumerator`1.get_Current()</summary>
+        </member>
+        <member name="P:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.CurrentSystemCollectionsIEnumeratorget">
+            <summary>Sets the shim of CallbackEnumerator`1.System.Collections.IEnumerator.get_Current()</summary>
+        </member>
+        <member name="P:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.Dispose">
+            <summary>Sets the shim of CallbackEnumerator`1.Dispose()</summary>
+        </member>
+        <member name="P:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.InnerEnumeratorGet">
+            <summary>Sets the shim of CallbackEnumerator`1.get_InnerEnumerator()</summary>
+        </member>
+        <member name="P:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.InnerEnumeratorSetIEnumeratorOfT0">
+            <summary>Sets the shim of CallbackEnumerator`1.set_InnerEnumerator(IEnumerator`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.MoveNext">
+            <summary>Sets the shim of CallbackEnumerator`1.MoveNext()</summary>
+        </member>
+        <member name="P:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.OnEnumerateObjectGet">
+            <summary>Sets the shim of CallbackEnumerator`1.get_OnEnumerateObject()</summary>
+        </member>
+        <member name="P:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.OnEnumerateObjectSetActionOfT0">
+            <summary>Sets the shim of CallbackEnumerator`1.set_OnEnumerateObject(Action`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.Reset">
+            <summary>Sets the shim of CallbackEnumerator`1.Reset()</summary>
+        </member>
+        <member name="T:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.AllInstances.CurrentGet">
+            <summary>Sets the shim of CallbackEnumerator`1.get_Current()</summary>
+        </member>
+        <member name="P:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.AllInstances.CurrentSystemCollectionsIEnumeratorget">
+            <summary>Sets the shim of CallbackEnumerator`1.System.Collections.IEnumerator.get_Current()</summary>
+        </member>
+        <member name="P:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.AllInstances.Dispose">
+            <summary>Sets the shim of CallbackEnumerator`1.Dispose()</summary>
+        </member>
+        <member name="P:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.AllInstances.InnerEnumeratorGet">
+            <summary>Sets the shim of CallbackEnumerator`1.get_InnerEnumerator()</summary>
+        </member>
+        <member name="P:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.AllInstances.InnerEnumeratorSetIEnumeratorOfT0">
+            <summary>Sets the shim of CallbackEnumerator`1.set_InnerEnumerator(IEnumerator`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.AllInstances.MoveNext">
+            <summary>Sets the shim of CallbackEnumerator`1.MoveNext()</summary>
+        </member>
+        <member name="P:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.AllInstances.OnEnumerateObjectGet">
+            <summary>Sets the shim of CallbackEnumerator`1.get_OnEnumerateObject()</summary>
+        </member>
+        <member name="P:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.AllInstances.OnEnumerateObjectSetActionOfT0">
+            <summary>Sets the shim of CallbackEnumerator`1.set_OnEnumerateObject(Action`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Repository.ChangeTracking.Fakes.ShimCallbackEnumerator`1.AllInstances.Reset">
+            <summary>Sets the shim of CallbackEnumerator`1.Reset()</summary>
+        </member>
+        <member name="T:Repository.ChangeTracking.Fakes.StubCallbackEnumerator`1">
+            <summary>Stub type of Repository.ChangeTracking.CallbackEnumerator`1</summary>
+        </member>
+        <member name="M:Repository.ChangeTracking.Fakes.StubCallbackEnumerator`1.#ctor(System.Collections.Generic.IEnumerator{`0},System.Action{`0})">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.ChangeTracking.Fakes.StubCallbackEnumerator`1.InitializeStub">
+            <summary>Initializes a new instance of type StubCallbackEnumerator</summary>
+        </member>
+        <member name="P:Repository.ChangeTracking.Fakes.StubCallbackEnumerator`1.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.ChangeTracking.Fakes.StubCallbackEnumerator`1.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.ChangeTracking.Fakes.StubCallbackEnumerator`1.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimBatchInsert`1">
+            <summary>Shim type of Repository.BatchInsert`1</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimBatchInsert`1.#ctor(Repository.BatchInsert{`0})">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimBatchInsert`1.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimBatchInsert`1.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimBatchInsert`1.Bind(Repository.IOperation)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimBatchInsert`1.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimBatchInsert`1.ConstructorIEnumerableOfKeyValuePairOfIEnumerableOfObjectT0">
+            <summary>Sets the shim of BatchInsert`1.BatchInsert`1(IEnumerable`1&lt;KeyValuePair`2&lt;IEnumerable`1&lt;Object&gt;,!0&gt;&gt; keyValuePairs)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimBatchInsert`1.KeyValuePairsGet">
+            <summary>Sets the shim of BatchInsert`1.get_KeyValuePairs()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimBatchInsert`1.KeyValuePairsSetIEnumerableOfKeyValuePairOfIEnumerableOfObjectT0">
+            <summary>Sets the shim of BatchInsert`1.set_KeyValuePairs(IEnumerable`1&lt;KeyValuePair`2&lt;IEnumerable`1&lt;Object&gt;,!0&gt;&gt; value)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimBatchInsert`1.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimBatchInsert`1.AllInstances.KeyValuePairsGet">
+            <summary>Sets the shim of BatchInsert`1.get_KeyValuePairs()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimBatchInsert`1.AllInstances.KeyValuePairsSetIEnumerableOfKeyValuePairOfIEnumerableOfObjectT0">
+            <summary>Sets the shim of BatchInsert`1.set_KeyValuePairs(IEnumerable`1&lt;KeyValuePair`2&lt;IEnumerable`1&lt;Object&gt;,!0&gt;&gt; value)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimComplexTestClass">
+            <summary>Shim type of Repository.ComplexTestClass</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimComplexTestClass.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimComplexTestClass.#ctor(Repository.ComplexTestClass)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimComplexTestClass.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimComplexTestClass.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimComplexTestClass.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimComplexTestClass.ComplexPropertyGet">
+            <summary>Sets the shim of ComplexTestClass.get_ComplexProperty()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimComplexTestClass.ComplexPropertySetTestProperty">
+            <summary>Sets the shim of ComplexTestClass.set_ComplexProperty(TestProperty value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimComplexTestClass.Constructor">
+            <summary>Sets the shim of ComplexTestClass.ComplexTestClass()</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimComplexTestClass.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimComplexTestClass.AllInstances.ComplexPropertyGet">
+            <summary>Sets the shim of ComplexTestClass.get_ComplexProperty()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimComplexTestClass.AllInstances.ComplexPropertySetTestProperty">
+            <summary>Sets the shim of ComplexTestClass.set_ComplexProperty(TestProperty value)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimDefaultBatchInsert`1">
+            <summary>Shim type of Repository.DefaultBatchInsert`1</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimDefaultBatchInsert`1.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimDefaultBatchInsert`1.#ctor(Repository.DefaultBatchInsert{`0})">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimDefaultBatchInsert`1.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimDefaultBatchInsert`1.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimDefaultBatchInsert`1.Bind(Repository.IOperation)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimDefaultBatchInsert`1.Apply">
+            <summary>Sets the shim of DefaultBatchInsert`1.Apply()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimDefaultBatchInsert`1.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimDefaultBatchInsert`1.ConstructorIEnumerableOfKeyValuePairOfIEnumerableOfObjectT0FuncOfIEnumerableOfObjectT0InsertOfT0">
+            <summary>Sets the shim of DefaultBatchInsert`1.DefaultBatchInsert`1(IEnumerable`1&lt;KeyValuePair`2&lt;IEnumerable`1&lt;Object&gt;,!0&gt;&gt; keyValuePairs, Func`3&lt;IEnumerable`1&lt;Object&gt;,!0,Insert`1&lt;!0&gt;&gt; singleInsertGenerator)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimDefaultBatchInsert`1.SingleInsertGeneratorGet">
+            <summary>Sets the shim of DefaultBatchInsert`1.get_SingleInsertGenerator()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimDefaultBatchInsert`1.SingleInsertGeneratorSetFuncOfIEnumerableOfObjectT0InsertOfT0">
+            <summary>Sets the shim of DefaultBatchInsert`1.set_SingleInsertGenerator(Func`3&lt;IEnumerable`1&lt;Object&gt;,!0,Insert`1&lt;!0&gt;&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimDefaultBatchInsert`1._Applyb__0KeyValuePairOfIEnumerableOfObjectT0">
+            <summary>Sets the shim of DefaultBatchInsert`1.&lt;Apply&gt;b__0(KeyValuePair`2&lt;IEnumerable`1&lt;Object&gt;,!0&gt; x)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimDefaultBatchInsert`1.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimDefaultBatchInsert`1.AllInstances.Apply">
+            <summary>Sets the shim of DefaultBatchInsert`1.Apply()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimDefaultBatchInsert`1.AllInstances.SingleInsertGeneratorGet">
+            <summary>Sets the shim of DefaultBatchInsert`1.get_SingleInsertGenerator()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimDefaultBatchInsert`1.AllInstances.SingleInsertGeneratorSetFuncOfIEnumerableOfObjectT0InsertOfT0">
+            <summary>Sets the shim of DefaultBatchInsert`1.set_SingleInsertGenerator(Func`3&lt;IEnumerable`1&lt;Object&gt;,!0,Insert`1&lt;!0&gt;&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimDefaultBatchInsert`1.AllInstances._Applyb__0KeyValuePairOfIEnumerableOfObjectT0">
+            <summary>Sets the shim of DefaultBatchInsert`1.&lt;Apply&gt;b__0(KeyValuePair`2&lt;IEnumerable`1&lt;Object&gt;,!0&gt; x)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimEnumerableObjectContext`1">
+            <summary>Shim type of Repository.EnumerableObjectContext`1</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimEnumerableObjectContext`1.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimEnumerableObjectContext`1.#ctor(Repository.EnumerableObjectContext{`0})">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimEnumerableObjectContext`1.AsRawOf1``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{``0})">
+            <summary>Sets the shim of EnumerableObjectContext`1.AsRaw()</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimEnumerableObjectContext`1.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimEnumerableObjectContext`1.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimEnumerableObjectContext`1.Bind(System.Linq.IQueryable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimEnumerableObjectContext`1.Bind(System.Linq.IQueryable{`0})">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimEnumerableObjectContext`1.Bind(System.Collections.IEnumerable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimEnumerableObjectContext`1.Bind(System.Collections.Generic.IEnumerable{`0})">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimEnumerableObjectContext`1.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimEnumerableObjectContext`1.ConstructorIQueryableOfT0RepositoryOfT0">
+            <summary>Sets the shim of EnumerableObjectContext`1.EnumerableObjectContext`1(IQueryable`1&lt;!0&gt; objects, Repository`1&lt;!0&gt; parentRepository)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimEnumerableObjectContext`1.ElementTypeGet">
+            <summary>Sets the shim of EnumerableObjectContext`1.get_ElementType()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimEnumerableObjectContext`1.ExpressionGet">
+            <summary>Sets the shim of EnumerableObjectContext`1.get_Expression()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimEnumerableObjectContext`1.GetEnumerator">
+            <summary>Sets the shim of EnumerableObjectContext`1.GetEnumerator()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimEnumerableObjectContext`1.ObjectsGet">
+            <summary>Sets the shim of EnumerableObjectContext`1.get_Objects()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimEnumerableObjectContext`1.ObjectsSetIQueryableOfT0">
+            <summary>Sets the shim of EnumerableObjectContext`1.set_Objects(IQueryable`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimEnumerableObjectContext`1.ParentRepositoryGet">
+            <summary>Sets the shim of EnumerableObjectContext`1.get_ParentRepository()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimEnumerableObjectContext`1.ParentRepositorySetRepositoryOfT0">
+            <summary>Sets the shim of EnumerableObjectContext`1.set_ParentRepository(Repository`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimEnumerableObjectContext`1.ProviderGet">
+            <summary>Sets the shim of EnumerableObjectContext`1.get_Provider()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimEnumerableObjectContext`1.SystemCollectionsIEnumerableGetEnumerator">
+            <summary>Sets the shim of EnumerableObjectContext`1.System.Collections.IEnumerable.GetEnumerator()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimEnumerableObjectContext`1._GetEnumeratorb__0T0">
+            <summary>Sets the shim of EnumerableObjectContext`1.&lt;GetEnumerator&gt;b__0(!0 x)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimEnumerableObjectContext`1.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimEnumerableObjectContext`1.AllInstances.AsRawOf1``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{Repository.EnumerableObjectContext{`0},``0})">
+            <summary>Sets the shim of EnumerableObjectContext`1.AsRaw()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimEnumerableObjectContext`1.AllInstances.ElementTypeGet">
+            <summary>Sets the shim of EnumerableObjectContext`1.get_ElementType()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimEnumerableObjectContext`1.AllInstances.ExpressionGet">
+            <summary>Sets the shim of EnumerableObjectContext`1.get_Expression()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimEnumerableObjectContext`1.AllInstances.GetEnumerator">
+            <summary>Sets the shim of EnumerableObjectContext`1.GetEnumerator()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimEnumerableObjectContext`1.AllInstances.ObjectsGet">
+            <summary>Sets the shim of EnumerableObjectContext`1.get_Objects()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimEnumerableObjectContext`1.AllInstances.ObjectsSetIQueryableOfT0">
+            <summary>Sets the shim of EnumerableObjectContext`1.set_Objects(IQueryable`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimEnumerableObjectContext`1.AllInstances.ParentRepositoryGet">
+            <summary>Sets the shim of EnumerableObjectContext`1.get_ParentRepository()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimEnumerableObjectContext`1.AllInstances.ParentRepositorySetRepositoryOfT0">
+            <summary>Sets the shim of EnumerableObjectContext`1.set_ParentRepository(Repository`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimEnumerableObjectContext`1.AllInstances.ProviderGet">
+            <summary>Sets the shim of EnumerableObjectContext`1.get_Provider()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimEnumerableObjectContext`1.AllInstances.SystemCollectionsIEnumerableGetEnumerator">
+            <summary>Sets the shim of EnumerableObjectContext`1.System.Collections.IEnumerable.GetEnumerator()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimEnumerableObjectContext`1.AllInstances._GetEnumeratorb__0T0">
+            <summary>Sets the shim of EnumerableObjectContext`1.&lt;GetEnumerator&gt;b__0(!0 x)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimExplicitKeyRepository`1">
+            <summary>Shim type of Repository.ExplicitKeyRepository`1</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimExplicitKeyRepository`1.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimExplicitKeyRepository`1.#ctor(Repository.ExplicitKeyRepository{`0})">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimExplicitKeyRepository`1.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimExplicitKeyRepository`1.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimExplicitKeyRepository`1.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1.ConstructorRepositoryOfT0">
+            <summary>Sets the shim of ExplicitKeyRepository`1.ExplicitKeyRepository`1(Repository`1&lt;!0&gt; implicitKeyRepository)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1.Dispose">
+            <summary>Sets the shim of ExplicitKeyRepository`1.Dispose()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1.ExistsByKeyObjectArray">
+            <summary>Sets the shim of ExplicitKeyRepository`1.ExistsByKey(Object[] keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1.FindObjectArray">
+            <summary>Sets the shim of ExplicitKeyRepository`1.Find(Object[] keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1.ImplicitKeyRepositoryGet">
+            <summary>Sets the shim of ExplicitKeyRepository`1.get_ImplicitKeyRepository()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1.ImplicitKeyRepositorySetRepositoryOfT0">
+            <summary>Sets the shim of ExplicitKeyRepository`1.set_ImplicitKeyRepository(Repository`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1.InsertIEnumerableOfTupleOfObjectArrayT0">
+            <summary>Sets the shim of ExplicitKeyRepository`1.Insert(IEnumerable`1&lt;Tuple`2&lt;Object[],!0&gt;&gt; values)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1.InsertT0ObjectArray">
+            <summary>Sets the shim of ExplicitKeyRepository`1.Insert(!0 value, Object[] keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1.ItemsGet">
+            <summary>Sets the shim of ExplicitKeyRepository`1.get_Items()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1.RemoveAllByKeyIEnumerableOfObjectArray">
+            <summary>Sets the shim of ExplicitKeyRepository`1.RemoveAllByKey(IEnumerable`1&lt;Object[]&gt; keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1.RemoveByKeyObjectArray">
+            <summary>Sets the shim of ExplicitKeyRepository`1.RemoveByKey(Object[] keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1.SaveChanges">
+            <summary>Sets the shim of ExplicitKeyRepository`1.SaveChanges()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1.StaticConstructor">
+            <summary>Sets the shim of ExplicitKeyRepository`1.ExplicitKeyRepository`1()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1._cctorb__3T0">
+            <summary>Sets the shim of ExplicitKeyRepository`1.&lt;.cctor&gt;b__3(!0 x)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimExplicitKeyRepository`1.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1.AllInstances.Dispose">
+            <summary>Sets the shim of ExplicitKeyRepository`1.Dispose()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1.AllInstances.ExistsByKeyObjectArray">
+            <summary>Sets the shim of ExplicitKeyRepository`1.ExistsByKey(Object[] keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1.AllInstances.FindObjectArray">
+            <summary>Sets the shim of ExplicitKeyRepository`1.Find(Object[] keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1.AllInstances.ImplicitKeyRepositoryGet">
+            <summary>Sets the shim of ExplicitKeyRepository`1.get_ImplicitKeyRepository()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1.AllInstances.ImplicitKeyRepositorySetRepositoryOfT0">
+            <summary>Sets the shim of ExplicitKeyRepository`1.set_ImplicitKeyRepository(Repository`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1.AllInstances.InsertIEnumerableOfTupleOfObjectArrayT0">
+            <summary>Sets the shim of ExplicitKeyRepository`1.Insert(IEnumerable`1&lt;Tuple`2&lt;Object[],!0&gt;&gt; values)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1.AllInstances.InsertT0ObjectArray">
+            <summary>Sets the shim of ExplicitKeyRepository`1.Insert(!0 value, Object[] keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1.AllInstances.ItemsGet">
+            <summary>Sets the shim of ExplicitKeyRepository`1.get_Items()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1.AllInstances.RemoveAllByKeyIEnumerableOfObjectArray">
+            <summary>Sets the shim of ExplicitKeyRepository`1.RemoveAllByKey(IEnumerable`1&lt;Object[]&gt; keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1.AllInstances.RemoveByKeyObjectArray">
+            <summary>Sets the shim of ExplicitKeyRepository`1.RemoveByKey(Object[] keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`1.AllInstances.SaveChanges">
+            <summary>Sets the shim of ExplicitKeyRepository`1.SaveChanges()</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimExplicitKeyRepository`2">
+            <summary>Shim type of Repository.ExplicitKeyRepository`2</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimExplicitKeyRepository`2.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimExplicitKeyRepository`2.#ctor(Repository.ExplicitKeyRepository{`0,`1})">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimExplicitKeyRepository`2.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimExplicitKeyRepository`2.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimExplicitKeyRepository`2.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2.ConstructorRepositoryOfT0">
+            <summary>Sets the shim of ExplicitKeyRepository`2.ExplicitKeyRepository`2(Repository`1&lt;!0&gt; innerRepository)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2.Dispose">
+            <summary>Sets the shim of ExplicitKeyRepository`2.Dispose()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2.ExistsByKeyT1">
+            <summary>Sets the shim of ExplicitKeyRepository`2.ExistsByKey(!1 key)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2.FindT1">
+            <summary>Sets the shim of ExplicitKeyRepository`2.Find(!1 key)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2.InnerRepositoryGet">
+            <summary>Sets the shim of ExplicitKeyRepository`2.get_InnerRepository()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2.InnerRepositorySetExplicitKeyRepositoryOfT0">
+            <summary>Sets the shim of ExplicitKeyRepository`2.set_InnerRepository(ExplicitKeyRepository`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2.InsertIEnumerableOfTupleOfT1T0">
+            <summary>Sets the shim of ExplicitKeyRepository`2.Insert(IEnumerable`1&lt;Tuple`2&lt;!1,!0&gt;&gt; values)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2.InsertT0T1">
+            <summary>Sets the shim of ExplicitKeyRepository`2.Insert(!0 value, !1 key)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2.ItemsGet">
+            <summary>Sets the shim of ExplicitKeyRepository`2.get_Items()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2.RemoveAllByKeyIEnumerableOfT1">
+            <summary>Sets the shim of ExplicitKeyRepository`2.RemoveAllByKey(IEnumerable`1&lt;!1&gt; keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2.RemoveByKeyT1">
+            <summary>Sets the shim of ExplicitKeyRepository`2.RemoveByKey(!1 key)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2.SaveChanges">
+            <summary>Sets the shim of ExplicitKeyRepository`2.SaveChanges()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2.StaticConstructor">
+            <summary>Sets the shim of ExplicitKeyRepository`2.ExplicitKeyRepository`2()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2._Insertb__0TupleOfT1T0">
+            <summary>Sets the shim of ExplicitKeyRepository`2.&lt;Insert&gt;b__0(Tuple`2&lt;!1,!0&gt; x)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2._RemoveAllByKeyb__2T1">
+            <summary>Sets the shim of ExplicitKeyRepository`2.&lt;RemoveAllByKey&gt;b__2(!1 x)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2._cctorb__4T0">
+            <summary>Sets the shim of ExplicitKeyRepository`2.&lt;.cctor&gt;b__4(!0 x)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimExplicitKeyRepository`2.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2.AllInstances.Dispose">
+            <summary>Sets the shim of ExplicitKeyRepository`2.Dispose()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2.AllInstances.ExistsByKeyT1">
+            <summary>Sets the shim of ExplicitKeyRepository`2.ExistsByKey(!1 key)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2.AllInstances.FindT1">
+            <summary>Sets the shim of ExplicitKeyRepository`2.Find(!1 key)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2.AllInstances.InnerRepositoryGet">
+            <summary>Sets the shim of ExplicitKeyRepository`2.get_InnerRepository()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2.AllInstances.InnerRepositorySetExplicitKeyRepositoryOfT0">
+            <summary>Sets the shim of ExplicitKeyRepository`2.set_InnerRepository(ExplicitKeyRepository`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2.AllInstances.InsertIEnumerableOfTupleOfT1T0">
+            <summary>Sets the shim of ExplicitKeyRepository`2.Insert(IEnumerable`1&lt;Tuple`2&lt;!1,!0&gt;&gt; values)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2.AllInstances.InsertT0T1">
+            <summary>Sets the shim of ExplicitKeyRepository`2.Insert(!0 value, !1 key)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2.AllInstances.ItemsGet">
+            <summary>Sets the shim of ExplicitKeyRepository`2.get_Items()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2.AllInstances.RemoveAllByKeyIEnumerableOfT1">
+            <summary>Sets the shim of ExplicitKeyRepository`2.RemoveAllByKey(IEnumerable`1&lt;!1&gt; keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2.AllInstances.RemoveByKeyT1">
+            <summary>Sets the shim of ExplicitKeyRepository`2.RemoveByKey(!1 key)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`2.AllInstances.SaveChanges">
+            <summary>Sets the shim of ExplicitKeyRepository`2.SaveChanges()</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimExplicitKeyRepository`3">
+            <summary>Shim type of Repository.ExplicitKeyRepository`3</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimExplicitKeyRepository`3.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimExplicitKeyRepository`3.#ctor(Repository.ExplicitKeyRepository{`0,`1,`2})">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimExplicitKeyRepository`3.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimExplicitKeyRepository`3.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimExplicitKeyRepository`3.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3.ConstructorRepositoryOfT0">
+            <summary>Sets the shim of ExplicitKeyRepository`3.ExplicitKeyRepository`3(Repository`1&lt;!0&gt; innerRepository)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3.Dispose">
+            <summary>Sets the shim of ExplicitKeyRepository`3.Dispose()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3.ExistsByKeyT1T2">
+            <summary>Sets the shim of ExplicitKeyRepository`3.ExistsByKey(!1 key1, !2 key2)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3.FindT1T2">
+            <summary>Sets the shim of ExplicitKeyRepository`3.Find(!1 key1, !2 key2)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3.InnerRepositoryGet">
+            <summary>Sets the shim of ExplicitKeyRepository`3.get_InnerRepository()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3.InnerRepositorySetExplicitKeyRepositoryOfT0">
+            <summary>Sets the shim of ExplicitKeyRepository`3.set_InnerRepository(ExplicitKeyRepository`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3.InsertIEnumerableOfTupleOfT1T2T0">
+            <summary>Sets the shim of ExplicitKeyRepository`3.Insert(IEnumerable`1&lt;Tuple`3&lt;!1,!2,!0&gt;&gt; values)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3.InsertT0T1T2">
+            <summary>Sets the shim of ExplicitKeyRepository`3.Insert(!0 value, !1 key1, !2 key2)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3.ItemsGet">
+            <summary>Sets the shim of ExplicitKeyRepository`3.get_Items()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3.RemoveAllByKeyIEnumerableOfTupleOfT1T2">
+            <summary>Sets the shim of ExplicitKeyRepository`3.RemoveAllByKey(IEnumerable`1&lt;Tuple`2&lt;!1,!2&gt;&gt; keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3.RemoveByKeyT1T2">
+            <summary>Sets the shim of ExplicitKeyRepository`3.RemoveByKey(!1 key1, !2 key2)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3.SaveChanges">
+            <summary>Sets the shim of ExplicitKeyRepository`3.SaveChanges()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3.StaticConstructor">
+            <summary>Sets the shim of ExplicitKeyRepository`3.ExplicitKeyRepository`3()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3._Insertb__0TupleOfT1T2T0">
+            <summary>Sets the shim of ExplicitKeyRepository`3.&lt;Insert&gt;b__0(Tuple`3&lt;!1,!2,!0&gt; x)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3._RemoveAllByKeyb__2TupleOfT1T2">
+            <summary>Sets the shim of ExplicitKeyRepository`3.&lt;RemoveAllByKey&gt;b__2(Tuple`2&lt;!1,!2&gt; x)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3._cctorb__4T0">
+            <summary>Sets the shim of ExplicitKeyRepository`3.&lt;.cctor&gt;b__4(!0 x)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimExplicitKeyRepository`3.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3.AllInstances.Dispose">
+            <summary>Sets the shim of ExplicitKeyRepository`3.Dispose()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3.AllInstances.ExistsByKeyT1T2">
+            <summary>Sets the shim of ExplicitKeyRepository`3.ExistsByKey(!1 key1, !2 key2)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3.AllInstances.FindT1T2">
+            <summary>Sets the shim of ExplicitKeyRepository`3.Find(!1 key1, !2 key2)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3.AllInstances.InnerRepositoryGet">
+            <summary>Sets the shim of ExplicitKeyRepository`3.get_InnerRepository()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3.AllInstances.InnerRepositorySetExplicitKeyRepositoryOfT0">
+            <summary>Sets the shim of ExplicitKeyRepository`3.set_InnerRepository(ExplicitKeyRepository`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3.AllInstances.InsertIEnumerableOfTupleOfT1T2T0">
+            <summary>Sets the shim of ExplicitKeyRepository`3.Insert(IEnumerable`1&lt;Tuple`3&lt;!1,!2,!0&gt;&gt; values)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3.AllInstances.InsertT0T1T2">
+            <summary>Sets the shim of ExplicitKeyRepository`3.Insert(!0 value, !1 key1, !2 key2)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3.AllInstances.ItemsGet">
+            <summary>Sets the shim of ExplicitKeyRepository`3.get_Items()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3.AllInstances.RemoveAllByKeyIEnumerableOfTupleOfT1T2">
+            <summary>Sets the shim of ExplicitKeyRepository`3.RemoveAllByKey(IEnumerable`1&lt;Tuple`2&lt;!1,!2&gt;&gt; keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3.AllInstances.RemoveByKeyT1T2">
+            <summary>Sets the shim of ExplicitKeyRepository`3.RemoveByKey(!1 key1, !2 key2)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimExplicitKeyRepository`3.AllInstances.SaveChanges">
+            <summary>Sets the shim of ExplicitKeyRepository`3.SaveChanges()</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimInMemoryRepository`1">
+            <summary>Shim type of Repository.InMemoryRepository`1</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimInMemoryRepository`1.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimInMemoryRepository`1.#ctor(Repository.InMemoryRepository{`0})">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimInMemoryRepository`1.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimInMemoryRepository`1.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimInMemoryRepository`1.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInMemoryRepository`1.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInMemoryRepository`1.ConstructorFuncOfT0Object">
+            <summary>Sets the shim of InMemoryRepository`1.InMemoryRepository`1(Func`2&lt;!0,Object&gt; keySelector)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInMemoryRepository`1.CreateInsertIEnumerableOfObjectT0">
+            <summary>Sets the shim of InMemoryRepository`1.CreateInsert(IEnumerable`1&lt;Object&gt; keys, !0 value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInMemoryRepository`1.CreateModifyIEnumerableOfObjectT0ActionOfT0">
+            <summary>Sets the shim of InMemoryRepository`1.CreateModify(IEnumerable`1&lt;Object&gt; keys, !0 value, Action`1&lt;!0&gt; modifier)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInMemoryRepository`1.CreateRemoveIEnumerableOfObject">
+            <summary>Sets the shim of InMemoryRepository`1.CreateRemove(IEnumerable`1&lt;Object&gt; keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInMemoryRepository`1.Dispose">
+            <summary>Sets the shim of InMemoryRepository`1.Dispose()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInMemoryRepository`1.ExistsByKeyObjectArray">
+            <summary>Sets the shim of InMemoryRepository`1.ExistsByKey(Object[] keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInMemoryRepository`1.FindImplObjectArray">
+            <summary>Sets the shim of InMemoryRepository`1.FindImpl(Object[] keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInMemoryRepository`1.ItemsGet">
+            <summary>Sets the shim of InMemoryRepository`1.get_Items()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInMemoryRepository`1._CreateInsertb__10Object">
+            <summary>Sets the shim of InMemoryRepository`1.&lt;CreateInsert&gt;b__10(Object x)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInMemoryRepository`1._CreateRemoveb__12Object">
+            <summary>Sets the shim of InMemoryRepository`1.&lt;CreateRemove&gt;b__12(Object x)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimInMemoryRepository`1.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInMemoryRepository`1.AllInstances.CreateInsertIEnumerableOfObjectT0">
+            <summary>Sets the shim of InMemoryRepository`1.CreateInsert(IEnumerable`1&lt;Object&gt; keys, !0 value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInMemoryRepository`1.AllInstances.CreateModifyIEnumerableOfObjectT0ActionOfT0">
+            <summary>Sets the shim of InMemoryRepository`1.CreateModify(IEnumerable`1&lt;Object&gt; keys, !0 value, Action`1&lt;!0&gt; modifier)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInMemoryRepository`1.AllInstances.CreateRemoveIEnumerableOfObject">
+            <summary>Sets the shim of InMemoryRepository`1.CreateRemove(IEnumerable`1&lt;Object&gt; keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInMemoryRepository`1.AllInstances.Dispose">
+            <summary>Sets the shim of InMemoryRepository`1.Dispose()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInMemoryRepository`1.AllInstances.ExistsByKeyObjectArray">
+            <summary>Sets the shim of InMemoryRepository`1.ExistsByKey(Object[] keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInMemoryRepository`1.AllInstances.FindImplObjectArray">
+            <summary>Sets the shim of InMemoryRepository`1.FindImpl(Object[] keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInMemoryRepository`1.AllInstances.ItemsGet">
+            <summary>Sets the shim of InMemoryRepository`1.get_Items()</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimInMemoryRepository`2">
+            <summary>Shim type of Repository.InMemoryRepository`2</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimInMemoryRepository`2.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimInMemoryRepository`2.#ctor(Repository.InMemoryRepository{`0,`1})">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimInMemoryRepository`2.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimInMemoryRepository`2.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimInMemoryRepository`2.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInMemoryRepository`2.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInMemoryRepository`2.ConstructorFuncOfT0T1">
+            <summary>Sets the shim of InMemoryRepository`2.InMemoryRepository`2(Func`2&lt;!0,!1&gt; keySelector)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimInMemoryRepository`2.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimInsert`1">
+            <summary>Shim type of Repository.Insert`1</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimInsert`1.#ctor(Repository.Insert{`0})">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimInsert`1.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimInsert`1.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimInsert`1.Bind(Repository.IOperation)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInsert`1.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInsert`1.ConstructorIEnumerableOfObjectT0">
+            <summary>Sets the shim of Insert`1.Insert`1(IEnumerable`1&lt;Object&gt; keys, !0 value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInsert`1.KeysGet">
+            <summary>Sets the shim of Insert`1.get_Keys()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInsert`1.KeysSetIEnumerableOfObject">
+            <summary>Sets the shim of Insert`1.set_Keys(IEnumerable`1&lt;Object&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInsert`1.ValueGet">
+            <summary>Sets the shim of Insert`1.get_Value()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInsert`1.ValueSetT0">
+            <summary>Sets the shim of Insert`1.set_Value(!0 value)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimInsert`1.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInsert`1.AllInstances.KeysGet">
+            <summary>Sets the shim of Insert`1.get_Keys()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInsert`1.AllInstances.KeysSetIEnumerableOfObject">
+            <summary>Sets the shim of Insert`1.set_Keys(IEnumerable`1&lt;Object&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInsert`1.AllInstances.ValueGet">
+            <summary>Sets the shim of Insert`1.get_Value()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimInsert`1.AllInstances.ValueSetT0">
+            <summary>Sets the shim of Insert`1.set_Value(!0 value)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimKeyedObject`1">
+            <summary>Shim type of Repository.KeyedObject`1</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimKeyedObject`1.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimKeyedObject`1.#ctor(Repository.KeyedObject{`0})">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimKeyedObject`1.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimKeyedObject`1.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`1.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`1.ConstructorObjectArrayT0">
+            <summary>Sets the shim of KeyedObject`1.KeyedObject`1(Object[] keys, !0 obj)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`1.KeysGet">
+            <summary>Sets the shim of KeyedObject`1.get_Keys()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`1.KeysSetObjectArray">
+            <summary>Sets the shim of KeyedObject`1.set_Keys(Object[] value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`1.ObjectGet">
+            <summary>Sets the shim of KeyedObject`1.get_Object()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`1.ObjectSetT0">
+            <summary>Sets the shim of KeyedObject`1.set_Object(!0 value)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimKeyedObject`1.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`1.AllInstances.KeysGet">
+            <summary>Sets the shim of KeyedObject`1.get_Keys()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`1.AllInstances.KeysSetObjectArray">
+            <summary>Sets the shim of KeyedObject`1.set_Keys(Object[] value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`1.AllInstances.ObjectGet">
+            <summary>Sets the shim of KeyedObject`1.get_Object()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`1.AllInstances.ObjectSetT0">
+            <summary>Sets the shim of KeyedObject`1.set_Object(!0 value)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimKeyedObject`2">
+            <summary>Shim type of Repository.KeyedObject`2</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimKeyedObject`2.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimKeyedObject`2.#ctor(Repository.KeyedObject{`0,`1})">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimKeyedObject`2.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimKeyedObject`2.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`2.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`2.ConstructorT0T1">
+            <summary>Sets the shim of KeyedObject`2.KeyedObject`2(!0 key, !1 value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`2.KeyGet">
+            <summary>Sets the shim of KeyedObject`2.get_Key()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`2.KeySetT0">
+            <summary>Sets the shim of KeyedObject`2.set_Key(!0 value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`2.ValueGet">
+            <summary>Sets the shim of KeyedObject`2.get_Value()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`2.ValueSetT1">
+            <summary>Sets the shim of KeyedObject`2.set_Value(!1 value)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimKeyedObject`2.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`2.AllInstances.KeyGet">
+            <summary>Sets the shim of KeyedObject`2.get_Key()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`2.AllInstances.KeySetT0">
+            <summary>Sets the shim of KeyedObject`2.set_Key(!0 value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`2.AllInstances.ValueGet">
+            <summary>Sets the shim of KeyedObject`2.get_Value()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`2.AllInstances.ValueSetT1">
+            <summary>Sets the shim of KeyedObject`2.set_Value(!1 value)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimKeyedObject`3">
+            <summary>Shim type of Repository.KeyedObject`3</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimKeyedObject`3.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimKeyedObject`3.#ctor(Repository.KeyedObject{`0,`1,`2})">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimKeyedObject`3.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimKeyedObject`3.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`3.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`3.ConstructorT0T1T2">
+            <summary>Sets the shim of KeyedObject`3.KeyedObject`3(!0 key1, !1 key2, !2 value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`3.Key1Get">
+            <summary>Sets the shim of KeyedObject`3.get_Key1()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`3.Key1SetT0">
+            <summary>Sets the shim of KeyedObject`3.set_Key1(!0 value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`3.Key2Get">
+            <summary>Sets the shim of KeyedObject`3.get_Key2()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`3.Key2SetT1">
+            <summary>Sets the shim of KeyedObject`3.set_Key2(!1 value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`3.ValueGet">
+            <summary>Sets the shim of KeyedObject`3.get_Value()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`3.ValueSetT2">
+            <summary>Sets the shim of KeyedObject`3.set_Value(!2 value)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimKeyedObject`3.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`3.AllInstances.Key1Get">
+            <summary>Sets the shim of KeyedObject`3.get_Key1()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`3.AllInstances.Key1SetT0">
+            <summary>Sets the shim of KeyedObject`3.set_Key1(!0 value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`3.AllInstances.Key2Get">
+            <summary>Sets the shim of KeyedObject`3.get_Key2()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`3.AllInstances.Key2SetT1">
+            <summary>Sets the shim of KeyedObject`3.set_Key2(!1 value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`3.AllInstances.ValueGet">
+            <summary>Sets the shim of KeyedObject`3.get_Value()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimKeyedObject`3.AllInstances.ValueSetT2">
+            <summary>Sets the shim of KeyedObject`3.set_Value(!2 value)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimModify`1">
+            <summary>Shim type of Repository.Modify`1</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimModify`1.#ctor(Repository.Modify{`0})">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimModify`1.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimModify`1.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimModify`1.Bind(Repository.IOperation)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimModify`1.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimModify`1.ConstructorIEnumerableOfObjectT0ActionOfT0">
+            <summary>Sets the shim of Modify`1.Modify`1(IEnumerable`1&lt;Object&gt; keys, !0 value, Action`1&lt;!0&gt; modifier)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimModify`1.KeysGet">
+            <summary>Sets the shim of Modify`1.get_Keys()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimModify`1.KeysSetIEnumerableOfObject">
+            <summary>Sets the shim of Modify`1.set_Keys(IEnumerable`1&lt;Object&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimModify`1.ModifierGet">
+            <summary>Sets the shim of Modify`1.get_Modifier()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimModify`1.ModifierSetActionOfT0">
+            <summary>Sets the shim of Modify`1.set_Modifier(Action`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimModify`1.ValueGet">
+            <summary>Sets the shim of Modify`1.get_Value()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimModify`1.ValueSetT0">
+            <summary>Sets the shim of Modify`1.set_Value(!0 value)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimModify`1.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimModify`1.AllInstances.KeysGet">
+            <summary>Sets the shim of Modify`1.get_Keys()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimModify`1.AllInstances.KeysSetIEnumerableOfObject">
+            <summary>Sets the shim of Modify`1.set_Keys(IEnumerable`1&lt;Object&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimModify`1.AllInstances.ModifierGet">
+            <summary>Sets the shim of Modify`1.get_Modifier()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimModify`1.AllInstances.ModifierSetActionOfT0">
+            <summary>Sets the shim of Modify`1.set_Modifier(Action`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimModify`1.AllInstances.ValueGet">
+            <summary>Sets the shim of Modify`1.get_Value()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimModify`1.AllInstances.ValueSetT0">
+            <summary>Sets the shim of Modify`1.set_Value(!0 value)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimObjectContext`1">
+            <summary>Shim type of Repository.ObjectContext`1</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimObjectContext`1.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimObjectContext`1.#ctor(Repository.ObjectContext{`0})">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimObjectContext`1.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimObjectContext`1.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimObjectContext`1.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimObjectContext`1.ConstructorT0">
+            <summary>Sets the shim of ObjectContext`1.ObjectContext`1(!0 obj)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimObjectContext`1.ObjectGet">
+            <summary>Sets the shim of ObjectContext`1.get_Object()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimObjectContext`1.ObjectSetT0">
+            <summary>Sets the shim of ObjectContext`1.set_Object(!0 value)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimObjectContext`1.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimObjectContext`1.AllInstances.ObjectGet">
+            <summary>Sets the shim of ObjectContext`1.get_Object()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimObjectContext`1.AllInstances.ObjectSetT0">
+            <summary>Sets the shim of ObjectContext`1.set_Object(!0 value)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimReadOnlyRepository`1">
+            <summary>Shim type of Repository.ReadOnlyRepository`1</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimReadOnlyRepository`1.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimReadOnlyRepository`1.#ctor(Repository.ReadOnlyRepository{`0})">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimReadOnlyRepository`1.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimReadOnlyRepository`1.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimReadOnlyRepository`1.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`1.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`1.ConstructorRepositoryOfT0">
+            <summary>Sets the shim of ReadOnlyRepository`1.ReadOnlyRepository`1(Repository`1&lt;!0&gt; innerRepository)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`1.Dispose">
+            <summary>Sets the shim of ReadOnlyRepository`1.Dispose()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`1.ExistsByKeyObjectArray">
+            <summary>Sets the shim of ReadOnlyRepository`1.ExistsByKey(Object[] keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`1.ExistsT0">
+            <summary>Sets the shim of ReadOnlyRepository`1.Exists(!0 obj)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`1.FindObjectArray">
+            <summary>Sets the shim of ReadOnlyRepository`1.Find(Object[] keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`1.InnerRepositoryGet">
+            <summary>Sets the shim of ReadOnlyRepository`1.get_InnerRepository()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`1.InnerRepositorySetRepositoryOfT0">
+            <summary>Sets the shim of ReadOnlyRepository`1.set_InnerRepository(Repository`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`1.ItemsGet">
+            <summary>Sets the shim of ReadOnlyRepository`1.get_Items()</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimReadOnlyRepository`1.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`1.AllInstances.Dispose">
+            <summary>Sets the shim of ReadOnlyRepository`1.Dispose()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`1.AllInstances.ExistsByKeyObjectArray">
+            <summary>Sets the shim of ReadOnlyRepository`1.ExistsByKey(Object[] keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`1.AllInstances.ExistsT0">
+            <summary>Sets the shim of ReadOnlyRepository`1.Exists(!0 obj)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`1.AllInstances.FindObjectArray">
+            <summary>Sets the shim of ReadOnlyRepository`1.Find(Object[] keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`1.AllInstances.InnerRepositoryGet">
+            <summary>Sets the shim of ReadOnlyRepository`1.get_InnerRepository()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`1.AllInstances.InnerRepositorySetRepositoryOfT0">
+            <summary>Sets the shim of ReadOnlyRepository`1.set_InnerRepository(Repository`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`1.AllInstances.ItemsGet">
+            <summary>Sets the shim of ReadOnlyRepository`1.get_Items()</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimReadOnlyRepository`2">
+            <summary>Shim type of Repository.ReadOnlyRepository`2</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimReadOnlyRepository`2.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimReadOnlyRepository`2.#ctor(Repository.ReadOnlyRepository{`0,`1})">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimReadOnlyRepository`2.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimReadOnlyRepository`2.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimReadOnlyRepository`2.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`2.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`2.ConstructorRepositoryOfT0T1">
+            <summary>Sets the shim of ReadOnlyRepository`2.ReadOnlyRepository`2(Repository`2&lt;!0,!1&gt; innerRepository)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`2.Dispose">
+            <summary>Sets the shim of ReadOnlyRepository`2.Dispose()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`2.ExistsByKeyT1">
+            <summary>Sets the shim of ReadOnlyRepository`2.ExistsByKey(!1 key)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`2.ExistsT0">
+            <summary>Sets the shim of ReadOnlyRepository`2.Exists(!0 obj)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`2.FindT1">
+            <summary>Sets the shim of ReadOnlyRepository`2.Find(!1 key)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`2.InnerRepositoryGet">
+            <summary>Sets the shim of ReadOnlyRepository`2.get_InnerRepository()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`2.InnerRepositorySetRepositoryOfT0T1">
+            <summary>Sets the shim of ReadOnlyRepository`2.set_InnerRepository(Repository`2&lt;!0,!1&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`2.ItemsGet">
+            <summary>Sets the shim of ReadOnlyRepository`2.get_Items()</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimReadOnlyRepository`2.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`2.AllInstances.Dispose">
+            <summary>Sets the shim of ReadOnlyRepository`2.Dispose()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`2.AllInstances.ExistsByKeyT1">
+            <summary>Sets the shim of ReadOnlyRepository`2.ExistsByKey(!1 key)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`2.AllInstances.ExistsT0">
+            <summary>Sets the shim of ReadOnlyRepository`2.Exists(!0 obj)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`2.AllInstances.FindT1">
+            <summary>Sets the shim of ReadOnlyRepository`2.Find(!1 key)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`2.AllInstances.InnerRepositoryGet">
+            <summary>Sets the shim of ReadOnlyRepository`2.get_InnerRepository()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`2.AllInstances.InnerRepositorySetRepositoryOfT0T1">
+            <summary>Sets the shim of ReadOnlyRepository`2.set_InnerRepository(Repository`2&lt;!0,!1&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`2.AllInstances.ItemsGet">
+            <summary>Sets the shim of ReadOnlyRepository`2.get_Items()</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimReadOnlyRepository`3">
+            <summary>Shim type of Repository.ReadOnlyRepository`3</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimReadOnlyRepository`3.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimReadOnlyRepository`3.#ctor(Repository.ReadOnlyRepository{`0,`1,`2})">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimReadOnlyRepository`3.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimReadOnlyRepository`3.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimReadOnlyRepository`3.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`3.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`3.ConstructorRepositoryOfT0T1T2">
+            <summary>Sets the shim of ReadOnlyRepository`3.ReadOnlyRepository`3(Repository`3&lt;!0,!1,!2&gt; innerRepository)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`3.Dispose">
+            <summary>Sets the shim of ReadOnlyRepository`3.Dispose()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`3.ExistsByKeyT1T2">
+            <summary>Sets the shim of ReadOnlyRepository`3.ExistsByKey(!1 key1, !2 key2)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`3.ExistsT0">
+            <summary>Sets the shim of ReadOnlyRepository`3.Exists(!0 obj)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`3.FindT1T2">
+            <summary>Sets the shim of ReadOnlyRepository`3.Find(!1 key1, !2 key2)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`3.InnerRepositoryGet">
+            <summary>Sets the shim of ReadOnlyRepository`3.get_InnerRepository()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`3.InnerRepositorySetRepositoryOfT0T1T2">
+            <summary>Sets the shim of ReadOnlyRepository`3.set_InnerRepository(Repository`3&lt;!0,!1,!2&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`3.ItemsGet">
+            <summary>Sets the shim of ReadOnlyRepository`3.get_Items()</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimReadOnlyRepository`3.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`3.AllInstances.Dispose">
+            <summary>Sets the shim of ReadOnlyRepository`3.Dispose()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`3.AllInstances.ExistsByKeyT1T2">
+            <summary>Sets the shim of ReadOnlyRepository`3.ExistsByKey(!1 key1, !2 key2)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`3.AllInstances.ExistsT0">
+            <summary>Sets the shim of ReadOnlyRepository`3.Exists(!0 obj)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`3.AllInstances.FindT1T2">
+            <summary>Sets the shim of ReadOnlyRepository`3.Find(!1 key1, !2 key2)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`3.AllInstances.InnerRepositoryGet">
+            <summary>Sets the shim of ReadOnlyRepository`3.get_InnerRepository()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`3.AllInstances.InnerRepositorySetRepositoryOfT0T1T2">
+            <summary>Sets the shim of ReadOnlyRepository`3.set_InnerRepository(Repository`3&lt;!0,!1,!2&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimReadOnlyRepository`3.AllInstances.ItemsGet">
+            <summary>Sets the shim of ReadOnlyRepository`3.get_Items()</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimRemove">
+            <summary>Shim type of Repository.Remove</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRemove.#ctor(Repository.Remove)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRemove.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRemove.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRemove.Bind(Repository.IOperation)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRemove.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRemove.ConstructorIEnumerableOfObject">
+            <summary>Sets the shim of Remove.Remove(IEnumerable`1&lt;Object&gt; keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRemove.KeysGet">
+            <summary>Sets the shim of Remove.get_Keys()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRemove.KeysSetIEnumerableOfObject">
+            <summary>Sets the shim of Remove.set_Keys(IEnumerable`1&lt;Object&gt; value)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimRemove.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRemove.AllInstances.KeysGet">
+            <summary>Sets the shim of Remove.get_Keys()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRemove.AllInstances.KeysSetIEnumerableOfObject">
+            <summary>Sets the shim of Remove.set_Keys(IEnumerable`1&lt;Object&gt; value)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimRepository`1">
+            <summary>Shim type of Repository.Repository`1</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`1.#ctor(Repository.Repository{`0})">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`1.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`1.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`1.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`1.UpdateOf1M0ObjectArray``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Action{``0,System.Object[]})">
+            <summary>Sets the shim of Repository`1.Update(!!0 modifier, Object[] keys)</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`1.UpdateOf2M0FuncOfT0M1ObjectArray``2(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Action{``0,System.Func{`0,``1},System.Object[]})">
+            <summary>Sets the shim of Repository`1.Update(!!0 modifier, Func`2&lt;!0,!!1&gt; getter, Object[] keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AddChangeTrackerT0">
+            <summary>Sets the shim of Repository`1.AddChangeTracker(!0 obj)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AddPendingOperationIOperation">
+            <summary>Sets the shim of Repository`1.AddPendingOperation(IOperation operation)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AfterApplyChanges">
+            <summary>Sets the shim of Repository`1.AfterApplyChanges()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.ApplyChanges">
+            <summary>Sets the shim of Repository`1.ApplyChanges()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AsReadOnly">
+            <summary>Sets the shim of Repository`1.AsReadOnly()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.ConstructorFuncOfT0ObjectArrayBoolean">
+            <summary>Sets the shim of Repository`1.Repository`1(Func`2&lt;!0,Object[]&gt; keySelector, Boolean ignoreChangeTracking)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.CreateBatchInsertIEnumerableOfKeyValuePairOfIEnumerableOfObjectT0">
+            <summary>Sets the shim of Repository`1.CreateBatchInsert(IEnumerable`1&lt;KeyValuePair`2&lt;IEnumerable`1&lt;Object&gt;,!0&gt;&gt; keyValuePairs)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.ExistsT0">
+            <summary>Sets the shim of Repository`1.Exists(!0 obj)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.FindObjectArray">
+            <summary>Sets the shim of Repository`1.Find(Object[] keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.FindWrapperObjectArrayBoolean">
+            <summary>Sets the shim of Repository`1.FindWrapper(Object[] keys, Boolean trackChanges)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.IgnoreChangeTrackingGet">
+            <summary>Sets the shim of Repository`1.get_IgnoreChangeTracking()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.IgnoreChangeTrackingSetBoolean">
+            <summary>Sets the shim of Repository`1.set_IgnoreChangeTracking(Boolean value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.InsertIEnumerableOfT0">
+            <summary>Sets the shim of Repository`1.Insert(IEnumerable`1&lt;!0&gt; values)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.InsertT0">
+            <summary>Sets the shim of Repository`1.Insert(!0 value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.KeySelectorGet">
+            <summary>Sets the shim of Repository`1.get_KeySelector()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.KeySelectorSetFuncOfT0ObjectArray">
+            <summary>Sets the shim of Repository`1.set_KeySelector(Func`2&lt;!0,Object[]&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.OnKeySelectorChangedFuncOfT0ObjectArray">
+            <summary>Sets the shim of Repository`1.OnKeySelectorChanged(Func`2&lt;!0,Object[]&gt; newKeySelector)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.PendingOperationsGet">
+            <summary>Sets the shim of Repository`1.get_PendingOperations()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.PendingOperationsSetListOfIOperation">
+            <summary>Sets the shim of Repository`1.set_PendingOperations(List`1&lt;IOperation&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.RemoveAllByKeyIEnumerableOfObjectArray">
+            <summary>Sets the shim of Repository`1.RemoveAllByKey(IEnumerable`1&lt;Object[]&gt; keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.RemoveAllIEnumerableOfT0">
+            <summary>Sets the shim of Repository`1.RemoveAll(IEnumerable`1&lt;!0&gt; objects)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.RemoveByKeyObjectArray">
+            <summary>Sets the shim of Repository`1.RemoveByKey(Object[] keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.RemoveT0">
+            <summary>Sets the shim of Repository`1.Remove(!0 obj)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.SaveChanges">
+            <summary>Sets the shim of Repository`1.SaveChanges()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.SetKeySelectorFuncOfT0ObjectArray">
+            <summary>Sets the shim of Repository`1.SetKeySelector(Func`2&lt;!0,Object[]&gt; keySelector)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1._Insertb__0T0">
+            <summary>Sets the shim of Repository`1.&lt;Insert&gt;b__0(!0 x)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1._RemoveAllb__1IOperation">
+            <summary>Sets the shim of Repository`1.&lt;RemoveAll&gt;b__1(IOperation x)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1._RemoveAllb__2T0">
+            <summary>Sets the shim of Repository`1.&lt;RemoveAll&gt;b__2(!0 x)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimRepository`1.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`1.AllInstances.UpdateOf1M0ObjectArray``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Action{Repository.Repository{`0},``0,System.Object[]})">
+            <summary>Sets the shim of Repository`1.Update(!!0 modifier, Object[] keys)</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`1.AllInstances.UpdateOf2M0FuncOfT0M1ObjectArray``2(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Action{Repository.Repository{`0},``0,System.Func{`0,``1},System.Object[]})">
+            <summary>Sets the shim of Repository`1.Update(!!0 modifier, Func`2&lt;!0,!!1&gt; getter, Object[] keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances.AddChangeTrackerT0">
+            <summary>Sets the shim of Repository`1.AddChangeTracker(!0 obj)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances.AddPendingOperationIOperation">
+            <summary>Sets the shim of Repository`1.AddPendingOperation(IOperation operation)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances.AfterApplyChanges">
+            <summary>Sets the shim of Repository`1.AfterApplyChanges()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances.ApplyChanges">
+            <summary>Sets the shim of Repository`1.ApplyChanges()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances.AsReadOnly">
+            <summary>Sets the shim of Repository`1.AsReadOnly()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances.CreateBatchInsertIEnumerableOfKeyValuePairOfIEnumerableOfObjectT0">
+            <summary>Sets the shim of Repository`1.CreateBatchInsert(IEnumerable`1&lt;KeyValuePair`2&lt;IEnumerable`1&lt;Object&gt;,!0&gt;&gt; keyValuePairs)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances.ExistsT0">
+            <summary>Sets the shim of Repository`1.Exists(!0 obj)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances.FindObjectArray">
+            <summary>Sets the shim of Repository`1.Find(Object[] keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances.FindWrapperObjectArrayBoolean">
+            <summary>Sets the shim of Repository`1.FindWrapper(Object[] keys, Boolean trackChanges)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances.IgnoreChangeTrackingGet">
+            <summary>Sets the shim of Repository`1.get_IgnoreChangeTracking()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances.IgnoreChangeTrackingSetBoolean">
+            <summary>Sets the shim of Repository`1.set_IgnoreChangeTracking(Boolean value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances.InsertIEnumerableOfT0">
+            <summary>Sets the shim of Repository`1.Insert(IEnumerable`1&lt;!0&gt; values)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances.InsertT0">
+            <summary>Sets the shim of Repository`1.Insert(!0 value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances.KeySelectorGet">
+            <summary>Sets the shim of Repository`1.get_KeySelector()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances.KeySelectorSetFuncOfT0ObjectArray">
+            <summary>Sets the shim of Repository`1.set_KeySelector(Func`2&lt;!0,Object[]&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances.OnKeySelectorChangedFuncOfT0ObjectArray">
+            <summary>Sets the shim of Repository`1.OnKeySelectorChanged(Func`2&lt;!0,Object[]&gt; newKeySelector)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances.PendingOperationsGet">
+            <summary>Sets the shim of Repository`1.get_PendingOperations()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances.PendingOperationsSetListOfIOperation">
+            <summary>Sets the shim of Repository`1.set_PendingOperations(List`1&lt;IOperation&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances.RemoveAllByKeyIEnumerableOfObjectArray">
+            <summary>Sets the shim of Repository`1.RemoveAllByKey(IEnumerable`1&lt;Object[]&gt; keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances.RemoveAllIEnumerableOfT0">
+            <summary>Sets the shim of Repository`1.RemoveAll(IEnumerable`1&lt;!0&gt; objects)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances.RemoveByKeyObjectArray">
+            <summary>Sets the shim of Repository`1.RemoveByKey(Object[] keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances.RemoveT0">
+            <summary>Sets the shim of Repository`1.Remove(!0 obj)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances.SaveChanges">
+            <summary>Sets the shim of Repository`1.SaveChanges()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances.SetKeySelectorFuncOfT0ObjectArray">
+            <summary>Sets the shim of Repository`1.SetKeySelector(Func`2&lt;!0,Object[]&gt; keySelector)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances._Insertb__0T0">
+            <summary>Sets the shim of Repository`1.&lt;Insert&gt;b__0(!0 x)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`1.AllInstances._RemoveAllb__2T0">
+            <summary>Sets the shim of Repository`1.&lt;RemoveAll&gt;b__2(!0 x)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimRepository`2">
+            <summary>Shim type of Repository.Repository`2</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`2.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`2.#ctor(Repository.Repository{`0,`1})">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`2.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`2.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`2.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`2.UpdateOf1T1M0``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Action{`1,``0})">
+            <summary>Sets the shim of Repository`2.Update(!1 key, !!0 updateObj)</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`2.UpdateOf2T1M0FuncOfT0M1``2(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Action{`1,``0,System.Func{`0,``1}})">
+            <summary>Sets the shim of Repository`2.Update(!1 key, !!0 updateObj, Func`2&lt;!0,!!1&gt; getter)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.AsReadOnly">
+            <summary>Sets the shim of Repository`2.AsReadOnly()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.ConstructorRepositoryOfT0">
+            <summary>Sets the shim of Repository`2.Repository`2(Repository`1&lt;!0&gt; innerRepository)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.Dispose">
+            <summary>Sets the shim of Repository`2.Dispose()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.ExistsByKeyT1">
+            <summary>Sets the shim of Repository`2.ExistsByKey(!1 key)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.ExistsT0">
+            <summary>Sets the shim of Repository`2.Exists(!0 obj)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.FindT1">
+            <summary>Sets the shim of Repository`2.Find(!1 key)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.InnerRepositoryGet">
+            <summary>Sets the shim of Repository`2.get_InnerRepository()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.InnerRepositorySetRepositoryOfT0">
+            <summary>Sets the shim of Repository`2.set_InnerRepository(Repository`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.InsertIEnumerableOfT0">
+            <summary>Sets the shim of Repository`2.Insert(IEnumerable`1&lt;!0&gt; values)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.InsertT0">
+            <summary>Sets the shim of Repository`2.Insert(!0 value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.ItemsGet">
+            <summary>Sets the shim of Repository`2.get_Items()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.RemoveAllByKeyIEnumerableOfT1">
+            <summary>Sets the shim of Repository`2.RemoveAllByKey(IEnumerable`1&lt;!1&gt; keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.RemoveAllIEnumerableOfT0">
+            <summary>Sets the shim of Repository`2.RemoveAll(IEnumerable`1&lt;!0&gt; objects)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.RemoveByKeyT1">
+            <summary>Sets the shim of Repository`2.RemoveByKey(!1 key)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.RemoveT0">
+            <summary>Sets the shim of Repository`2.Remove(!0 obj)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.SaveChanges">
+            <summary>Sets the shim of Repository`2.SaveChanges()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.UpdateT1StringStringUpdateType">
+            <summary>Sets the shim of Repository`2.Update(!1 key, String pathToProperty, String json, UpdateType updateType)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.UpdateT1StringUpdateType">
+            <summary>Sets the shim of Repository`2.Update(!1 key, String json, UpdateType updateType)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2._RemoveAllByKeyb__0T1">
+            <summary>Sets the shim of Repository`2.&lt;RemoveAllByKey&gt;b__0(!1 x)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimRepository`2.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`2.AllInstances.UpdateOf1T1M0``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Action{Repository.Repository{`0,`1},`1,``0})">
+            <summary>Sets the shim of Repository`2.Update(!1 key, !!0 updateObj)</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`2.AllInstances.UpdateOf2T1M0FuncOfT0M1``2(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Action{Repository.Repository{`0,`1},`1,``0,System.Func{`0,``1}})">
+            <summary>Sets the shim of Repository`2.Update(!1 key, !!0 updateObj, Func`2&lt;!0,!!1&gt; getter)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.AllInstances.AsReadOnly">
+            <summary>Sets the shim of Repository`2.AsReadOnly()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.AllInstances.Dispose">
+            <summary>Sets the shim of Repository`2.Dispose()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.AllInstances.ExistsByKeyT1">
+            <summary>Sets the shim of Repository`2.ExistsByKey(!1 key)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.AllInstances.ExistsT0">
+            <summary>Sets the shim of Repository`2.Exists(!0 obj)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.AllInstances.FindT1">
+            <summary>Sets the shim of Repository`2.Find(!1 key)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.AllInstances.InnerRepositoryGet">
+            <summary>Sets the shim of Repository`2.get_InnerRepository()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.AllInstances.InnerRepositorySetRepositoryOfT0">
+            <summary>Sets the shim of Repository`2.set_InnerRepository(Repository`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.AllInstances.InsertIEnumerableOfT0">
+            <summary>Sets the shim of Repository`2.Insert(IEnumerable`1&lt;!0&gt; values)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.AllInstances.InsertT0">
+            <summary>Sets the shim of Repository`2.Insert(!0 value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.AllInstances.ItemsGet">
+            <summary>Sets the shim of Repository`2.get_Items()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.AllInstances.RemoveAllByKeyIEnumerableOfT1">
+            <summary>Sets the shim of Repository`2.RemoveAllByKey(IEnumerable`1&lt;!1&gt; keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.AllInstances.RemoveAllIEnumerableOfT0">
+            <summary>Sets the shim of Repository`2.RemoveAll(IEnumerable`1&lt;!0&gt; objects)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.AllInstances.RemoveByKeyT1">
+            <summary>Sets the shim of Repository`2.RemoveByKey(!1 key)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.AllInstances.RemoveT0">
+            <summary>Sets the shim of Repository`2.Remove(!0 obj)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.AllInstances.SaveChanges">
+            <summary>Sets the shim of Repository`2.SaveChanges()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.AllInstances.UpdateT1StringStringUpdateType">
+            <summary>Sets the shim of Repository`2.Update(!1 key, String pathToProperty, String json, UpdateType updateType)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`2.AllInstances.UpdateT1StringUpdateType">
+            <summary>Sets the shim of Repository`2.Update(!1 key, String json, UpdateType updateType)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimRepository`3">
+            <summary>Shim type of Repository.Repository`3</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`3.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`3.#ctor(Repository.Repository{`0,`1,`2})">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`3.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`3.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`3.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`3.UpdateOf1T1T2M0``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Action{`1,`2,``0})">
+            <summary>Sets the shim of Repository`3.Update(!1 key1, !2 key2, !!0 updateObj)</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`3.UpdateOf2T1T2M0FuncOfT0M1``2(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Action{`1,`2,``0,System.Func{`0,``1}})">
+            <summary>Sets the shim of Repository`3.Update(!1 key1, !2 key2, !!0 updateObj, Func`2&lt;!0,!!1&gt; getter)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.AsReadOnly">
+            <summary>Sets the shim of Repository`3.AsReadOnly()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.ConstructorRepositoryOfT0">
+            <summary>Sets the shim of Repository`3.Repository`3(Repository`1&lt;!0&gt; innerRepository)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.Dispose">
+            <summary>Sets the shim of Repository`3.Dispose()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.ExistsByKeyT1T2">
+            <summary>Sets the shim of Repository`3.ExistsByKey(!1 key1, !2 key2)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.ExistsT0">
+            <summary>Sets the shim of Repository`3.Exists(!0 obj)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.FindT1T2">
+            <summary>Sets the shim of Repository`3.Find(!1 key1, !2 key2)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.InnerRepositoryGet">
+            <summary>Sets the shim of Repository`3.get_InnerRepository()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.InnerRepositorySetRepositoryOfT0">
+            <summary>Sets the shim of Repository`3.set_InnerRepository(Repository`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.InsertIEnumerableOfT0">
+            <summary>Sets the shim of Repository`3.Insert(IEnumerable`1&lt;!0&gt; values)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.InsertT0">
+            <summary>Sets the shim of Repository`3.Insert(!0 value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.ItemsGet">
+            <summary>Sets the shim of Repository`3.get_Items()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.RemoveAllByKeyIEnumerableOfTupleOfT1T2">
+            <summary>Sets the shim of Repository`3.RemoveAllByKey(IEnumerable`1&lt;Tuple`2&lt;!1,!2&gt;&gt; keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.RemoveAllIEnumerableOfT0">
+            <summary>Sets the shim of Repository`3.RemoveAll(IEnumerable`1&lt;!0&gt; objects)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.RemoveByKeyT1T2">
+            <summary>Sets the shim of Repository`3.RemoveByKey(!1 key1, !2 key2)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.RemoveT0">
+            <summary>Sets the shim of Repository`3.Remove(!0 obj)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.SaveChanges">
+            <summary>Sets the shim of Repository`3.SaveChanges()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.UpdateT1T2StringStringUpdateType">
+            <summary>Sets the shim of Repository`3.Update(!1 key1, !2 key2, String pathToProperty, String json, UpdateType updateType)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.UpdateT1T2StringUpdateType">
+            <summary>Sets the shim of Repository`3.Update(!1 key1, !2 key2, String json, UpdateType updateType)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3._RemoveAllByKeyb__0TupleOfT1T2">
+            <summary>Sets the shim of Repository`3.&lt;RemoveAllByKey&gt;b__0(Tuple`2&lt;!1,!2&gt; x)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimRepository`3.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`3.AllInstances.UpdateOf1T1T2M0``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Action{Repository.Repository{`0,`1,`2},`1,`2,``0})">
+            <summary>Sets the shim of Repository`3.Update(!1 key1, !2 key2, !!0 updateObj)</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepository`3.AllInstances.UpdateOf2T1T2M0FuncOfT0M1``2(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Action{Repository.Repository{`0,`1,`2},`1,`2,``0,System.Func{`0,``1}})">
+            <summary>Sets the shim of Repository`3.Update(!1 key1, !2 key2, !!0 updateObj, Func`2&lt;!0,!!1&gt; getter)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.AllInstances.AsReadOnly">
+            <summary>Sets the shim of Repository`3.AsReadOnly()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.AllInstances.Dispose">
+            <summary>Sets the shim of Repository`3.Dispose()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.AllInstances.ExistsByKeyT1T2">
+            <summary>Sets the shim of Repository`3.ExistsByKey(!1 key1, !2 key2)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.AllInstances.ExistsT0">
+            <summary>Sets the shim of Repository`3.Exists(!0 obj)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.AllInstances.FindT1T2">
+            <summary>Sets the shim of Repository`3.Find(!1 key1, !2 key2)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.AllInstances.InnerRepositoryGet">
+            <summary>Sets the shim of Repository`3.get_InnerRepository()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.AllInstances.InnerRepositorySetRepositoryOfT0">
+            <summary>Sets the shim of Repository`3.set_InnerRepository(Repository`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.AllInstances.InsertIEnumerableOfT0">
+            <summary>Sets the shim of Repository`3.Insert(IEnumerable`1&lt;!0&gt; values)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.AllInstances.InsertT0">
+            <summary>Sets the shim of Repository`3.Insert(!0 value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.AllInstances.ItemsGet">
+            <summary>Sets the shim of Repository`3.get_Items()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.AllInstances.RemoveAllByKeyIEnumerableOfTupleOfT1T2">
+            <summary>Sets the shim of Repository`3.RemoveAllByKey(IEnumerable`1&lt;Tuple`2&lt;!1,!2&gt;&gt; keys)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.AllInstances.RemoveAllIEnumerableOfT0">
+            <summary>Sets the shim of Repository`3.RemoveAll(IEnumerable`1&lt;!0&gt; objects)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.AllInstances.RemoveByKeyT1T2">
+            <summary>Sets the shim of Repository`3.RemoveByKey(!1 key1, !2 key2)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.AllInstances.RemoveT0">
+            <summary>Sets the shim of Repository`3.Remove(!0 obj)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.AllInstances.SaveChanges">
+            <summary>Sets the shim of Repository`3.SaveChanges()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.AllInstances.UpdateT1T2StringStringUpdateType">
+            <summary>Sets the shim of Repository`3.Update(!1 key1, !2 key2, String pathToProperty, String json, UpdateType updateType)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepository`3.AllInstances.UpdateT1T2StringUpdateType">
+            <summary>Sets the shim of Repository`3.Update(!1 key1, !2 key2, String json, UpdateType updateType)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimRepositoryException">
+            <summary>Shim type of Repository.RepositoryException</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepositoryException.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepositoryException.#ctor(Repository.RepositoryException)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepositoryException.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepositoryException.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimRepositoryException.Bind(System.Runtime.Serialization.ISerializable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepositoryException.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimRepositoryException.ConstructorStringException">
+            <summary>Sets the shim of RepositoryException.RepositoryException(String errorMessage, Exception innerException)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimRepositoryException.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimStringKeyClass">
+            <summary>Shim type of Repository.StringKeyClass</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimStringKeyClass.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimStringKeyClass.#ctor(Repository.StringKeyClass)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimStringKeyClass.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimStringKeyClass.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimStringKeyClass.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimStringKeyClass.ConstructorString">
+            <summary>Sets the shim of StringKeyClass.StringKeyClass(String key)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimStringKeyClass.KeyGet">
+            <summary>Sets the shim of StringKeyClass.get_Key()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimStringKeyClass.KeySetString">
+            <summary>Sets the shim of StringKeyClass.set_Key(String value)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimStringKeyClass.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimStringKeyClass.AllInstances.KeyGet">
+            <summary>Sets the shim of StringKeyClass.get_Key()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimStringKeyClass.AllInstances.KeySetString">
+            <summary>Sets the shim of StringKeyClass.set_Key(String value)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimTestClass">
+            <summary>Shim type of Repository.TestClass</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimTestClass.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimTestClass.#ctor(Repository.TestClass)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimTestClass.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimTestClass.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestClass.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestClass.Constructor">
+            <summary>Sets the shim of TestClass.TestClass()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestClass.ConstructorStringString">
+            <summary>Sets the shim of TestClass.TestClass(String key, String value1)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestClass.GuidGet">
+            <summary>Sets the shim of TestClass.get_Guid()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestClass.GuidSetGuid">
+            <summary>Sets the shim of TestClass.set_Guid(Guid value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestClass.IDGet">
+            <summary>Sets the shim of TestClass.get_ID()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestClass.IDSetString">
+            <summary>Sets the shim of TestClass.set_ID(String value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestClass.IntValueGet">
+            <summary>Sets the shim of TestClass.get_IntValue()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestClass.IntValueSetInt32">
+            <summary>Sets the shim of TestClass.set_IntValue(Int32 value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestClass.ListGet">
+            <summary>Sets the shim of TestClass.get_List()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestClass.ListSetListOfInt32">
+            <summary>Sets the shim of TestClass.set_List(List`1&lt;Int32&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestClass.StringValueGet">
+            <summary>Sets the shim of TestClass.get_StringValue()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestClass.StringValueSetString">
+            <summary>Sets the shim of TestClass.set_StringValue(String value)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimTestClass.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestClass.AllInstances.GuidGet">
+            <summary>Sets the shim of TestClass.get_Guid()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestClass.AllInstances.GuidSetGuid">
+            <summary>Sets the shim of TestClass.set_Guid(Guid value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestClass.AllInstances.IDGet">
+            <summary>Sets the shim of TestClass.get_ID()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestClass.AllInstances.IDSetString">
+            <summary>Sets the shim of TestClass.set_ID(String value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestClass.AllInstances.IntValueGet">
+            <summary>Sets the shim of TestClass.get_IntValue()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestClass.AllInstances.IntValueSetInt32">
+            <summary>Sets the shim of TestClass.set_IntValue(Int32 value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestClass.AllInstances.ListGet">
+            <summary>Sets the shim of TestClass.get_List()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestClass.AllInstances.ListSetListOfInt32">
+            <summary>Sets the shim of TestClass.set_List(List`1&lt;Int32&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestClass.AllInstances.StringValueGet">
+            <summary>Sets the shim of TestClass.get_StringValue()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestClass.AllInstances.StringValueSetString">
+            <summary>Sets the shim of TestClass.set_StringValue(String value)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimTestProperty">
+            <summary>Shim type of Repository.TestProperty</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimTestProperty.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimTestProperty.#ctor(Repository.TestProperty)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimTestProperty.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimTestProperty.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestProperty.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestProperty.Constructor">
+            <summary>Sets the shim of TestProperty.TestProperty()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestProperty.DateTimeValueGet">
+            <summary>Sets the shim of TestProperty.get_DateTimeValue()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestProperty.DateTimeValueSetDateTime">
+            <summary>Sets the shim of TestProperty.set_DateTimeValue(DateTime value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestProperty.IDGet">
+            <summary>Sets the shim of TestProperty.get_ID()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestProperty.IDSetString">
+            <summary>Sets the shim of TestProperty.set_ID(String value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestProperty.NullableValueGet">
+            <summary>Sets the shim of TestProperty.get_NullableValue()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestProperty.NullableValueSetNullableOfInt32">
+            <summary>Sets the shim of TestProperty.set_NullableValue(Nullable`1&lt;Int32&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestProperty.ThirdLevelGet">
+            <summary>Sets the shim of TestProperty.get_ThirdLevel()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestProperty.ThirdLevelSetThirdLevel">
+            <summary>Sets the shim of TestProperty.set_ThirdLevel(ThirdLevel value)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimTestProperty.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestProperty.AllInstances.DateTimeValueGet">
+            <summary>Sets the shim of TestProperty.get_DateTimeValue()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestProperty.AllInstances.DateTimeValueSetDateTime">
+            <summary>Sets the shim of TestProperty.set_DateTimeValue(DateTime value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestProperty.AllInstances.IDGet">
+            <summary>Sets the shim of TestProperty.get_ID()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestProperty.AllInstances.IDSetString">
+            <summary>Sets the shim of TestProperty.set_ID(String value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestProperty.AllInstances.NullableValueGet">
+            <summary>Sets the shim of TestProperty.get_NullableValue()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestProperty.AllInstances.NullableValueSetNullableOfInt32">
+            <summary>Sets the shim of TestProperty.set_NullableValue(Nullable`1&lt;Int32&gt; value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestProperty.AllInstances.ThirdLevelGet">
+            <summary>Sets the shim of TestProperty.get_ThirdLevel()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimTestProperty.AllInstances.ThirdLevelSetThirdLevel">
+            <summary>Sets the shim of TestProperty.set_ThirdLevel(ThirdLevel value)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimThirdLevel">
+            <summary>Shim type of Repository.ThirdLevel</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimThirdLevel.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimThirdLevel.#ctor(Repository.ThirdLevel)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimThirdLevel.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Fakes.ShimThirdLevel.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimThirdLevel.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimThirdLevel.Constructor">
+            <summary>Sets the shim of ThirdLevel.ThirdLevel()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimThirdLevel.IDGet">
+            <summary>Sets the shim of ThirdLevel.get_ID()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimThirdLevel.IDSetString">
+            <summary>Sets the shim of ThirdLevel.set_ID(String value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimThirdLevel.ValueGet">
+            <summary>Sets the shim of ThirdLevel.get_Value()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimThirdLevel.ValueSetInt32">
+            <summary>Sets the shim of ThirdLevel.set_Value(Int32 value)</summary>
+        </member>
+        <member name="T:Repository.Fakes.ShimThirdLevel.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimThirdLevel.AllInstances.IDGet">
+            <summary>Sets the shim of ThirdLevel.get_ID()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimThirdLevel.AllInstances.IDSetString">
+            <summary>Sets the shim of ThirdLevel.set_ID(String value)</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimThirdLevel.AllInstances.ValueGet">
+            <summary>Sets the shim of ThirdLevel.get_Value()</summary>
+        </member>
+        <member name="P:Repository.Fakes.ShimThirdLevel.AllInstances.ValueSetInt32">
+            <summary>Sets the shim of ThirdLevel.set_Value(Int32 value)</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubBatchInsert`1">
+            <summary>Stub type of Repository.BatchInsert`1</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubBatchInsert`1.#ctor(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.Collections.Generic.IEnumerable{System.Object},`0}})">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubBatchInsert`1.Apply">
+            <summary>Sets the stub of BatchInsert`1.Apply()</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubBatchInsert`1.Apply01">
+            <summary>Sets the stub of BatchInsert`1.Apply()</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubBatchInsert`1.InitializeStub">
+            <summary>Initializes a new instance of type StubBatchInsert</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubBatchInsert`1.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubBatchInsert`1.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubBatchInsert`1.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubComplexTestClass">
+            <summary>Stub type of Repository.ComplexTestClass</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubComplexTestClass.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubComplexTestClass.InitializeStub">
+            <summary>Initializes a new instance of type StubComplexTestClass</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubComplexTestClass.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubComplexTestClass.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubComplexTestClass.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubDefaultBatchInsert`1">
+            <summary>Stub type of Repository.DefaultBatchInsert`1</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubDefaultBatchInsert`1.#ctor(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.Collections.Generic.IEnumerable{System.Object},`0}},System.Func{System.Collections.Generic.IEnumerable{System.Object},`0,Repository.Insert{`0}})">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubDefaultBatchInsert`1.Apply">
+            <summary>Sets the stub of DefaultBatchInsert`1.Apply()</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubDefaultBatchInsert`1.Apply01">
+            <summary>Sets the stub of DefaultBatchInsert`1.Apply()</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubDefaultBatchInsert`1.InitializeStub">
+            <summary>Initializes a new instance of type StubDefaultBatchInsert</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubDefaultBatchInsert`1.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubDefaultBatchInsert`1.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubDefaultBatchInsert`1.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubEnumerableObjectContext`1">
+            <summary>Stub type of Repository.EnumerableObjectContext`1</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubEnumerableObjectContext`1.#ctor(System.Linq.IQueryable{`0},Repository.Repository{`0})">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubEnumerableObjectContext`1.InitializeStub">
+            <summary>Initializes a new instance of type StubEnumerableObjectContext</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubEnumerableObjectContext`1.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubEnumerableObjectContext`1.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubEnumerableObjectContext`1.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubExplicitKeyRepository`1">
+            <summary>Stub type of Repository.ExplicitKeyRepository`1</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubExplicitKeyRepository`1.#ctor(Repository.Repository{`0})">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubExplicitKeyRepository`1.InitializeStub">
+            <summary>Initializes a new instance of type StubExplicitKeyRepository</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubExplicitKeyRepository`1.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubExplicitKeyRepository`1.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubExplicitKeyRepository`1.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubExplicitKeyRepository`2">
+            <summary>Stub type of Repository.ExplicitKeyRepository`2</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubExplicitKeyRepository`2.#ctor(Repository.Repository{`0})">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubExplicitKeyRepository`2.InitializeStub">
+            <summary>Initializes a new instance of type StubExplicitKeyRepository</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubExplicitKeyRepository`2.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubExplicitKeyRepository`2.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubExplicitKeyRepository`2.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubExplicitKeyRepository`3">
+            <summary>Stub type of Repository.ExplicitKeyRepository`3</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubExplicitKeyRepository`3.#ctor(Repository.Repository{`0})">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubExplicitKeyRepository`3.InitializeStub">
+            <summary>Initializes a new instance of type StubExplicitKeyRepository</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubExplicitKeyRepository`3.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubExplicitKeyRepository`3.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubExplicitKeyRepository`3.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubIOperation">
+            <summary>Stub type of Repository.IOperation</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubIOperation.#ctor">
+            <summary>Initializes a new instance of type StubIOperation</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubIOperation.Apply">
+            <summary>Sets the stub of IOperation.Apply()</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubIOperation.r::Repository#IOperation#Apply">
+            <summary>Sets the stub of IOperation.Apply()</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubInMemoryRepository`1">
+            <summary>Stub type of Repository.InMemoryRepository`1</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubInMemoryRepository`1.#ctor(System.Func{`0,System.Object})">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubInMemoryRepository`1.AfterApplyChanges">
+            <summary>Sets the stub of Repository`1.AfterApplyChanges()</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubInMemoryRepository`1.AfterApplyChanges01">
+            <summary>Sets the stub of Repository`1.AfterApplyChanges()</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubInMemoryRepository`1.CreateBatchInsert(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.Collections.Generic.IEnumerable{System.Object},`0}})">
+            <summary>Sets the stub of Repository`1.CreateBatchInsert(IEnumerable`1&lt;KeyValuePair`2&lt;IEnumerable`1&lt;Object&gt;,!0&gt;&gt; keyValuePairs)</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubInMemoryRepository`1.CreateBatchInsertIEnumerableOfKeyValuePairOfIEnumerableOfObjectT0">
+            <summary>Sets the stub of Repository`1.CreateBatchInsert(IEnumerable`1&lt;KeyValuePair`2&lt;IEnumerable`1&lt;Object&gt;,!0&gt;&gt; keyValuePairs)</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubInMemoryRepository`1.CreateInsert(System.Collections.Generic.IEnumerable{System.Object},`0)">
+            <summary>Sets the stub of InMemoryRepository`1.CreateInsert(IEnumerable`1&lt;Object&gt; keys, !0 value)</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubInMemoryRepository`1.CreateInsertIEnumerableOfObjectT0">
+            <summary>Sets the stub of InMemoryRepository`1.CreateInsert(IEnumerable`1&lt;Object&gt; keys, !0 value)</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubInMemoryRepository`1.CreateModify(System.Collections.Generic.IEnumerable{System.Object},`0,System.Action{`0})">
+            <summary>Sets the stub of InMemoryRepository`1.CreateModify(IEnumerable`1&lt;Object&gt; keys, !0 value, Action`1&lt;!0&gt; modifier)</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubInMemoryRepository`1.CreateModifyIEnumerableOfObjectT0ActionOfT0">
+            <summary>Sets the stub of InMemoryRepository`1.CreateModify(IEnumerable`1&lt;Object&gt; keys, !0 value, Action`1&lt;!0&gt; modifier)</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubInMemoryRepository`1.CreateRemove(System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>Sets the stub of InMemoryRepository`1.CreateRemove(IEnumerable`1&lt;Object&gt; keys)</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubInMemoryRepository`1.CreateRemoveIEnumerableOfObject">
+            <summary>Sets the stub of InMemoryRepository`1.CreateRemove(IEnumerable`1&lt;Object&gt; keys)</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubInMemoryRepository`1.Dispose">
+            <summary>Sets the stub of InMemoryRepository`1.Dispose()</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubInMemoryRepository`1.Dispose01">
+            <summary>Sets the stub of InMemoryRepository`1.Dispose()</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubInMemoryRepository`1.ExistsByKey(System.Object[])">
+            <summary>Sets the stub of InMemoryRepository`1.ExistsByKey(Object[] keys)</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubInMemoryRepository`1.ExistsByKeyObjectArray">
+            <summary>Sets the stub of InMemoryRepository`1.ExistsByKey(Object[] keys)</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubInMemoryRepository`1.FindImpl(System.Object[])">
+            <summary>Sets the stub of InMemoryRepository`1.FindImpl(Object[] keys)</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubInMemoryRepository`1.FindImplObjectArray">
+            <summary>Sets the stub of InMemoryRepository`1.FindImpl(Object[] keys)</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubInMemoryRepository`1.InitializeStub">
+            <summary>Initializes a new instance of type StubInMemoryRepository</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubInMemoryRepository`1.ItemsGet">
+            <summary>Sets the stub of InMemoryRepository`1.get_Items()</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubInMemoryRepository`1.OnKeySelectorChanged(System.Func{`0,System.Object[]})">
+            <summary>Sets the stub of Repository`1.OnKeySelectorChanged(Func`2&lt;!0,Object[]&gt; newKeySelector)</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubInMemoryRepository`1.OnKeySelectorChangedFuncOfT0ObjectArray">
+            <summary>Sets the stub of Repository`1.OnKeySelectorChanged(Func`2&lt;!0,Object[]&gt; newKeySelector)</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubInMemoryRepository`1.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubInMemoryRepository`1.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubInMemoryRepository`1.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubInMemoryRepository`1.Items">
+            <summary>Sets the stub of InMemoryRepository`1.get_Items()</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubInMemoryRepository`2">
+            <summary>Stub type of Repository.InMemoryRepository`2</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubInMemoryRepository`2.#ctor(System.Func{`0,`1})">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubInMemoryRepository`2.InitializeStub">
+            <summary>Initializes a new instance of type StubInMemoryRepository</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubInMemoryRepository`2.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubInMemoryRepository`2.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubInMemoryRepository`2.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubInsert`1">
+            <summary>Stub type of Repository.Insert`1</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubInsert`1.#ctor(System.Collections.Generic.IEnumerable{System.Object},`0)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubInsert`1.Apply">
+            <summary>Sets the stub of Insert`1.Apply()</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubInsert`1.Apply01">
+            <summary>Sets the stub of Insert`1.Apply()</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubInsert`1.InitializeStub">
+            <summary>Initializes a new instance of type StubInsert</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubInsert`1.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubInsert`1.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubInsert`1.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubKeyedObject`1">
+            <summary>Stub type of Repository.KeyedObject`1</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubKeyedObject`1.#ctor(System.Object[],`0)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubKeyedObject`1.InitializeStub">
+            <summary>Initializes a new instance of type StubKeyedObject</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubKeyedObject`1.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubKeyedObject`1.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubKeyedObject`1.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubKeyedObject`2">
+            <summary>Stub type of Repository.KeyedObject`2</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubKeyedObject`2.#ctor(`0,`1)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubKeyedObject`2.InitializeStub">
+            <summary>Initializes a new instance of type StubKeyedObject</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubKeyedObject`2.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubKeyedObject`2.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubKeyedObject`2.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubKeyedObject`3">
+            <summary>Stub type of Repository.KeyedObject`3</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubKeyedObject`3.#ctor(`0,`1,`2)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubKeyedObject`3.InitializeStub">
+            <summary>Initializes a new instance of type StubKeyedObject</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubKeyedObject`3.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubKeyedObject`3.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubKeyedObject`3.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubModify`1">
+            <summary>Stub type of Repository.Modify`1</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubModify`1.#ctor(System.Collections.Generic.IEnumerable{System.Object},`0,System.Action{`0})">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubModify`1.Apply">
+            <summary>Sets the stub of Modify`1.Apply()</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubModify`1.Apply01">
+            <summary>Sets the stub of Modify`1.Apply()</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubModify`1.InitializeStub">
+            <summary>Initializes a new instance of type StubModify</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubModify`1.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubModify`1.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubModify`1.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubObjectContext`1">
+            <summary>Stub type of Repository.ObjectContext`1</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubObjectContext`1.#ctor(`0)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubObjectContext`1.InitializeStub">
+            <summary>Initializes a new instance of type StubObjectContext</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubObjectContext`1.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubObjectContext`1.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubObjectContext`1.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubReadOnlyRepository`1">
+            <summary>Stub type of Repository.ReadOnlyRepository`1</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubReadOnlyRepository`1.#ctor(Repository.Repository{`0})">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubReadOnlyRepository`1.InitializeStub">
+            <summary>Initializes a new instance of type StubReadOnlyRepository</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubReadOnlyRepository`1.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubReadOnlyRepository`1.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubReadOnlyRepository`1.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubReadOnlyRepository`2">
+            <summary>Stub type of Repository.ReadOnlyRepository`2</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubReadOnlyRepository`2.#ctor(Repository.Repository{`0,`1})">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubReadOnlyRepository`2.InitializeStub">
+            <summary>Initializes a new instance of type StubReadOnlyRepository</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubReadOnlyRepository`2.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubReadOnlyRepository`2.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubReadOnlyRepository`2.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubReadOnlyRepository`3">
+            <summary>Stub type of Repository.ReadOnlyRepository`3</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubReadOnlyRepository`3.#ctor(Repository.Repository{`0,`1,`2})">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubReadOnlyRepository`3.InitializeStub">
+            <summary>Initializes a new instance of type StubReadOnlyRepository</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubReadOnlyRepository`3.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubReadOnlyRepository`3.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubReadOnlyRepository`3.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubRemove">
+            <summary>Stub type of Repository.Remove</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubRemove.#ctor(System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubRemove.Apply">
+            <summary>Sets the stub of Remove.Apply()</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubRemove.Apply01">
+            <summary>Sets the stub of Remove.Apply()</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubRemove.InitializeStub">
+            <summary>Initializes a new instance of type StubRemove</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubRemove.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubRemove.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubRemove.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubRepository`1">
+            <summary>Stub type of Repository.Repository`1</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubRepository`1.#ctor(System.Func{`0,System.Object[]},System.Boolean)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubRepository`1.AfterApplyChanges">
+            <summary>Sets the stub of Repository`1.AfterApplyChanges()</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubRepository`1.AfterApplyChanges01">
+            <summary>Sets the stub of Repository`1.AfterApplyChanges()</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubRepository`1.CreateBatchInsert(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.Collections.Generic.IEnumerable{System.Object},`0}})">
+            <summary>Sets the stub of Repository`1.CreateBatchInsert(IEnumerable`1&lt;KeyValuePair`2&lt;IEnumerable`1&lt;Object&gt;,!0&gt;&gt; keyValuePairs)</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubRepository`1.CreateBatchInsertIEnumerableOfKeyValuePairOfIEnumerableOfObjectT0">
+            <summary>Sets the stub of Repository`1.CreateBatchInsert(IEnumerable`1&lt;KeyValuePair`2&lt;IEnumerable`1&lt;Object&gt;,!0&gt;&gt; keyValuePairs)</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubRepository`1.CreateInsert(System.Collections.Generic.IEnumerable{System.Object},`0)">
+            <summary>Sets the stub of Repository`1.CreateInsert(IEnumerable`1&lt;Object&gt; keys, !0 value)</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubRepository`1.CreateInsertIEnumerableOfObjectT0">
+            <summary>Sets the stub of Repository`1.CreateInsert(IEnumerable`1&lt;Object&gt; keys, !0 value)</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubRepository`1.CreateModify(System.Collections.Generic.IEnumerable{System.Object},`0,System.Action{`0})">
+            <summary>Sets the stub of Repository`1.CreateModify(IEnumerable`1&lt;Object&gt; keys, !0 value, Action`1&lt;!0&gt; modifier)</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubRepository`1.CreateModifyIEnumerableOfObjectT0ActionOfT0">
+            <summary>Sets the stub of Repository`1.CreateModify(IEnumerable`1&lt;Object&gt; keys, !0 value, Action`1&lt;!0&gt; modifier)</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubRepository`1.CreateRemove(System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>Sets the stub of Repository`1.CreateRemove(IEnumerable`1&lt;Object&gt; keys)</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubRepository`1.CreateRemoveIEnumerableOfObject">
+            <summary>Sets the stub of Repository`1.CreateRemove(IEnumerable`1&lt;Object&gt; keys)</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubRepository`1.Dispose">
+            <summary>Sets the stub of Repository`1.Dispose()</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubRepository`1.Dispose01">
+            <summary>Sets the stub of Repository`1.Dispose()</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubRepository`1.ExistsByKey(System.Object[])">
+            <summary>Sets the stub of Repository`1.ExistsByKey(Object[] keys)</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubRepository`1.ExistsByKeyObjectArray">
+            <summary>Sets the stub of Repository`1.ExistsByKey(Object[] keys)</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubRepository`1.FindImpl(System.Object[])">
+            <summary>Sets the stub of Repository`1.FindImpl(Object[] keys)</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubRepository`1.FindImplObjectArray">
+            <summary>Sets the stub of Repository`1.FindImpl(Object[] keys)</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubRepository`1.InitializeStub">
+            <summary>Initializes a new instance of type StubRepository</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubRepository`1.ItemsGet">
+            <summary>Sets the stub of Repository`1.get_Items()</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubRepository`1.OnKeySelectorChanged(System.Func{`0,System.Object[]})">
+            <summary>Sets the stub of Repository`1.OnKeySelectorChanged(Func`2&lt;!0,Object[]&gt; newKeySelector)</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubRepository`1.OnKeySelectorChangedFuncOfT0ObjectArray">
+            <summary>Sets the stub of Repository`1.OnKeySelectorChanged(Func`2&lt;!0,Object[]&gt; newKeySelector)</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubRepository`1.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubRepository`1.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubRepository`1.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubRepository`1.Items">
+            <summary>Sets the stub of Repository`1.get_Items()</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubRepository`2">
+            <summary>Stub type of Repository.Repository`2</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubRepository`2.#ctor(Repository.Repository{`0})">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubRepository`2.InitializeStub">
+            <summary>Initializes a new instance of type StubRepository</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubRepository`2.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubRepository`2.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubRepository`2.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubRepository`3">
+            <summary>Stub type of Repository.Repository`3</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubRepository`3.#ctor(Repository.Repository{`0})">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubRepository`3.InitializeStub">
+            <summary>Initializes a new instance of type StubRepository</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubRepository`3.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubRepository`3.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubRepository`3.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubRepositoryException">
+            <summary>Stub type of Repository.RepositoryException</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubRepositoryException.#ctor(System.String,System.Exception)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubRepositoryException.AttachBackingFieldToHelpLink">
+            <summary>Attaches delegates to emulate StubRepositoryException.HelpLink as a property with a backing field.</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubRepositoryException.AttachBackingFieldToSource">
+            <summary>Attaches delegates to emulate StubRepositoryException.Source as a property with a backing field.</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubRepositoryException.DataGet">
+            <summary>Sets the stub of Exception.get_Data()</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubRepositoryException.GetBaseException">
+            <summary>Sets the stub of Exception.GetBaseException()</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubRepositoryException.GetBaseException01">
+            <summary>Sets the stub of Exception.GetBaseException()</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubRepositoryException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Sets the stub of Exception.GetObjectData(SerializationInfo info, StreamingContext context)</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubRepositoryException.GetObjectDataSerializationInfoStreamingContext">
+            <summary>Sets the stub of Exception.GetObjectData(SerializationInfo info, StreamingContext context)</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubRepositoryException.HelpLinkGet">
+            <summary>Sets the stub of Exception.get_HelpLink()</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubRepositoryException.HelpLinkSetString">
+            <summary>Sets the stub of Exception.set_HelpLink(String value)</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubRepositoryException.InitializeStub">
+            <summary>Initializes a new instance of type StubRepositoryException</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubRepositoryException.MessageGet">
+            <summary>Sets the stub of Exception.get_Message()</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubRepositoryException.SourceGet">
+            <summary>Sets the stub of Exception.get_Source()</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubRepositoryException.SourceSetString">
+            <summary>Sets the stub of Exception.set_Source(String value)</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubRepositoryException.StackTraceGet">
+            <summary>Sets the stub of Exception.get_StackTrace()</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubRepositoryException.ToString">
+            <summary>Sets the stub of Exception.ToString()</summary>
+        </member>
+        <member name="F:Repository.Fakes.StubRepositoryException.ToString01">
+            <summary>Sets the stub of Exception.ToString()</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubRepositoryException.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubRepositoryException.Data">
+            <summary>Sets the stub of Exception.get_Data()</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubRepositoryException.HelpLink">
+            <summary>Sets the stub of Exception.get_HelpLink()</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubRepositoryException.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubRepositoryException.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubRepositoryException.Message">
+            <summary>Sets the stub of Exception.get_Message()</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubRepositoryException.Source">
+            <summary>Sets the stub of Exception.get_Source()</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubRepositoryException.StackTrace">
+            <summary>Sets the stub of Exception.get_StackTrace()</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubStringKeyClass">
+            <summary>Stub type of Repository.StringKeyClass</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubStringKeyClass.#ctor(System.String)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubStringKeyClass.InitializeStub">
+            <summary>Initializes a new instance of type StubStringKeyClass</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubStringKeyClass.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubStringKeyClass.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubStringKeyClass.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubTestClass">
+            <summary>Stub type of Repository.TestClass</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubTestClass.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubTestClass.#ctor(System.String,System.String)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubTestClass.InitializeStub">
+            <summary>Initializes a new instance of type StubTestClass</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubTestClass.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubTestClass.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubTestClass.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubTestProperty">
+            <summary>Stub type of Repository.TestProperty</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubTestProperty.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubTestProperty.InitializeStub">
+            <summary>Initializes a new instance of type StubTestProperty</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubTestProperty.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubTestProperty.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubTestProperty.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Fakes.StubThirdLevel">
+            <summary>Stub type of Repository.ThirdLevel</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubThirdLevel.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Fakes.StubThirdLevel.InitializeStub">
+            <summary>Initializes a new instance of type StubThirdLevel</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubThirdLevel.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubThirdLevel.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Fakes.StubThirdLevel.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Serialization.Fakes.ShimJsonSerializer`1">
+            <summary>Shim type of Repository.Serialization.JsonSerializer`1</summary>
+        </member>
+        <member name="M:Repository.Serialization.Fakes.ShimJsonSerializer`1.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Repository.Serialization.Fakes.ShimJsonSerializer`1.#ctor(Repository.Serialization.JsonSerializer{`0})">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Repository.Serialization.Fakes.ShimJsonSerializer`1.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Serialization.Fakes.ShimJsonSerializer`1.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Serialization.Fakes.ShimJsonSerializer`1.Bind(Repository.Serialization.ISerializer{`0})">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Repository.Serialization.Fakes.ShimJsonSerializer`1.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Serialization.Fakes.ShimJsonSerializer`1.Constructor">
+            <summary>Sets the shim of JsonSerializer`1.JsonSerializer`1()</summary>
+        </member>
+        <member name="P:Repository.Serialization.Fakes.ShimJsonSerializer`1.DeserializeStream">
+            <summary>Sets the shim of JsonSerializer`1.Deserialize(Stream stream)</summary>
+        </member>
+        <member name="P:Repository.Serialization.Fakes.ShimJsonSerializer`1.SerializeT0Stream">
+            <summary>Sets the shim of JsonSerializer`1.Serialize(!0 obj, Stream stream)</summary>
+        </member>
+        <member name="T:Repository.Serialization.Fakes.ShimJsonSerializer`1.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Repository.Serialization.Fakes.ShimJsonSerializer`1.AllInstances.DeserializeStream">
+            <summary>Sets the shim of JsonSerializer`1.Deserialize(Stream stream)</summary>
+        </member>
+        <member name="P:Repository.Serialization.Fakes.ShimJsonSerializer`1.AllInstances.SerializeT0Stream">
+            <summary>Sets the shim of JsonSerializer`1.Serialize(!0 obj, Stream stream)</summary>
+        </member>
+        <member name="T:Repository.Serialization.Fakes.StubISerializer`1">
+            <summary>Stub type of Repository.Serialization.ISerializer`1</summary>
+        </member>
+        <member name="M:Repository.Serialization.Fakes.StubISerializer`1.#ctor">
+            <summary>Initializes a new instance of type StubISerializer</summary>
+        </member>
+        <member name="F:Repository.Serialization.Fakes.StubISerializer`1.DeserializeStream">
+            <summary>Sets the stub of ISerializer`1.Deserialize(Stream stream)</summary>
+        </member>
+        <member name="M:Repository.Serialization.Fakes.StubISerializer`1.r::Repository#Serialization#ISerializer{T}#Deserialize(System.IO.Stream)">
+            <summary>Sets the stub of ISerializer`1.Deserialize(Stream stream)</summary>
+        </member>
+        <member name="M:Repository.Serialization.Fakes.StubISerializer`1.r::Repository#Serialization#ISerializer{T}#Serialize(`0,System.IO.Stream)">
+            <summary>Sets the stub of ISerializer`1.Serialize(!0 obj, Stream stream)</summary>
+        </member>
+        <member name="F:Repository.Serialization.Fakes.StubISerializer`1.SerializeT0Stream">
+            <summary>Sets the stub of ISerializer`1.Serialize(!0 obj, Stream stream)</summary>
+        </member>
+        <member name="T:Repository.Serialization.Fakes.StubJsonSerializer`1">
+            <summary>Stub type of Repository.Serialization.JsonSerializer`1</summary>
+        </member>
+        <member name="M:Repository.Serialization.Fakes.StubJsonSerializer`1.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Repository.Serialization.Fakes.StubJsonSerializer`1.InitializeStub">
+            <summary>Initializes a new instance of type StubJsonSerializer</summary>
+        </member>
+        <member name="P:Repository.Serialization.Fakes.StubJsonSerializer`1.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Repository.Serialization.Fakes.StubJsonSerializer`1.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Repository.Serialization.Fakes.StubJsonSerializer`1.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Repository.Testing.Fakes.ShimStandardTests">
+            <summary>Shim type of Repository.Testing.StandardTests</summary>
+        </member>
+        <member name="M:Repository.Testing.Fakes.ShimStandardTests.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Repository.Testing.Fakes.ShimStandardTests.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Repository.Testing.Fakes.ShimStandardTests.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Testing.Fakes.ShimStandardTests.AllRepositoryOfTestClassRepositoryOfTestClassStringExplicitKeyRepositoryOfTestClass">
+            <summary>Sets the shim of StandardTests.All(Repository`1&lt;TestClass&gt; implicitKeyRepository, Repository`2&lt;TestClass,String&gt; typedKeyRepository, ExplicitKeyRepository`1&lt;TestClass&gt; explicitKeyRepository)</summary>
+        </member>
+        <member name="P:Repository.Testing.Fakes.ShimStandardTests.BatchInsertAndRemoveRepositoryOfTestClass">
+            <summary>Sets the shim of StandardTests.BatchInsertAndRemove(Repository`1&lt;TestClass&gt; repo)</summary>
+        </member>
+        <member name="P:Repository.Testing.Fakes.ShimStandardTests.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Repository.Testing.Fakes.ShimStandardTests.ChangeTrackingEnumeratedObjectsRepositoryOfTestClass">
+            <summary>Sets the shim of StandardTests.ChangeTrackingEnumeratedObjects(Repository`1&lt;TestClass&gt; repo)</summary>
+        </member>
+        <member name="P:Repository.Testing.Fakes.ShimStandardTests.ChangeTrackingRepositoryOfTestClass">
+            <summary>Sets the shim of StandardTests.ChangeTracking(Repository`1&lt;TestClass&gt; repo)</summary>
+        </member>
+        <member name="P:Repository.Testing.Fakes.ShimStandardTests.ExistsRepositoryOfTestClass">
+            <summary>Sets the shim of StandardTests.Exists(Repository`1&lt;TestClass&gt; repo)</summary>
+        </member>
+        <member name="P:Repository.Testing.Fakes.ShimStandardTests.ExplicitKeyRepositoryExplicitKeyRepositoryOfTestClass">
+            <summary>Sets the shim of StandardTests.ExplicitKeyRepository(ExplicitKeyRepository`1&lt;TestClass&gt; repo)</summary>
+        </member>
+        <member name="P:Repository.Testing.Fakes.ShimStandardTests.InsertAndRemoveRepositoryOfTestClass">
+            <summary>Sets the shim of StandardTests.InsertAndRemove(Repository`1&lt;TestClass&gt; testObjects)</summary>
+        </member>
+        <member name="P:Repository.Testing.Fakes.ShimStandardTests.ItemsRepositoryOfTestClass">
+            <summary>Sets the shim of StandardTests.Items(Repository`1&lt;TestClass&gt; repo)</summary>
+        </member>
+        <member name="P:Repository.Testing.Fakes.ShimStandardTests.TypedRepositoryTestRepositoryOfTestClassString">
+            <summary>Sets the shim of StandardTests.TypedRepositoryTest(Repository`2&lt;TestClass,String&gt; repo)</summary>
+        </member>
+        <member name="P:Repository.Testing.Fakes.ShimStandardTests._BatchInsertAndRemoveb__7Int32">
+            <summary>Sets the shim of StandardTests.&lt;BatchInsertAndRemove&gt;b__7(Int32 x)</summary>
+        </member>
+        <member name="P:Repository.Testing.Fakes.ShimStandardTests._BatchInsertAndRemoveb__aTestClass">
+            <summary>Sets the shim of StandardTests.&lt;BatchInsertAndRemove&gt;b__a(TestClass x)</summary>
+        </member>
+        <member name="P:Repository.Testing.Fakes.ShimStandardTests._ChangeTrackingEnumeratedObjectsb__4Int32">
+            <summary>Sets the shim of StandardTests.&lt;ChangeTrackingEnumeratedObjects&gt;b__4(Int32 x)</summary>
+        </member>
+        <member name="P:Repository.Testing.Fakes.ShimStandardTests._Itemsb__0Int32">
+            <summary>Sets the shim of StandardTests.&lt;Items&gt;b__0(Int32 x)</summary>
+        </member>
+        <member name="P:Repository.Testing.Fakes.ShimStandardTests._Itemsb__1TestClass">
+            <summary>Sets the shim of StandardTests.&lt;Items&gt;b__1(TestClass x)</summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_9DFD26_SWD2015Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DB_9DFD26_SWD2015Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Customers" EntityType="DB_9DFD26_SWD2015Model.Customer" />
+    <EntitySet Name="Employees" EntityType="DB_9DFD26_SWD2015Model.Employee" />
+    <EntitySet Name="Images" EntityType="DB_9DFD26_SWD2015Model.Image" />
+    <EntitySet Name="Orders" EntityType="DB_9DFD26_SWD2015Model.Order" />
+    <EntitySet Name="Order_Status" EntityType="DB_9DFD26_SWD2015Model.Order_Status" />
+    <EntitySet Name="OrderDetails" EntityType="DB_9DFD26_SWD2015Model.OrderDetail" />
+    <EntitySet Name="Products" EntityType="DB_9DFD26_SWD2015Model.Product" />
+    <EntitySet Name="Product_Category" EntityType="DB_9DFD26_SWD2015Model.Product_Category" />
+    <EntitySet Name="Product_Image" EntityType="DB_9DFD26_SWD2015Model.Product_Image" />
+    <EntitySet Name="Product_Status" EntityType="DB_9DFD26_SWD2015Model.Product_Status" />
+    <EntitySet Name="Stocks" EntityType="DB_9DFD26_SWD2015Model.Stock" />
+    <EntitySet Name="sysdiagrams" EntityType="DB_9DFD26_SWD2015Model.sysdiagram" />
+    <EntitySet Name="Warehouses" EntityType="DB_9DFD26_SWD2015Model.Warehouse" />
+    <AssociationSet Name="FK_Customer_Image" Association="DB_9DFD26_SWD2015Model.FK_Customer_Image">
+      <End Role="Image" EntitySet="Images" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Customer" Association="DB_9DFD26_SWD2015Model.FK_Order_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Employee" Association="DB_9DFD26_SWD2015Model.FK_Order_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Image_Image" Association="DB_9DFD26_SWD2015Model.FK_Product_Image_Image">
+      <End Role="Image" EntitySet="Images" />
+      <End Role="Product_Image" EntitySet="Product_Image" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Order_Status" Association="DB_9DFD26_SWD2015Model.FK_Order_Order_Status">
+      <End Role="Order_Status" EntitySet="Order_Status" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetail_Order" Association="DB_9DFD26_SWD2015Model.FK_OrderDetail_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderDetail" EntitySet="OrderDetails" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FullName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Birthday" Type="DateTime" Precision="0" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="isGuest" Type="Boolean" Nullable="false" />
+    <Property Name="ImageID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Image" Relationship="DB_9DFD26_SWD2015Model.FK_Customer_Image" FromRole="Customer" ToRole="Image" />
+    <NavigationProperty Name="Orders" Relationship="DB_9DFD26_SWD2015Model.FK_Order_Customer" FromRole="Customer" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="DB_9DFD26_SWD2015Model.FK_Order_Employee" FromRole="Employee" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ImageURL" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Customers" Relationship="DB_9DFD26_SWD2015Model.FK_Customer_Image" FromRole="Image" ToRole="Customer" />
+    <NavigationProperty Name="Product_Image" Relationship="DB_9DFD26_SWD2015Model.FK_Product_Image_Image" FromRole="Image" ToRole="Product_Image" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Total" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <NavigationProperty Name="Customer" Relationship="DB_9DFD26_SWD2015Model.FK_Order_Customer" FromRole="Order" ToRole="Customer" />
+    <NavigationProperty Name="Employee" Relationship="DB_9DFD26_SWD2015Model.FK_Order_Employee" FromRole="Order" ToRole="Employee" />
+    <NavigationProperty Name="Order_Status" Relationship="DB_9DFD26_SWD2015Model.FK_Order_Order_Status" FromRole="Order" ToRole="Order_Status" />
+    <NavigationProperty Name="OrderDetails" Relationship="DB_9DFD26_SWD2015Model.FK_OrderDetail_Order" FromRole="Order" ToRole="OrderDetail" />
+  </EntityType>
+  <EntityType Name="Order_Status">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Orders" Relationship="DB_9DFD26_SWD2015Model.FK_Order_Order_Status" FromRole="Order_Status" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="DB_9DFD26_SWD2015Model.FK_OrderDetail_Order" FromRole="OrderDetail" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Category" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product_Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Product_Image">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ImageID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Image" Relationship="DB_9DFD26_SWD2015Model.FK_Product_Image_Image" FromRole="Product_Image" ToRole="Image" />
+  </EntityType>
+  <EntityType Name="Product_Status">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Stock">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="WarehouseID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Warehouse">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Customer_Image">
+    <End Type="DB_9DFD26_SWD2015Model.Image" Role="Image" Multiplicity="1" />
+    <End Type="DB_9DFD26_SWD2015Model.Customer" Role="Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="ImageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Customer">
+    <End Type="DB_9DFD26_SWD2015Model.Customer" Role="Customer" Multiplicity="1" />
+    <End Type="DB_9DFD26_SWD2015Model.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Employee">
+    <End Type="DB_9DFD26_SWD2015Model.Employee" Role="Employee" Multiplicity="1" />
+    <End Type="DB_9DFD26_SWD2015Model.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Image_Image">
+    <End Type="DB_9DFD26_SWD2015Model.Image" Role="Image" Multiplicity="1" />
+    <End Type="DB_9DFD26_SWD2015Model.Product_Image" Role="Product_Image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Product_Image">
+        <PropertyRef Name="ImageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Order_Status">
+    <End Type="DB_9DFD26_SWD2015Model.Order_Status" Role="Order_Status" Multiplicity="1" />
+    <End Type="DB_9DFD26_SWD2015Model.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order_Status">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetail_Order">
+    <End Type="DB_9DFD26_SWD2015Model.Order" Role="Order" Multiplicity="1" />
+    <End Type="DB_9DFD26_SWD2015Model.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

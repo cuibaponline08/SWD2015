@@ -1,0 +1,27 @@
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate stub for Repository.ChangeTracking.ChangeTracker`1: type is not visible to exported or assembly(Repository.1.0.7.5.Fakes).
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate stub for Repository.Testing.StandardTests: type is sealed.
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate stub for Repository.InMemoryInsert`1: type is not visible to exported or assembly(Repository.1.0.7.5.Fakes).
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate stub for Repository.InMemoryRemove`1: type is not visible to exported or assembly(Repository.1.0.7.5.Fakes).
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate stub for Repository.InMemoryModify`1: type is not visible to exported or assembly(Repository.1.0.7.5.Fakes).
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate stub for Repository.Testing.InMemoryRepositoryTests: type is not visible to exported or assembly(Repository.1.0.7.5.Fakes).
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate stub for Repository.UpdateType: type is a value type.
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate stub for <>f__AnonymousType0`1: type is sealed.
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate stub for <>f__AnonymousType1`1: type is sealed.
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate stub for <>f__AnonymousType2`1: type is sealed.
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate shim for Repository.ChangeTracking.ChangeTracker`1: type is not visible to exported or assembly(Repository.1.0.7.5.Fakes).
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate shim for Repository.ExplicitKeyRepository`1+<>c__DisplayClass1: type is not supported because of internal limitations.
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate shim for Repository.Testing.StandardTests+<>c__DisplayClassd: type is not supported because of internal limitations.
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate shim for Repository.IOperation: type is an interface.
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate shim for Repository.InMemoryInsert`1: type is not visible to exported or assembly(Repository.1.0.7.5.Fakes).
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate shim for Repository.InMemoryRemove`1: type is not visible to exported or assembly(Repository.1.0.7.5.Fakes).
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate shim for Repository.InMemoryModify`1: type is not visible to exported or assembly(Repository.1.0.7.5.Fakes).
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate shim for Repository.Repository`1+<>c__DisplayClass5`1: type is not supported because of internal limitations.
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate shim for Repository.Repository`1+<>c__DisplayClass8`2: type is not supported because of internal limitations.
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate shim for Repository.InMemoryRepository`1+<>c__DisplayClasse: type is not supported because of internal limitations.
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate shim for Repository.InMemoryRepository`2+<>c__DisplayClass4: type is not supported because of internal limitations.
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate shim for Repository.Serialization.ISerializer`1: type is an interface.
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate shim for Repository.Testing.InMemoryRepositoryTests: type is not visible to exported or assembly(Repository.1.0.7.5.Fakes).
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate shim for Repository.UpdateType: type is an enum.
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate shim for <>f__AnonymousType0`1: type is not supported because of internal limitations.
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate shim for <>f__AnonymousType1`1: type is not supported because of internal limitations.
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\Fakes\Repository.fakes : warning : Cannot generate shim for <>f__AnonymousType2`1: type is not supported because of internal limitations.

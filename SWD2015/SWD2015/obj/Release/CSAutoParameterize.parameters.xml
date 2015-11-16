@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DB_9DFD26_SWD2015Entities-Web.config Connection String" description="DB_9DFD26_SWD2015Entities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.SWDDataModel.csdl|res://*/Models.SWDDataModel.ssdl|res://*/Models.SWDDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=SQL5005.HostBuddy.com;initial catalog=DB_9DFD26_SWD2015;persist security info=True;user id=DB_9DFD26_SWD2015_admin;password=123456789;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Programming\\FPT\\FALL_2015\\SWD\\Project\\SWD2015\\SWD2015\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DB_9DFD26_SWD2015Entities']/@connectionString" />
+  </parameter>
+</parameters>
