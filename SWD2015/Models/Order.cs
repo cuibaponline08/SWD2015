@@ -14,11 +14,6 @@ namespace SWD2015.Models
     
     public partial class Order
     {
-        public Order()
-        {
-            this.OrderDetails = new HashSet<OrderDetail>();
-        }
-    
         public int ID { get; set; }
         public int CustomerID { get; set; }
         public int EmployeeID { get; set; }
@@ -26,10 +21,5 @@ namespace SWD2015.Models
         public int Status { get; set; }
         public string Address { get; set; }
         public decimal Total { get; set; }
-    
-        public virtual Customer Customer { get; set; }
-        public virtual Employee Employee { get; set; }
-        public virtual Order_Status Order_Status { get; set; }
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

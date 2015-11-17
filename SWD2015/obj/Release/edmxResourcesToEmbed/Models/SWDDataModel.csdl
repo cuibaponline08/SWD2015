@@ -3,11 +3,13 @@
   <EntityContainer Name="DB_9DFD26_SWD2015Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Customers" EntityType="DB_9DFD26_SWD2015Model.Customer" />
     <EntitySet Name="Employees" EntityType="DB_9DFD26_SWD2015Model.Employee" />
+    <EntitySet Name="Images" EntityType="DB_9DFD26_SWD2015Model.Image" />
     <EntitySet Name="Orders" EntityType="DB_9DFD26_SWD2015Model.Order" />
     <EntitySet Name="Order_Status" EntityType="DB_9DFD26_SWD2015Model.Order_Status" />
     <EntitySet Name="OrderDetails" EntityType="DB_9DFD26_SWD2015Model.OrderDetail" />
     <EntitySet Name="Products" EntityType="DB_9DFD26_SWD2015Model.Product" />
     <EntitySet Name="Product_Category" EntityType="DB_9DFD26_SWD2015Model.Product_Category" />
+    <EntitySet Name="Product_Image" EntityType="DB_9DFD26_SWD2015Model.Product_Image" />
     <EntitySet Name="Product_Status" EntityType="DB_9DFD26_SWD2015Model.Product_Status" />
     <EntitySet Name="Stocks" EntityType="DB_9DFD26_SWD2015Model.Stock" />
     <EntitySet Name="sysdiagrams" EntityType="DB_9DFD26_SWD2015Model.sysdiagram" />
@@ -42,6 +44,7 @@
     <Property Name="Address" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
     <Property Name="isGuest" Type="Boolean" Nullable="false" />
+    <Property Name="ImageURL" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Orders" Relationship="DB_9DFD26_SWD2015Model.FK_Order_Customer" FromRole="Customer" ToRole="Order" />
   </EntityType>
   <EntityType Name="Employee">
@@ -56,6 +59,13 @@
     <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
     <Property Name="IsActive" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Orders" Relationship="DB_9DFD26_SWD2015Model.FK_Order_Employee" FromRole="Employee" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ImageURL" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Order">
     <Key>
@@ -104,7 +114,8 @@
     <Property Name="Category" Type="Int32" Nullable="false" />
     <Property Name="Status" Type="Int32" Nullable="false" />
     <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Int32" Nullable="false" />
+    <Property Name="ImageURL" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
   </EntityType>
   <EntityType Name="Product_Category">
     <Key>
@@ -112,6 +123,14 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Product_Image">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ImageID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Product_Status">
     <Key>

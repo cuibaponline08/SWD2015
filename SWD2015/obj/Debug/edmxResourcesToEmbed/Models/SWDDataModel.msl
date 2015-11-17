@@ -4,7 +4,7 @@
     <EntitySetMapping Name="Customers">
       <EntityTypeMapping TypeName="DB_9DFD26_SWD2015Model.Customer">
         <MappingFragment StoreEntitySet="Customer">
-          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
           <ScalarProperty Name="isGuest" ColumnName="isGuest" />
           <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
           <ScalarProperty Name="Address" ColumnName="Address" />
@@ -74,7 +74,9 @@
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="DB_9DFD26_SWD2015Model.Product">
         <MappingFragment StoreEntitySet="Product">
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="TotalSell" ColumnName="TotalSell" />
+          <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
           <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
           <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="Category" ColumnName="Category" />

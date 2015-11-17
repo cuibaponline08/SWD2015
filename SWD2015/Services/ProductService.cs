@@ -11,6 +11,7 @@ namespace SWD2015.Services
     public class ProductService : IProductService
     {
         IRepository<Product> _productRepository = new ProductRepository();
+        IRepository<Order> _orderRepository = new OrderRepository();
 
         public IQueryable<Models.Product> GetAllProducts()
         {
@@ -37,11 +38,25 @@ namespace SWD2015.Services
             }
         }
 
-
+        // Get List Products have just added since 14 days
+        // p.Status == 1, means this product is available
         public IQueryable<Product> GetNewProducts()
         {
-            //return _productRepository.GetMany(p => (DateTime.Now.Subtract(p.CreateDate).Duration(30));
-            return null;
+            return _productRepository.GetMany(p => p.Status == 1 && (DateTime.Now.Date - p.CreateDate.Date).Days <= 14);
+        }
+
+        // Get List favourite Products in 30 days
+        public IQueryable<Product> GetFavouriteProducts()
+        {
+            //var rs = _orderDetailRepository.GetMany(od => (DateTime.Now.Date - od.Order.CreateDate.Date).Days <= 30);
+            //return _productRepository.GetMany(p => p.Status == 1 && _orderRepository.Get(o => (DateTime.Now.Date - o.CreateDate.Date).Days <= 30) != null).OrderByDescending(p => p.Count);
+            //var aaa = _orderRepository.GetAll().FirstOrDefault().CreateDate;
+            //var rs = _orderRepository.GetMany(o => DateTime.Now.Date < o.CreateDate || DateTime.Now.Date >= o.CreateDate).ToList();
+            //var rs = _orderRepository.GetMany(o => (DateTime.Now - o.CreateDate).Days <= 100000000).ToList();
+            //var rs = _orderRepository.Get
+            return _productRepository.GetMany(p => p.Status == 1 
+                //&& _orderRepository.Get(o => (DateTime.Now - o.CreateDate).Days <= 30) != null
+                ).OrderByDescending(p => p.TotalSell);
         }
     }
 }

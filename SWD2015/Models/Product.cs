@@ -22,5 +22,7 @@ namespace SWD2015.Models
         public int Status { get; set; }
         public System.DateTime CreateDate { get; set; }
         public int Amount { get; set; }
+        public string ImageURL { get; set; }
+        public Nullable<int> TotalSell { get; set; }
     }
 }

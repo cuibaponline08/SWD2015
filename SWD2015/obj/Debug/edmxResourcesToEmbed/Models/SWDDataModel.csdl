@@ -14,30 +14,6 @@
     <EntitySet Name="Stocks" EntityType="DB_9DFD26_SWD2015Model.Stock" />
     <EntitySet Name="sysdiagrams" EntityType="DB_9DFD26_SWD2015Model.sysdiagram" />
     <EntitySet Name="Warehouses" EntityType="DB_9DFD26_SWD2015Model.Warehouse" />
-    <AssociationSet Name="FK_Customer_Image" Association="DB_9DFD26_SWD2015Model.FK_Customer_Image">
-      <End Role="Image" EntitySet="Images" />
-      <End Role="Customer" EntitySet="Customers" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Order_Customer" Association="DB_9DFD26_SWD2015Model.FK_Order_Customer">
-      <End Role="Customer" EntitySet="Customers" />
-      <End Role="Order" EntitySet="Orders" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Order_Employee" Association="DB_9DFD26_SWD2015Model.FK_Order_Employee">
-      <End Role="Employee" EntitySet="Employees" />
-      <End Role="Order" EntitySet="Orders" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Product_Image_Image" Association="DB_9DFD26_SWD2015Model.FK_Product_Image_Image">
-      <End Role="Image" EntitySet="Images" />
-      <End Role="Product_Image" EntitySet="Product_Image" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Order_Order_Status" Association="DB_9DFD26_SWD2015Model.FK_Order_Order_Status">
-      <End Role="Order_Status" EntitySet="Order_Status" />
-      <End Role="Order" EntitySet="Orders" />
-    </AssociationSet>
-    <AssociationSet Name="FK_OrderDetail_Order" Association="DB_9DFD26_SWD2015Model.FK_OrderDetail_Order">
-      <End Role="Order" EntitySet="Orders" />
-      <End Role="OrderDetail" EntitySet="OrderDetails" />
-    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Customer">
     <Key>
@@ -52,9 +28,7 @@
     <Property Name="Address" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
     <Property Name="isGuest" Type="Boolean" Nullable="false" />
-    <Property Name="ImageID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Image" Relationship="DB_9DFD26_SWD2015Model.FK_Customer_Image" FromRole="Customer" ToRole="Image" />
-    <NavigationProperty Name="Orders" Relationship="DB_9DFD26_SWD2015Model.FK_Order_Customer" FromRole="Customer" ToRole="Order" />
+    <Property Name="ImageURL" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Employee">
     <Key>
@@ -67,7 +41,6 @@
     <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
     <Property Name="IsActive" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="Orders" Relationship="DB_9DFD26_SWD2015Model.FK_Order_Employee" FromRole="Employee" ToRole="Order" />
   </EntityType>
   <EntityType Name="Image">
     <Key>
@@ -75,8 +48,6 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="ImageURL" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Customers" Relationship="DB_9DFD26_SWD2015Model.FK_Customer_Image" FromRole="Image" ToRole="Customer" />
-    <NavigationProperty Name="Product_Image" Relationship="DB_9DFD26_SWD2015Model.FK_Product_Image_Image" FromRole="Image" ToRole="Product_Image" />
   </EntityType>
   <EntityType Name="Order">
     <Key>
@@ -89,10 +60,6 @@
     <Property Name="Status" Type="Int32" Nullable="false" />
     <Property Name="Address" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Total" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-    <NavigationProperty Name="Customer" Relationship="DB_9DFD26_SWD2015Model.FK_Order_Customer" FromRole="Order" ToRole="Customer" />
-    <NavigationProperty Name="Employee" Relationship="DB_9DFD26_SWD2015Model.FK_Order_Employee" FromRole="Order" ToRole="Employee" />
-    <NavigationProperty Name="Order_Status" Relationship="DB_9DFD26_SWD2015Model.FK_Order_Order_Status" FromRole="Order" ToRole="Order_Status" />
-    <NavigationProperty Name="OrderDetails" Relationship="DB_9DFD26_SWD2015Model.FK_OrderDetail_Order" FromRole="Order" ToRole="OrderDetail" />
   </EntityType>
   <EntityType Name="Order_Status">
     <Key>
@@ -100,7 +67,6 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Orders" Relationship="DB_9DFD26_SWD2015Model.FK_Order_Order_Status" FromRole="Order_Status" ToRole="Order" />
   </EntityType>
   <EntityType Name="OrderDetail">
     <Key>
@@ -109,10 +75,9 @@
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="OrderID" Type="Int32" Nullable="false" />
     <Property Name="ProductID" Type="Int32" Nullable="false" />
-    <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Price" Type="Double" Nullable="false" />
     <Property Name="Quantity" Type="Int32" Nullable="false" />
     <Property Name="IsDelete" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="Order" Relationship="DB_9DFD26_SWD2015Model.FK_OrderDetail_Order" FromRole="OrderDetail" ToRole="Order" />
   </EntityType>
   <EntityType Name="Product">
     <Key>
@@ -125,7 +90,9 @@
     <Property Name="Category" Type="Int32" Nullable="false" />
     <Property Name="Status" Type="Int32" Nullable="false" />
     <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Int32" Nullable="false" />
+    <Property Name="ImageURL" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="TotalSell" Type="Int32" />
   </EntityType>
   <EntityType Name="Product_Category">
     <Key>
@@ -141,7 +108,6 @@
     <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="ImageID" Type="Int32" Nullable="false" />
     <Property Name="ProductID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Image" Relationship="DB_9DFD26_SWD2015Model.FK_Product_Image_Image" FromRole="Product_Image" ToRole="Image" />
   </EntityType>
   <EntityType Name="Product_Status">
     <Key>
@@ -179,76 +145,4 @@
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="IsActive" Type="Boolean" Nullable="false" />
   </EntityType>
-  <Association Name="FK_Customer_Image">
-    <End Type="DB_9DFD26_SWD2015Model.Image" Role="Image" Multiplicity="1" />
-    <End Type="DB_9DFD26_SWD2015Model.Customer" Role="Customer" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Image">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Customer">
-        <PropertyRef Name="ImageID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Order_Customer">
-    <End Type="DB_9DFD26_SWD2015Model.Customer" Role="Customer" Multiplicity="1" />
-    <End Type="DB_9DFD26_SWD2015Model.Order" Role="Order" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Customer">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Order">
-        <PropertyRef Name="CustomerID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Order_Employee">
-    <End Type="DB_9DFD26_SWD2015Model.Employee" Role="Employee" Multiplicity="1" />
-    <End Type="DB_9DFD26_SWD2015Model.Order" Role="Order" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Employee">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Order">
-        <PropertyRef Name="EmployeeID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Product_Image_Image">
-    <End Type="DB_9DFD26_SWD2015Model.Image" Role="Image" Multiplicity="1" />
-    <End Type="DB_9DFD26_SWD2015Model.Product_Image" Role="Product_Image" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Image">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Product_Image">
-        <PropertyRef Name="ImageID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Order_Order_Status">
-    <End Type="DB_9DFD26_SWD2015Model.Order_Status" Role="Order_Status" Multiplicity="1" />
-    <End Type="DB_9DFD26_SWD2015Model.Order" Role="Order" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Order_Status">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Order">
-        <PropertyRef Name="Status" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_OrderDetail_Order">
-    <End Type="DB_9DFD26_SWD2015Model.Order" Role="Order" Multiplicity="1" />
-    <End Type="DB_9DFD26_SWD2015Model.OrderDetail" Role="OrderDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Order">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="OrderDetail">
-        <PropertyRef Name="OrderID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
 </Schema>

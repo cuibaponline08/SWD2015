@@ -32,13 +32,13 @@ namespace SWD2015.Controllers
             return Ok(customer);
         }
 
-        // GET api/Customer
-        public IQueryable<Customer> GetCustomers()
-        {
-            var rs = _customerService.GetAllCustomers().ToList();
+        //// GET api/Customer
+        //public IQueryable<Customer> GetCustomers()
+        //{
+        //    var rs = _customerService.GetAllCustomers().ToList();
 
-            return _customerService.GetAllCustomers();
-        }
+        //    return _customerService.GetAllCustomers();
+        //}
 
         /// <summary>
         /// Get List New Products (return JSON)

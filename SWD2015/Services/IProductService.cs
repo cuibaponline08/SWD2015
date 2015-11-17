@@ -13,5 +13,6 @@ namespace SWD2015.Services
         Product GetProductByID(int id);
         bool AddProduct(Product product);
         IQueryable<Product> GetNewProducts();
+        IQueryable<Product> GetFavouriteProducts();
     }
 }

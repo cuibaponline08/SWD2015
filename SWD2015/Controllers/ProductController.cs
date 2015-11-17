@@ -9,24 +9,37 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using SWD2015.Models;
+using SWD2015.Services;
 
 namespace SWD2015.Controllers
 {
     public class ProductController : ApiController
     {
         private DB_9DFD26_SWD2015Entities db = new DB_9DFD26_SWD2015Entities();
+        private IProductService _productService = new ProductService();
+
+        [Route("api/product/GetFavouriteProducts/")]
+        public IQueryable<Product> GetFavouriteProducts()
+        {
+            var rs = _productService.GetFavouriteProducts();
+            if (rs != null)
+            {
+                return rs;
+            }
+            return null;
+        }
 
         // GET api/Product
         public IQueryable<Product> GetProducts()
         {
-            return db.Products;
+            return _productService.GetAllProducts();
         }
 
         // GET api/Product/5
         [ResponseType(typeof(Product))]
         public IHttpActionResult GetProduct(int id)
         {
-            Product product = db.Products.Find(id);
+            Product product = _productService.GetProductByID(id);
             if (product == null)
             {
                 return NotFound();

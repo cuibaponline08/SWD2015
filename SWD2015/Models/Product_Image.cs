@@ -17,7 +17,5 @@ namespace SWD2015.Models
         public int ID { get; set; }
         public int ImageID { get; set; }
         public int ProductID { get; set; }
-    
-        public virtual Image Image { get; set; }
     }
 }

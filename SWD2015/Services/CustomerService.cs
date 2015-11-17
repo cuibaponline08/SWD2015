@@ -15,14 +15,13 @@ namespace SWD2015.Services
         public Customer CheckLogin(string email, string password)
         {
             var customer = _customerRepository.Get(c => c.Email == email && c.Password == password);
-            //customer = _customerRepository.GetById(15);
             return customer;
         }
 
-        public IQueryable<Models.Customer> GetAllCustomers()
-        {
-            return _customerRepository.GetAll();
-        }
+        //public IQueryable<Models.Customer> GetAllCustomers()
+        //{
+        //    return _customerRepository.GetAll();
+        //}
 
         public Models.Customer GetCustomerByID(int customerID)
         {

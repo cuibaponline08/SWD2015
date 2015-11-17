@@ -14,16 +14,7 @@ namespace SWD2015.Models
     
     public partial class Image
     {
-        public Image()
-        {
-            this.Customers = new HashSet<Customer>();
-            this.Product_Image = new HashSet<Product_Image>();
-        }
-    
         public int ID { get; set; }
         public string ImageURL { get; set; }
-    
-        public virtual ICollection<Customer> Customers { get; set; }
-        public virtual ICollection<Product_Image> Product_Image { get; set; }
     }
 }

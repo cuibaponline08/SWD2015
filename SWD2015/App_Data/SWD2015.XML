@@ -396,5 +396,11 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="M:SWD2015.Controllers.CustomerController.GetNewProducts">
+            <summary>
+            Get List New Products (return JSON)
+            </summary>
+            <returns>JSON</returns>
+        </member>
     </members>
 </doc>
