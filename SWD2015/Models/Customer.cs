@@ -14,6 +14,11 @@ namespace SWD2015.Models
     
     public partial class Customer
     {
+        public Customer()
+        {
+            this.Orders = new HashSet<Order>();
+        }
+    
         public int ID { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
@@ -24,5 +29,7 @@ namespace SWD2015.Models
         public string PhoneNumber { get; set; }
         public bool isGuest { get; set; }
         public string ImageURL { get; set; }
+    
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

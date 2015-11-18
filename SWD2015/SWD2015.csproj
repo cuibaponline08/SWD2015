@@ -161,6 +161,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\DatabaseFactory.cs" />
+    <Compile Include="Infrastructure\DataFactory.cs" />
     <Compile Include="Infrastructure\Disposable.cs" />
     <Compile Include="Infrastructure\IDatabaseFactory.cs" />
     <Compile Include="Infrastructure\Repository.cs" />
@@ -182,6 +183,8 @@
     <Compile Include="Models\Order_Status.cs">
       <DependentUpon>SWDDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\POCOs\ProductPOCO.cs" />
+    <Compile Include="Models\POCOs\ProductSoldPOCO.cs" />
     <Compile Include="Models\Product.cs">
       <DependentUpon>SWDDataModel.tt</DependentUpon>
     </Compile>

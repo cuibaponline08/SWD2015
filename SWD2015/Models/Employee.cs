@@ -14,6 +14,11 @@ namespace SWD2015.Models
     
     public partial class Employee
     {
+        public Employee()
+        {
+            this.Orders = new HashSet<Order>();
+        }
+    
         public int ID { get; set; }
         public string Name { get; set; }
         public string Gender { get; set; }
@@ -21,5 +26,7 @@ namespace SWD2015.Models
         public string Address { get; set; }
         public string PhoneNumber { get; set; }
         public bool IsActive { get; set; }
+    
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

@@ -14,7 +14,14 @@ namespace SWD2015.Models
     
     public partial class Product_Status
     {
+        public Product_Status()
+        {
+            this.Stocks = new HashSet<Stock>();
+        }
+    
         public int ID { get; set; }
         public string Name { get; set; }
+    
+        public virtual ICollection<Stock> Stocks { get; set; }
     }
 }

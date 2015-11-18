@@ -18,6 +18,7 @@ namespace SWD2015.Models
         public DB_9DFD26_SWD2015Entities()
             : base("name=DB_9DFD26_SWD2015Entities")
         {
+            Configuration.ProxyCreationEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

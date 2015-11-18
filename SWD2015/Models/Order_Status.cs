@@ -14,7 +14,14 @@ namespace SWD2015.Models
     
     public partial class Order_Status
     {
+        public Order_Status()
+        {
+            this.Orders = new HashSet<Order>();
+        }
+    
         public int ID { get; set; }
         public string Name { get; set; }
+    
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

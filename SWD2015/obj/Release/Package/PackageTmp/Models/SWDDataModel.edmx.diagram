@@ -5,23 +5,27 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="a03d695bc26b4528af18849717d1cbbe" Name="Diagram1" ZoomLevel="90">
-        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Customer" Width="1.5" PointX="0.75" PointY="9.125" />
+        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Customer" Width="1.5" PointX="0.75" PointY="1" />
         <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Employee" Width="1.5" PointX="0.75" PointY="5.875" />
         <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Image" Width="1.5" PointX="2.75" PointY="5.75" />
         <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Order" Width="1.5" PointX="3" PointY="1" />
-        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Order_Status" Width="1.5" PointX="0.75" PointY="1.75" />
-        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.OrderDetail" Width="1.5" PointX="5.25" PointY="1.375" />
-        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Product" Width="1.5" PointX="5.75" PointY="4.75" />
-        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Product_Category" Width="1.5" PointX="7.75" PointY="0.75" />
-        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Product_Image" Width="1.5" PointX="7.75" PointY="3.75" />
-        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Product_Status" Width="1.5" PointX="7.75" PointY="6.75" />
-        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Stock" Width="1.5" PointX="2.75" PointY="8.75" />
-        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.sysdiagram" Width="1.5" PointX="4.75" PointY="8.75" />
-        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Warehouse" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Order_Status" Width="1.5" PointX="0.75" PointY="9.125" />
+        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.OrderDetail" Width="1.5" PointX="5.25" PointY="1.25" />
+        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Product" Width="1.5" PointX="3" PointY="12.125" />
+        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Product_Category" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Product_Image" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Product_Status" Width="1.5" PointX="3" PointY="8.75" />
+        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Stock" Width="1.5" PointX="5.25" PointY="12.5" />
+        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Warehouse" Width="1.5" PointX="7.75" PointY="3.75" />
         <AssociationConnector Association="DB_9DFD26_SWD2015Model.FK_Order_Customer" />
         <AssociationConnector Association="DB_9DFD26_SWD2015Model.FK_Order_Employee" />
         <AssociationConnector Association="DB_9DFD26_SWD2015Model.FK_Order_Order_Status" />
         <AssociationConnector Association="DB_9DFD26_SWD2015Model.FK_OrderDetail_Order" />
+        <AssociationConnector Association="DB_9DFD26_SWD2015Model.FK_OrderDetail_Product" />
+        <AssociationConnector Association="DB_9DFD26_SWD2015Model.FK_Product_Product_Category" />
+        <AssociationConnector Association="DB_9DFD26_SWD2015Model.FK_Stock_Product" />
+        <AssociationConnector Association="DB_9DFD26_SWD2015Model.FK_Stock_Product_Status" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -24,6 +24,10 @@ namespace SWD2015.Services
             return rs;
         }
 
+        public string GetProductStatustNameByID(int id)
+        {
+            return _productStatusRepository.GetById(id).Name;
+        }
         public bool AddProductStatus(Product_Status productStatus)
         {
             try

@@ -30,6 +30,22 @@
       <End Role="Order" EntitySet="Orders" />
       <End Role="OrderDetail" EntitySet="OrderDetails" />
     </AssociationSet>
+    <AssociationSet Name="FK_OrderDetail_Product" Association="DB_9DFD26_SWD2015Model.FK_OrderDetail_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="OrderDetail" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Product_Category" Association="DB_9DFD26_SWD2015Model.FK_Product_Product_Category">
+      <End Role="Product_Category" EntitySet="Product_Category" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stock_Product" Association="DB_9DFD26_SWD2015Model.FK_Stock_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Stock" EntitySet="Stocks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stock_Product_Status" Association="DB_9DFD26_SWD2015Model.FK_Stock_Product_Status">
+      <End Role="Product_Status" EntitySet="Product_Status" />
+      <End Role="Stock" EntitySet="Stocks" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Customer">
     <Key>
@@ -98,10 +114,11 @@
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="OrderID" Type="Int32" Nullable="false" />
     <Property Name="ProductID" Type="Int32" Nullable="false" />
-    <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Price" Type="Double" Nullable="false" />
     <Property Name="Quantity" Type="Int32" Nullable="false" />
     <Property Name="IsDelete" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Order" Relationship="DB_9DFD26_SWD2015Model.FK_OrderDetail_Order" FromRole="OrderDetail" ToRole="Order" />
+    <NavigationProperty Name="Product" Relationship="DB_9DFD26_SWD2015Model.FK_OrderDetail_Product" FromRole="OrderDetail" ToRole="Product" />
   </EntityType>
   <EntityType Name="Product">
     <Key>
@@ -112,10 +129,11 @@
     <Property Name="Price" Type="Double" Nullable="false" />
     <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Category" Type="Int32" Nullable="false" />
-    <Property Name="Status" Type="Int32" Nullable="false" />
     <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="Amount" Type="Int32" Nullable="false" />
-    <Property Name="ImageURL" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ImageURL" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="OrderDetails" Relationship="DB_9DFD26_SWD2015Model.FK_OrderDetail_Product" FromRole="Product" ToRole="OrderDetail" />
+    <NavigationProperty Name="Product_Category" Relationship="DB_9DFD26_SWD2015Model.FK_Product_Product_Category" FromRole="Product" ToRole="Product_Category" />
+    <NavigationProperty Name="Stocks" Relationship="DB_9DFD26_SWD2015Model.FK_Stock_Product" FromRole="Product" ToRole="Stock" />
   </EntityType>
   <EntityType Name="Product_Category">
     <Key>
@@ -123,6 +141,7 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Products" Relationship="DB_9DFD26_SWD2015Model.FK_Product_Product_Category" FromRole="Product_Category" ToRole="Product" />
   </EntityType>
   <EntityType Name="Product_Image">
     <Key>
@@ -138,6 +157,7 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Stocks" Relationship="DB_9DFD26_SWD2015Model.FK_Stock_Product_Status" FromRole="Product_Status" ToRole="Stock" />
   </EntityType>
   <EntityType Name="Stock">
     <Key>
@@ -145,8 +165,10 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ProductID" Type="Int32" Nullable="false" />
-    <Property Name="Quantity" Type="Int32" Nullable="false" />
-    <Property Name="WarehouseID" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="DB_9DFD26_SWD2015Model.FK_Stock_Product" FromRole="Stock" ToRole="Product" />
+    <NavigationProperty Name="Product_Status" Relationship="DB_9DFD26_SWD2015Model.FK_Stock_Product_Status" FromRole="Stock" ToRole="Product_Status" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
@@ -213,6 +235,54 @@
       </Principal>
       <Dependent Role="OrderDetail">
         <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetail_Product">
+    <End Type="DB_9DFD26_SWD2015Model.Product" Role="Product" Multiplicity="1" />
+    <End Type="DB_9DFD26_SWD2015Model.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Product_Category">
+    <End Type="DB_9DFD26_SWD2015Model.Product_Category" Role="Product_Category" Multiplicity="1" />
+    <End Type="DB_9DFD26_SWD2015Model.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product_Category">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="Category" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stock_Product">
+    <End Type="DB_9DFD26_SWD2015Model.Product" Role="Product" Multiplicity="1" />
+    <End Type="DB_9DFD26_SWD2015Model.Stock" Role="Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Stock">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stock_Product_Status">
+    <End Type="DB_9DFD26_SWD2015Model.Product_Status" Role="Product_Status" Multiplicity="1" />
+    <End Type="DB_9DFD26_SWD2015Model.Stock" Role="Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product_Status">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Stock">
+        <PropertyRef Name="Status" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

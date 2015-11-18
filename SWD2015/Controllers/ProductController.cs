@@ -10,6 +10,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using SWD2015.Models;
 using SWD2015.Services;
+using SWD2015.Models.POCOs;
 
 namespace SWD2015.Controllers
 {
@@ -17,6 +18,7 @@ namespace SWD2015.Controllers
     {
         private DB_9DFD26_SWD2015Entities db = new DB_9DFD26_SWD2015Entities();
         private IProductService _productService = new ProductService();
+        private IProductStatusService _productStatusService = new ProductStatusService();
 
         [Route("api/product/GetFavouriteProducts/")]
         public IQueryable<Product> GetFavouriteProducts()
@@ -30,23 +32,65 @@ namespace SWD2015.Controllers
         }
 
         // GET api/Product
-        public IQueryable<Product> GetProducts()
+        public IQueryable<ProductPOCO> GetProducts()
         {
-            return _productService.GetAllProducts();
+            var rs = _productService.GetAllProducts().Select(p => new ProductPOCO()
+            {
+                ID = p.ID,
+                Name = p.Name,
+                Price = p.Price,
+                Description = p.Description,
+                CategoryName = p.Product_Category.Name,
+                CreateDate = p.CreateDate,
+                ImageURL = p.ImageURL,
+                Status = p.Stocks.Where(s => s.Status == DataFactory.AVAILABLEPRODUCT).FirstOrDefault().Product_Status.Name //TODO: at this time, just status = 1 is available
+            }).AsQueryable();
+
+            return rs;
+        }
+
+        public IQueryable<ProductPOCO> GetFavouriteProducts()
+        {
+            var rs = _productService.GetFavouriteProducts().Select(p => new ProductPOCO()
+            {
+                ID = p.ID,
+                Name = p.Name,
+                Price = p.Price,
+                Description = p.Description,
+                CategoryName = p.Product_Category.Name,
+                CreateDate = p.CreateDate,
+                ImageURL = p.ImageURL,
+                Status = p.Stocks.Where(s => s.Status == DataFactory.AVAILABLEPRODUCT).FirstOrDefault().Product_Status.Name //TODO: at this time, just status = 1 is available
+            }).AsQueryable();
+
+            return rs;
         }
 
         // GET api/Product/5
-        [ResponseType(typeof(Product))]
+        [ResponseType(typeof(ProductPOCO))]
         public IHttpActionResult GetProduct(int id)
         {
             Product product = _productService.GetProductByID(id);
+            ProductPOCO poco = new ProductPOCO()
+            {
+                ID = product.ID,
+                Name = product.Name,
+                Price = product.Price,
+                Description = product.Description,
+                CategoryName = product.Product_Category.Name,
+                CreateDate = product.CreateDate,
+                ImageURL = product.ImageURL,
+                Status = product.Stocks.Where(s => s.Status == DataFactory.AVAILABLEPRODUCT).FirstOrDefault().Product_Status.Name //TODO: at this time, just status = 1 is available
+            };
             if (product == null)
             {
                 return NotFound();
             }
 
-            return Ok(product);
+            return Ok(poco);
         }
+
+        //TODO: must be continue implement these methods below:
 
         // PUT api/Product/5
         public IHttpActionResult PutProduct(int id, Product product)
@@ -61,23 +105,6 @@ namespace SWD2015.Controllers
                 return BadRequest();
             }
 
-            db.Entry(product).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ProductExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
 
             return StatusCode(HttpStatusCode.NoContent);
         }

@@ -14,15 +14,22 @@ namespace SWD2015.Models
     
     public partial class Product
     {
+        public Product()
+        {
+            this.OrderDetails = new HashSet<OrderDetail>();
+            this.Stocks = new HashSet<Stock>();
+        }
+    
         public int ID { get; set; }
         public string Name { get; set; }
         public double Price { get; set; }
         public string Description { get; set; }
         public int Category { get; set; }
-        public int Status { get; set; }
         public System.DateTime CreateDate { get; set; }
-        public int Amount { get; set; }
         public string ImageURL { get; set; }
-        public Nullable<int> TotalSell { get; set; }
+    
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual Product_Category Product_Category { get; set; }
+        public virtual ICollection<Stock> Stocks { get; set; }
     }
 }

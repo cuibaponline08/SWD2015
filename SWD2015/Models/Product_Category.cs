@@ -14,7 +14,14 @@ namespace SWD2015.Models
     
     public partial class Product_Category
     {
+        public Product_Category()
+        {
+            this.Products = new HashSet<Product>();
+        }
+    
         public int ID { get; set; }
         public string Name { get; set; }
+    
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

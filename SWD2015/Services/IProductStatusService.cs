@@ -10,6 +10,7 @@ namespace SWD2015.Services
     {
         IQueryable<Product_Status> GetAllProductStatus();
         Product_Status GetProductStatustByID(int id);
+        string GetProductStatustNameByID(int id);
         bool AddProductStatus(Product_Status productStatus);
         bool EditProductStatus(Product_Status productStatus);
         bool DeleteProductStatus(int productStatusID);
