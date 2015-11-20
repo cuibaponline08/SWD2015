@@ -32,25 +32,6 @@
           <Property Name="PhoneNumber" Type="nvarchar" MaxLength="25" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
-        <EntityType Name="Image">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="ImageURL" Type="nvarchar(max)" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Order">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CustomerID" Type="int" Nullable="false" />
-          <Property Name="EmployeeID" Type="int" Nullable="false" />
-          <Property Name="CreateDate" Type="datetime" Nullable="false" />
-          <Property Name="Status" Type="int" Nullable="false" />
-          <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Total" Type="money" Nullable="false" />
-        </EntityType>
         <EntityType Name="Order_Status">
           <Key>
             <PropertyRef Name="ID" />
@@ -63,7 +44,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="SoldOrderID" Type="int" Nullable="false" />
           <Property Name="ProductID" Type="int" Nullable="false" />
           <Property Name="Price" Type="float" Nullable="false" />
           <Property Name="Quantity" Type="int" Nullable="false" />
@@ -88,20 +69,41 @@
           <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
-        <EntityType Name="Product_Image">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="ImageID" Type="int" Nullable="false" />
-          <Property Name="ProductID" Type="int" Nullable="false" />
-        </EntityType>
         <EntityType Name="Product_Status">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PurchasedOrder">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="OrderStatus" Type="int" Nullable="false" />
+          <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Total" Type="float" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Price" Type="float" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Category" Type="int" Nullable="false" />
+          <Property Name="ImageURL" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SoldOrder">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Total" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="Stock">
           <Key>
@@ -122,64 +124,6 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
-        <EntityType Name="Warehouse">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Description" Type="nvarchar(max)" />
-          <Property Name="IsActive" Type="bit" Nullable="false" />
-        </EntityType>
-        <Association Name="FK_Order_Customer">
-          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
-          <End Role="Order" Type="Self.Order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Customer">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Order">
-              <PropertyRef Name="CustomerID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Order_Employee">
-          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
-          <End Role="Order" Type="Self.Order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Employee">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Order">
-              <PropertyRef Name="EmployeeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Order_Order_Status">
-          <End Role="Order_Status" Type="Self.Order_Status" Multiplicity="1" />
-          <End Role="Order" Type="Self.Order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Order_Status">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Order">
-              <PropertyRef Name="Status" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_OrderDetail_Order">
-          <End Role="Order" Type="Self.Order" Multiplicity="1" />
-          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Order">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="OrderDetail">
-              <PropertyRef Name="OrderID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_OrderDetail_Product">
           <End Role="Product" Type="Self.Product" Multiplicity="1" />
           <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
@@ -192,6 +136,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_OrderDetail_SoldOrder">
+          <End Role="SoldOrder" Type="Self.SoldOrder" Multiplicity="1" />
+          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SoldOrder">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="SoldOrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Product_Product_Category">
           <End Role="Product_Category" Type="Self.Product_Category" Multiplicity="1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
@@ -201,6 +157,90 @@
             </Principal>
             <Dependent Role="Product">
               <PropertyRef Name="Category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PurchasedOrder_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="PurchasedOrder" Type="Self.PurchasedOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PurchasedOrder">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PurchasedOrder_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="PurchasedOrder" Type="Self.PurchasedOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PurchasedOrder">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PurchasedOrder_Order_Status">
+          <End Role="Order_Status" Type="Self.Order_Status" Multiplicity="1" />
+          <End Role="PurchasedOrder" Type="Self.PurchasedOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order_Status">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PurchasedOrder">
+              <PropertyRef Name="OrderStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PurchasedOrder_Product_Category">
+          <End Role="Product_Category" Type="Self.Product_Category" Multiplicity="1" />
+          <End Role="PurchasedOrder" Type="Self.PurchasedOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product_Category">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PurchasedOrder">
+              <PropertyRef Name="Category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SoldOrder_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="SoldOrder" Type="Self.SoldOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SoldOrder">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SoldOrder_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="SoldOrder" Type="Self.SoldOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SoldOrder">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SoldOrder_Order_Status">
+          <End Role="Order_Status" Type="Self.Order_Status" Multiplicity="1" />
+          <End Role="SoldOrder" Type="Self.SoldOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order_Status">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SoldOrder">
+              <PropertyRef Name="Status" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -231,40 +271,54 @@
         <EntityContainer Name="DB_9DFD26_SWD2015ModelStoreContainer">
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Image" EntityType="Self.Image" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order_Status" EntityType="Self.Order_Status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product_Category" EntityType="Self.Product_Category" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Product_Image" EntityType="Self.Product_Image" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product_Status" EntityType="Self.Product_Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PurchasedOrder" EntityType="Self.PurchasedOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SoldOrder" EntityType="Self.SoldOrder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Stock" EntityType="Self.Stock" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Warehouse" EntityType="Self.Warehouse" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Order_Customer" Association="Self.FK_Order_Customer">
-            <End Role="Customer" EntitySet="Customer" />
-            <End Role="Order" EntitySet="Order" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Order_Employee" Association="Self.FK_Order_Employee">
-            <End Role="Employee" EntitySet="Employee" />
-            <End Role="Order" EntitySet="Order" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Order_Order_Status" Association="Self.FK_Order_Order_Status">
-            <End Role="Order_Status" EntitySet="Order_Status" />
-            <End Role="Order" EntitySet="Order" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrderDetail_Order" Association="Self.FK_OrderDetail_Order">
-            <End Role="Order" EntitySet="Order" />
-            <End Role="OrderDetail" EntitySet="OrderDetail" />
-          </AssociationSet>
           <AssociationSet Name="FK_OrderDetail_Product" Association="Self.FK_OrderDetail_Product">
             <End Role="Product" EntitySet="Product" />
+            <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_SoldOrder" Association="Self.FK_OrderDetail_SoldOrder">
+            <End Role="SoldOrder" EntitySet="SoldOrder" />
             <End Role="OrderDetail" EntitySet="OrderDetail" />
           </AssociationSet>
           <AssociationSet Name="FK_Product_Product_Category" Association="Self.FK_Product_Product_Category">
             <End Role="Product_Category" EntitySet="Product_Category" />
             <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PurchasedOrder_Customer" Association="Self.FK_PurchasedOrder_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="PurchasedOrder" EntitySet="PurchasedOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PurchasedOrder_Employee" Association="Self.FK_PurchasedOrder_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="PurchasedOrder" EntitySet="PurchasedOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PurchasedOrder_Order_Status" Association="Self.FK_PurchasedOrder_Order_Status">
+            <End Role="Order_Status" EntitySet="Order_Status" />
+            <End Role="PurchasedOrder" EntitySet="PurchasedOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PurchasedOrder_Product_Category" Association="Self.FK_PurchasedOrder_Product_Category">
+            <End Role="Product_Category" EntitySet="Product_Category" />
+            <End Role="PurchasedOrder" EntitySet="PurchasedOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SoldOrder_Customer" Association="Self.FK_SoldOrder_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="SoldOrder" EntitySet="SoldOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SoldOrder_Employee" Association="Self.FK_SoldOrder_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="SoldOrder" EntitySet="SoldOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SoldOrder_Order_Status" Association="Self.FK_SoldOrder_Order_Status">
+            <End Role="Order_Status" EntitySet="Order_Status" />
+            <End Role="SoldOrder" EntitySet="SoldOrder" />
           </AssociationSet>
           <AssociationSet Name="FK_Stock_Product" Association="Self.FK_Stock_Product">
             <End Role="Product" EntitySet="Product" />
@@ -282,35 +336,45 @@
         <EntityContainer Name="DB_9DFD26_SWD2015Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Customers" EntityType="DB_9DFD26_SWD2015Model.Customer" />
           <EntitySet Name="Employees" EntityType="DB_9DFD26_SWD2015Model.Employee" />
-          <EntitySet Name="Images" EntityType="DB_9DFD26_SWD2015Model.Image" />
-          <EntitySet Name="Orders" EntityType="DB_9DFD26_SWD2015Model.Order" />
           <EntitySet Name="Order_Status" EntityType="DB_9DFD26_SWD2015Model.Order_Status" />
           <EntitySet Name="OrderDetails" EntityType="DB_9DFD26_SWD2015Model.OrderDetail" />
           <EntitySet Name="Products" EntityType="DB_9DFD26_SWD2015Model.Product" />
           <EntitySet Name="Product_Category" EntityType="DB_9DFD26_SWD2015Model.Product_Category" />
-          <EntitySet Name="Product_Image" EntityType="DB_9DFD26_SWD2015Model.Product_Image" />
           <EntitySet Name="Product_Status" EntityType="DB_9DFD26_SWD2015Model.Product_Status" />
+          <EntitySet Name="PurchasedOrders" EntityType="DB_9DFD26_SWD2015Model.PurchasedOrder" />
+          <EntitySet Name="SoldOrders" EntityType="DB_9DFD26_SWD2015Model.SoldOrder" />
           <EntitySet Name="Stocks" EntityType="DB_9DFD26_SWD2015Model.Stock" />
           <EntitySet Name="sysdiagrams" EntityType="DB_9DFD26_SWD2015Model.sysdiagram" />
-          <EntitySet Name="Warehouses" EntityType="DB_9DFD26_SWD2015Model.Warehouse" />
-          <AssociationSet Name="FK_Order_Customer" Association="DB_9DFD26_SWD2015Model.FK_Order_Customer">
+          <AssociationSet Name="FK_PurchasedOrder_Customer" Association="DB_9DFD26_SWD2015Model.FK_PurchasedOrder_Customer">
             <End Role="Customer" EntitySet="Customers" />
-            <End Role="Order" EntitySet="Orders" />
+            <End Role="PurchasedOrder" EntitySet="PurchasedOrders" />
           </AssociationSet>
-          <AssociationSet Name="FK_Order_Employee" Association="DB_9DFD26_SWD2015Model.FK_Order_Employee">
+          <AssociationSet Name="FK_SoldOrder_Customer" Association="DB_9DFD26_SWD2015Model.FK_SoldOrder_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="SoldOrder" EntitySet="SoldOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PurchasedOrder_Employee" Association="DB_9DFD26_SWD2015Model.FK_PurchasedOrder_Employee">
             <End Role="Employee" EntitySet="Employees" />
-            <End Role="Order" EntitySet="Orders" />
+            <End Role="PurchasedOrder" EntitySet="PurchasedOrders" />
           </AssociationSet>
-          <AssociationSet Name="FK_Order_Order_Status" Association="DB_9DFD26_SWD2015Model.FK_Order_Order_Status">
+          <AssociationSet Name="FK_SoldOrder_Employee" Association="DB_9DFD26_SWD2015Model.FK_SoldOrder_Employee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="SoldOrder" EntitySet="SoldOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PurchasedOrder_Order_Status" Association="DB_9DFD26_SWD2015Model.FK_PurchasedOrder_Order_Status">
             <End Role="Order_Status" EntitySet="Order_Status" />
-            <End Role="Order" EntitySet="Orders" />
+            <End Role="PurchasedOrder" EntitySet="PurchasedOrders" />
           </AssociationSet>
-          <AssociationSet Name="FK_OrderDetail_Order" Association="DB_9DFD26_SWD2015Model.FK_OrderDetail_Order">
-            <End Role="Order" EntitySet="Orders" />
-            <End Role="OrderDetail" EntitySet="OrderDetails" />
+          <AssociationSet Name="FK_SoldOrder_Order_Status" Association="DB_9DFD26_SWD2015Model.FK_SoldOrder_Order_Status">
+            <End Role="Order_Status" EntitySet="Order_Status" />
+            <End Role="SoldOrder" EntitySet="SoldOrders" />
           </AssociationSet>
           <AssociationSet Name="FK_OrderDetail_Product" Association="DB_9DFD26_SWD2015Model.FK_OrderDetail_Product">
             <End Role="Product" EntitySet="Products" />
+            <End Role="OrderDetail" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_SoldOrder" Association="DB_9DFD26_SWD2015Model.FK_OrderDetail_SoldOrder">
+            <End Role="SoldOrder" EntitySet="SoldOrders" />
             <End Role="OrderDetail" EntitySet="OrderDetails" />
           </AssociationSet>
           <AssociationSet Name="FK_Product_Product_Category" Association="DB_9DFD26_SWD2015Model.FK_Product_Product_Category">
@@ -320,6 +384,10 @@
           <AssociationSet Name="FK_Stock_Product" Association="DB_9DFD26_SWD2015Model.FK_Stock_Product">
             <End Role="Product" EntitySet="Products" />
             <End Role="Stock" EntitySet="Stocks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PurchasedOrder_Product_Category" Association="DB_9DFD26_SWD2015Model.FK_PurchasedOrder_Product_Category">
+            <End Role="Product_Category" EntitySet="Product_Category" />
+            <End Role="PurchasedOrder" EntitySet="PurchasedOrders" />
           </AssociationSet>
           <AssociationSet Name="FK_Stock_Product_Status" Association="DB_9DFD26_SWD2015Model.FK_Stock_Product_Status">
             <End Role="Product_Status" EntitySet="Product_Status" />
@@ -340,7 +408,8 @@
           <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
           <Property Name="isGuest" Type="Boolean" Nullable="false" />
           <Property Name="ImageURL" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Orders" Relationship="DB_9DFD26_SWD2015Model.FK_Order_Customer" FromRole="Customer" ToRole="Order" />
+          <NavigationProperty Name="PurchasedOrders" Relationship="DB_9DFD26_SWD2015Model.FK_PurchasedOrder_Customer" FromRole="Customer" ToRole="PurchasedOrder" />
+          <NavigationProperty Name="SoldOrders" Relationship="DB_9DFD26_SWD2015Model.FK_SoldOrder_Customer" FromRole="Customer" ToRole="SoldOrder" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -353,30 +422,8 @@
           <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Orders" Relationship="DB_9DFD26_SWD2015Model.FK_Order_Employee" FromRole="Employee" ToRole="Order" />
-        </EntityType>
-        <EntityType Name="Image">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="ImageURL" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Order">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CustomerID" Type="Int32" Nullable="false" />
-          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
-          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Status" Type="Int32" Nullable="false" />
-          <Property Name="Address" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Total" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <NavigationProperty Name="Customer" Relationship="DB_9DFD26_SWD2015Model.FK_Order_Customer" FromRole="Order" ToRole="Customer" />
-          <NavigationProperty Name="Employee" Relationship="DB_9DFD26_SWD2015Model.FK_Order_Employee" FromRole="Order" ToRole="Employee" />
-          <NavigationProperty Name="Order_Status" Relationship="DB_9DFD26_SWD2015Model.FK_Order_Order_Status" FromRole="Order" ToRole="Order_Status" />
-          <NavigationProperty Name="OrderDetails" Relationship="DB_9DFD26_SWD2015Model.FK_OrderDetail_Order" FromRole="Order" ToRole="OrderDetail" />
+          <NavigationProperty Name="PurchasedOrders" Relationship="DB_9DFD26_SWD2015Model.FK_PurchasedOrder_Employee" FromRole="Employee" ToRole="PurchasedOrder" />
+          <NavigationProperty Name="SoldOrders" Relationship="DB_9DFD26_SWD2015Model.FK_SoldOrder_Employee" FromRole="Employee" ToRole="SoldOrder" />
         </EntityType>
         <EntityType Name="Order_Status">
           <Key>
@@ -384,20 +431,21 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Orders" Relationship="DB_9DFD26_SWD2015Model.FK_Order_Order_Status" FromRole="Order_Status" ToRole="Order" />
+          <NavigationProperty Name="PurchasedOrders" Relationship="DB_9DFD26_SWD2015Model.FK_PurchasedOrder_Order_Status" FromRole="Order_Status" ToRole="PurchasedOrder" />
+          <NavigationProperty Name="SoldOrders" Relationship="DB_9DFD26_SWD2015Model.FK_SoldOrder_Order_Status" FromRole="Order_Status" ToRole="SoldOrder" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="SoldOrderID" Type="Int32" Nullable="false" />
           <Property Name="ProductID" Type="Int32" Nullable="false" />
           <Property Name="Price" Type="Double" Nullable="false" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
           <Property Name="IsDelete" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Order" Relationship="DB_9DFD26_SWD2015Model.FK_OrderDetail_Order" FromRole="OrderDetail" ToRole="Order" />
           <NavigationProperty Name="Product" Relationship="DB_9DFD26_SWD2015Model.FK_OrderDetail_Product" FromRole="OrderDetail" ToRole="Product" />
+          <NavigationProperty Name="SoldOrder" Relationship="DB_9DFD26_SWD2015Model.FK_OrderDetail_SoldOrder" FromRole="OrderDetail" ToRole="SoldOrder" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -421,14 +469,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Products" Relationship="DB_9DFD26_SWD2015Model.FK_Product_Product_Category" FromRole="Product_Category" ToRole="Product" />
-        </EntityType>
-        <EntityType Name="Product_Image">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="ImageID" Type="Int32" Nullable="false" />
-          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PurchasedOrders" Relationship="DB_9DFD26_SWD2015Model.FK_PurchasedOrder_Product_Category" FromRole="Product_Category" ToRole="PurchasedOrder" />
         </EntityType>
         <EntityType Name="Product_Status">
           <Key>
@@ -437,6 +478,43 @@
           <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Stocks" Relationship="DB_9DFD26_SWD2015Model.FK_Stock_Product_Status" FromRole="Product_Status" ToRole="Stock" />
+        </EntityType>
+        <EntityType Name="PurchasedOrder">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OrderStatus" Type="Int32" Nullable="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Total" Type="Double" Nullable="false" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Double" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Category" Type="Int32" Nullable="false" />
+          <Property Name="ImageURL" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Customer" Relationship="DB_9DFD26_SWD2015Model.FK_PurchasedOrder_Customer" FromRole="PurchasedOrder" ToRole="Customer" />
+          <NavigationProperty Name="Employee" Relationship="DB_9DFD26_SWD2015Model.FK_PurchasedOrder_Employee" FromRole="PurchasedOrder" ToRole="Employee" />
+          <NavigationProperty Name="Order_Status" Relationship="DB_9DFD26_SWD2015Model.FK_PurchasedOrder_Order_Status" FromRole="PurchasedOrder" ToRole="Order_Status" />
+          <NavigationProperty Name="Product_Category" Relationship="DB_9DFD26_SWD2015Model.FK_PurchasedOrder_Product_Category" FromRole="PurchasedOrder" ToRole="Product_Category" />
+        </EntityType>
+        <EntityType Name="SoldOrder">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Total" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Customer" Relationship="DB_9DFD26_SWD2015Model.FK_SoldOrder_Customer" FromRole="SoldOrder" ToRole="Customer" />
+          <NavigationProperty Name="Employee" Relationship="DB_9DFD26_SWD2015Model.FK_SoldOrder_Employee" FromRole="SoldOrder" ToRole="Employee" />
+          <NavigationProperty Name="Order_Status" Relationship="DB_9DFD26_SWD2015Model.FK_SoldOrder_Order_Status" FromRole="SoldOrder" ToRole="Order_Status" />
+          <NavigationProperty Name="OrderDetails" Relationship="DB_9DFD26_SWD2015Model.FK_OrderDetail_SoldOrder" FromRole="SoldOrder" ToRole="OrderDetail" />
         </EntityType>
         <EntityType Name="Stock">
           <Key>
@@ -459,61 +537,75 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <EntityType Name="Warehouse">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Address" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <Association Name="FK_Order_Customer">
+        <Association Name="FK_PurchasedOrder_Customer">
           <End Type="DB_9DFD26_SWD2015Model.Customer" Role="Customer" Multiplicity="1" />
-          <End Type="DB_9DFD26_SWD2015Model.Order" Role="Order" Multiplicity="*" />
+          <End Type="DB_9DFD26_SWD2015Model.PurchasedOrder" Role="PurchasedOrder" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customer">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Order">
+            <Dependent Role="PurchasedOrder">
               <PropertyRef Name="CustomerID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Order_Employee">
+        <Association Name="FK_SoldOrder_Customer">
+          <End Type="DB_9DFD26_SWD2015Model.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="DB_9DFD26_SWD2015Model.SoldOrder" Role="SoldOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SoldOrder">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PurchasedOrder_Employee">
           <End Type="DB_9DFD26_SWD2015Model.Employee" Role="Employee" Multiplicity="1" />
-          <End Type="DB_9DFD26_SWD2015Model.Order" Role="Order" Multiplicity="*" />
+          <End Type="DB_9DFD26_SWD2015Model.PurchasedOrder" Role="PurchasedOrder" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employee">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Order">
+            <Dependent Role="PurchasedOrder">
               <PropertyRef Name="EmployeeID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Order_Order_Status">
+        <Association Name="FK_SoldOrder_Employee">
+          <End Type="DB_9DFD26_SWD2015Model.Employee" Role="Employee" Multiplicity="1" />
+          <End Type="DB_9DFD26_SWD2015Model.SoldOrder" Role="SoldOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SoldOrder">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PurchasedOrder_Order_Status">
           <End Type="DB_9DFD26_SWD2015Model.Order_Status" Role="Order_Status" Multiplicity="1" />
-          <End Type="DB_9DFD26_SWD2015Model.Order" Role="Order" Multiplicity="*" />
+          <End Type="DB_9DFD26_SWD2015Model.PurchasedOrder" Role="PurchasedOrder" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Order_Status">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Order">
-              <PropertyRef Name="Status" />
+            <Dependent Role="PurchasedOrder">
+              <PropertyRef Name="OrderStatus" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_OrderDetail_Order">
-          <End Type="DB_9DFD26_SWD2015Model.Order" Role="Order" Multiplicity="1" />
-          <End Type="DB_9DFD26_SWD2015Model.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+        <Association Name="FK_SoldOrder_Order_Status">
+          <End Type="DB_9DFD26_SWD2015Model.Order_Status" Role="Order_Status" Multiplicity="1" />
+          <End Type="DB_9DFD26_SWD2015Model.SoldOrder" Role="SoldOrder" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Order">
+            <Principal Role="Order_Status">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="OrderDetail">
-              <PropertyRef Name="OrderID" />
+            <Dependent Role="SoldOrder">
+              <PropertyRef Name="Status" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -526,6 +618,18 @@
             </Principal>
             <Dependent Role="OrderDetail">
               <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_SoldOrder">
+          <End Type="DB_9DFD26_SWD2015Model.SoldOrder" Role="SoldOrder" Multiplicity="1" />
+          <End Type="DB_9DFD26_SWD2015Model.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SoldOrder">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="SoldOrderID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -550,6 +654,18 @@
             </Principal>
             <Dependent Role="Stock">
               <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PurchasedOrder_Product_Category">
+          <End Type="DB_9DFD26_SWD2015Model.Product_Category" Role="Product_Category" Multiplicity="1" />
+          <End Type="DB_9DFD26_SWD2015Model.PurchasedOrder" Role="PurchasedOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product_Category">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PurchasedOrder">
+              <PropertyRef Name="Category" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -600,27 +716,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Images">
-            <EntityTypeMapping TypeName="DB_9DFD26_SWD2015Model.Image">
-              <MappingFragment StoreEntitySet="Image">
-                <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Orders">
-            <EntityTypeMapping TypeName="DB_9DFD26_SWD2015Model.Order">
-              <MappingFragment StoreEntitySet="Order">
-                <ScalarProperty Name="Total" ColumnName="Total" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Order_Status">
             <EntityTypeMapping TypeName="DB_9DFD26_SWD2015Model.Order_Status">
               <MappingFragment StoreEntitySet="Order_Status">
@@ -636,7 +731,7 @@
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="SoldOrderID" ColumnName="SoldOrderID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -662,19 +757,41 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Product_Image">
-            <EntityTypeMapping TypeName="DB_9DFD26_SWD2015Model.Product_Image">
-              <MappingFragment StoreEntitySet="Product_Image">
-                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Product_Status">
             <EntityTypeMapping TypeName="DB_9DFD26_SWD2015Model.Product_Status">
               <MappingFragment StoreEntitySet="Product_Status">
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PurchasedOrders">
+            <EntityTypeMapping TypeName="DB_9DFD26_SWD2015Model.PurchasedOrder">
+              <MappingFragment StoreEntitySet="PurchasedOrder">
+                <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SoldOrders">
+            <EntityTypeMapping TypeName="DB_9DFD26_SWD2015Model.SoldOrder">
+              <MappingFragment StoreEntitySet="SoldOrder">
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -697,17 +814,6 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Warehouses">
-            <EntityTypeMapping TypeName="DB_9DFD26_SWD2015Model.Warehouse">
-              <MappingFragment StoreEntitySet="Warehouse">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

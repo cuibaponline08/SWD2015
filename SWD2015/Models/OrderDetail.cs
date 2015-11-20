@@ -15,13 +15,13 @@ namespace SWD2015.Models
     public partial class OrderDetail
     {
         public int ID { get; set; }
-        public int OrderID { get; set; }
+        public int SoldOrderID { get; set; }
         public int ProductID { get; set; }
         public double Price { get; set; }
         public int Quantity { get; set; }
         public bool IsDelete { get; set; }
     
-        public virtual Order Order { get; set; }
         public virtual Product Product { get; set; }
+        public virtual SoldOrder SoldOrder { get; set; }
     }
 }

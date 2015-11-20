@@ -12,9 +12,9 @@ namespace SWD2015.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Order
+    public partial class SoldOrder
     {
-        public Order()
+        public SoldOrder()
         {
             this.OrderDetails = new HashSet<OrderDetail>();
         }
@@ -25,7 +25,7 @@ namespace SWD2015.Models
         public System.DateTime CreateDate { get; set; }
         public int Status { get; set; }
         public string Address { get; set; }
-        public decimal Total { get; set; }
+        public double Total { get; set; }
     
         public virtual Customer Customer { get; set; }
         public virtual Employee Employee { get; set; }

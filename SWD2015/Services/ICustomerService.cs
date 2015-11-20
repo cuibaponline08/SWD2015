@@ -10,7 +10,7 @@ namespace SWD2015.Services
     public interface ICustomerService
     {
         Customer CheckLogin(string email, string password);
-        //IQueryable<Customer> GetAllCustomers();
+        IQueryable<Customer> GetAllCustomers();
         Customer GetCustomerByID(int customerID);
         bool AddCustomer(Customer customer);
         bool UpdateCustomer(Customer customer);

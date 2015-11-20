@@ -18,7 +18,6 @@ namespace SWD2015.Models
         public DB_9DFD26_SWD2015Entities()
             : base("name=DB_9DFD26_SWD2015Entities")
         {
-            Configuration.ProxyCreationEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -28,16 +27,14 @@ namespace SWD2015.Models
     
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<Image> Images { get; set; }
-        public DbSet<Order> Orders { get; set; }
         public DbSet<Order_Status> Order_Status { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Product_Category> Product_Category { get; set; }
-        public DbSet<Product_Image> Product_Image { get; set; }
         public DbSet<Product_Status> Product_Status { get; set; }
+        public DbSet<PurchasedOrder> PurchasedOrders { get; set; }
+        public DbSet<SoldOrder> SoldOrders { get; set; }
         public DbSet<Stock> Stocks { get; set; }
         public DbSet<sysdiagram> sysdiagrams { get; set; }
-        public DbSet<Warehouse> Warehouses { get; set; }
     }
 }

@@ -10,6 +10,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using SWD2015.Models;
 using SWD2015.Services;
+using SWD2015.Models.POCOs;
 
 namespace SWD2015.Controllers
 {
@@ -32,27 +33,27 @@ namespace SWD2015.Controllers
             return Ok(customer);
         }
 
-        //// GET api/Customer
-        //public IQueryable<Customer> GetCustomers()
-        //{
-        //    var rs = _customerService.GetAllCustomers().ToList();
-
-        //    return _customerService.GetAllCustomers();
-        //}
-
-        /// <summary>
-        /// Get List New Products (return JSON)
-        /// </summary>
-        /// <returns>JSON</returns>
-        public IQueryable<Product> GetNewProducts()
+        // GET api/customer/GetCustomers
+        [Route("api/customer/GetCustomers")]
+        public IQueryable GetCustomers()
         {
-            return null;
+            return _customerService.GetAllCustomers().Select(c => new CustomerPOCO(){
+                FullName = c.FullName,
+                Email = c.Email,
+                PhoneNumber = c.PhoneNumber,
+                //Birthday = c.Birthday.HasValue ? c.Birthday.Value.ToString() : "unknown",
+                Birthday = c.Birthday.Value,
+                Gender = c.Gender,
+                Address = c.Address,
+                //c.isGuest == true ? "Guest": "Registered",
+                ImageURL = c.ImageURL
+            }).AsQueryable();
         }
 
         // GET api/Customer/
-        [Route("api/customer/GetCustomer/{id}")]
-        [ResponseType(typeof(Customer))]
-        public IHttpActionResult GetCustomer(int id)
+        [Route("api/customer/GetCustomerByID/{id}")]
+        [ResponseType(typeof(CustomerPOCO))]
+        public IHttpActionResult GetCustomerByID(int id)
         {
             Customer customer = _customerService.GetCustomerByID(id);
             if (customer == null)
@@ -60,55 +61,77 @@ namespace SWD2015.Controllers
                 return NotFound();
             }
 
-            return Ok(customer);
+            CustomerPOCO poco = new CustomerPOCO()
+            {
+                FullName = customer.FullName,
+                Email = customer.Email,
+                PhoneNumber = customer.PhoneNumber,
+                Birthday = customer.Birthday,
+                Gender = customer.Gender,
+                Address = customer.Address,
+                ImageURL = customer.ImageURL
+            };
+
+            return Ok(poco);
         }
 
         // PUT api/Customer/5
-        [Route("api/customer/GetCustomer/{id}")]
-        public IHttpActionResult PutCustomer(int id, Customer customer)
+        //[Route("api/customer/GetCustomer/{id}")]
+        [Route("api/customer/UpdateCustomerDetail/{id}")]
+        [ResponseType(typeof(Customer))]
+        public IHttpActionResult PutCustomer(int id, CustomerPOCO poco)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != customer.ID)
+            Customer customer = _customerService.GetCustomerByID(id);
+            if (customer == null)
             {
                 return BadRequest();
             }
 
+            customer.FullName = poco.FullName;
+            customer.Email = poco.Email;
+            customer.PhoneNumber = poco.PhoneNumber;
+            customer.Birthday = poco.Birthday;
+            customer.Gender = poco.Gender;
+            customer.Address = poco.Address;
+            customer.ImageURL = poco.ImageURL;
+
             _customerService.UpdateCustomer(customer);
-
-            return StatusCode(HttpStatusCode.NoContent);
-        }
-
-        // POST api/Customer
-        [ResponseType(typeof(Customer))]
-        public IHttpActionResult PostCustomer(Customer customer)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            _customerService.AddCustomer(customer);
-
-            return CreatedAtRoute("DefaultApi", new { id = customer.ID }, customer);
-        }
-
-        // DELETE api/Customer/5
-        [ResponseType(typeof(Customer))]
-        public IHttpActionResult DeleteCustomer(int id)
-        {
-            Customer customer = _customerService.GetCustomerByID(id);
-            if (customer == null)
-            {
-                return NotFound();
-            }
-
-            _customerService.DeleteCustomer(customer);
 
             return Ok(customer);
         }
+
+        //// POST api/Customer
+        //[ResponseType(typeof(Customer))]
+        //public IHttpActionResult PostCustomer(Customer customer)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+
+        //    _customerService.AddCustomer(customer);
+
+        //    return CreatedAtRoute("DefaultApi", new { id = customer.ID }, customer);
+        //}
+
+        //// DELETE api/Customer/5
+        //[ResponseType(typeof(Customer))]
+        //public IHttpActionResult DeleteCustomer(int id)
+        //{
+        //    Customer customer = _customerService.GetCustomerByID(id);
+        //    if (customer == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    _customerService.DeleteCustomer(customer);
+
+        //    return Ok(customer);
+        //}
     }
 }

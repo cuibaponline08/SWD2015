@@ -37,49 +37,49 @@ namespace SWD2015.Controllers
         }
 
         // PUT api/ProductStatus/5
-        public IHttpActionResult PutProduct_Status(int id, Product_Status product_status)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //public IHttpActionResult PutProduct_Status(int id, Product_Status product_status)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            if (id != product_status.ID)
-            {
-                return BadRequest();
-            }
-            _productStatusService.EditProductStatus(product_status);
+        //    if (id != product_status.ID)
+        //    {
+        //        return BadRequest();
+        //    }
+        //    _productStatusService.EditProductStatus(product_status);
 
-            return StatusCode(HttpStatusCode.NoContent);
-        }
+        //    return StatusCode(HttpStatusCode.NoContent);
+        //}
 
-        // POST api/ProductStatus
-        [ResponseType(typeof(Product_Status))]
-        public IHttpActionResult PostProduct_Status(Product_Status product_status)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //// POST api/ProductStatus
+        //[ResponseType(typeof(Product_Status))]
+        //public IHttpActionResult PostProduct_Status(Product_Status product_status)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            _productStatusService.AddProductStatus(product_status);
+        //    _productStatusService.AddProductStatus(product_status);
 
-            return CreatedAtRoute("DefaultApi", new { id = product_status.ID }, product_status);
-        }
+        //    return CreatedAtRoute("DefaultApi", new { id = product_status.ID }, product_status);
+        //}
 
-        // DELETE api/ProductStatus/5
-        [ResponseType(typeof(Product_Status))]
-        public IHttpActionResult DeleteProduct_Status(int id)
-        {
-            Product_Status product_status = _productStatusService.GetProductStatustByID(id);
-            if (product_status == null)
-            {
-                return NotFound();
-            }
+        //// DELETE api/ProductStatus/5
+        //[ResponseType(typeof(Product_Status))]
+        //public IHttpActionResult DeleteProduct_Status(int id)
+        //{
+        //    Product_Status product_status = _productStatusService.GetProductStatustByID(id);
+        //    if (product_status == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            _productStatusService.DeleteProductStatus(id);
+        //    _productStatusService.DeleteProductStatus(id);
 
-            return Ok(product_status);
-        }
+        //    return Ok(product_status);
+        //}
     }
 }

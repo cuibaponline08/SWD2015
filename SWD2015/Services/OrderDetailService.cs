@@ -12,7 +12,7 @@ namespace SWD2015.Services
 
         public IQueryable<Models.OrderDetail> GetAllOrderDetailsByOrderID(int orderID)
         {
-            return _orderDetailRepository.GetMany(o => o.OrderID == orderID && o.IsDelete == false);
+            return _orderDetailRepository.GetMany(o => o.SoldOrderID == orderID && o.IsDelete == false);
         }
 
         public Models.OrderDetail GetOrderDetailByID(int orderDetailID)

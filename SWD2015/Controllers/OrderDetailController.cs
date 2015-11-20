@@ -39,56 +39,56 @@ namespace SWD2015.Controllers
 
         // GET api/OrderDetail
         // GET All Order Detail by its OrderID
-        public IQueryable<OrderDetail> GetAllAvailableOrderDetailsByOrderID(int orderID)
-        {
-            return _oderDetailService.GetAllOrderDetailsByOrderID(orderID);
-        }
+        //public IQueryable<OrderDetail> GetAllAvailableOrderDetailsByOrderID(int orderID)
+        //{
+        //    return _oderDetailService.GetAllOrderDetailsByOrderID(orderID);
+        //}
 
-        // PUT api/OrderDetail/5
-        public IHttpActionResult PutOrderDetail(int id, OrderDetail orderdetail)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //// PUT api/OrderDetail/5
+        //public IHttpActionResult PutOrderDetail(int id, OrderDetail orderdetail)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            if (id != orderdetail.ID)
-            {
-                return BadRequest();
-            }
+        //    if (id != orderdetail.ID)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            _oderDetailService.UpdateOrderDetail(orderdetail);
+        //    _oderDetailService.UpdateOrderDetail(orderdetail);
 
-            return StatusCode(HttpStatusCode.NoContent);
-        }
+        //    return StatusCode(HttpStatusCode.NoContent);
+        //}
 
-        // POST api/OrderDetail
-        [ResponseType(typeof(OrderDetail))]
-        public IHttpActionResult PostOrderDetail(OrderDetail orderdetail)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //// POST api/OrderDetail
+        //[ResponseType(typeof(OrderDetail))]
+        //public IHttpActionResult PostOrderDetail(OrderDetail orderdetail)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            _oderDetailService.AddOrderDetail(orderdetail);
+        //    _oderDetailService.AddOrderDetail(orderdetail);
 
-            return CreatedAtRoute("DefaultApi", new { id = orderdetail.ID }, orderdetail);
-        }
+        //    return CreatedAtRoute("DefaultApi", new { id = orderdetail.ID }, orderdetail);
+        //}
 
-        // DELETE api/OrderDetail/5
-        [ResponseType(typeof(OrderDetail))]
-        public IHttpActionResult DeleteOrderDetail(int id)
-        {
-            OrderDetail orderdetail = _oderDetailService.GetOrderDetailByID(id);
-            if (orderdetail == null)
-            {
-                return NotFound();
-            }
+        //// DELETE api/OrderDetail/5
+        //[ResponseType(typeof(OrderDetail))]
+        //public IHttpActionResult DeleteOrderDetail(int id)
+        //{
+        //    OrderDetail orderdetail = _oderDetailService.GetOrderDetailByID(id);
+        //    if (orderdetail == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            _oderDetailService.DeleteOrderDetail(orderdetail);
+        //    _oderDetailService.DeleteOrderDetail(orderdetail);
 
-            return Ok(orderdetail);
-        }
+        //    return Ok(orderdetail);
+        //}
     }
 }

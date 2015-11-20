@@ -1,13 +1,11 @@
-﻿using SWD2015.Infrastructure;
-using SWD2015.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
 namespace SWD2015.Repositories
 {
-    public class OrderRepository : Repository<Order>
+    public class PurchasedOrderRepository : Infrastructure.Repository<Models.PurchasedOrder>
     {
     }
 }

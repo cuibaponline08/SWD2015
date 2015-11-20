@@ -153,16 +153,15 @@
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\PurchasedOrderController.cs" />
+    <Compile Include="Controllers\SoldOrderController.cs" />
     <Compile Include="Controllers\OrderDetailController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductStatusController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\DatabaseFactory.cs" />
     <Compile Include="Infrastructure\DataFactory.cs" />
-    <Compile Include="Infrastructure\Disposable.cs" />
     <Compile Include="Infrastructure\IDatabaseFactory.cs" />
     <Compile Include="Infrastructure\Repository.cs" />
     <Compile Include="Models\Customer.cs">
@@ -171,18 +170,14 @@
     <Compile Include="Models\Employee.cs">
       <DependentUpon>SWDDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Image.cs">
-      <DependentUpon>SWDDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Order.cs">
-      <DependentUpon>SWDDataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\OrderDetail.cs">
       <DependentUpon>SWDDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Order_Status.cs">
       <DependentUpon>SWDDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\POCOs\CustomerPOCO.cs" />
+    <Compile Include="Models\POCOs\OrderPOCO.cs" />
     <Compile Include="Models\POCOs\ProductPOCO.cs" />
     <Compile Include="Models\POCOs\ProductSoldPOCO.cs" />
     <Compile Include="Models\Product.cs">
@@ -191,10 +186,13 @@
     <Compile Include="Models\Product_Category.cs">
       <DependentUpon>SWDDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Product_Image.cs">
+    <Compile Include="Models\Product_Status.cs">
       <DependentUpon>SWDDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Product_Status.cs">
+    <Compile Include="Models\PurchasedOrder.cs">
+      <DependentUpon>SWDDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SoldOrder.cs">
       <DependentUpon>SWDDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Stock.cs">
@@ -223,26 +221,26 @@
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>SWDDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Warehouse.cs">
-      <DependentUpon>SWDDataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Infrastructure\IRepository.cs" />
     <Compile Include="Repositories\CustomerRepository.cs" />
     <Compile Include="Repositories\EmployeeRepository.cs" />
     <Compile Include="Repositories\OrderDetailRepository.cs" />
-    <Compile Include="Repositories\OrderRepository.cs" />
+    <Compile Include="Repositories\PurchasedOrderRepository.cs" />
+    <Compile Include="Repositories\SoldOrderRepository.cs" />
     <Compile Include="Repositories\ProductRepository.cs" />
     <Compile Include="Repositories\ProductStatusRepository.cs" />
     <Compile Include="Services\EmployeeService.cs" />
     <Compile Include="Services\ICustomerService.cs" />
     <Compile Include="Services\IEmployeeService.cs" />
     <Compile Include="Services\IOrderDetailService.cs" />
-    <Compile Include="Services\IOrderService.cs" />
+    <Compile Include="Services\IPurchasedOrderService.cs" />
+    <Compile Include="Services\ISoldOrderService.cs" />
     <Compile Include="Services\IProductService.cs" />
     <Compile Include="Services\IProductStatusService.cs" />
     <Compile Include="Services\OrderDetailService.cs" />
-    <Compile Include="Services\OrderService.cs" />
+    <Compile Include="Services\PurchasedOrderService.cs" />
+    <Compile Include="Services\SoldOrderService.cs" />
     <Compile Include="Services\ProductService.cs" />
     <Compile Include="Services\ProductStatusService.cs" />
   </ItemGroup>

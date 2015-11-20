@@ -16,7 +16,8 @@ namespace SWD2015.Models
     {
         public Employee()
         {
-            this.Orders = new HashSet<Order>();
+            this.PurchasedOrders = new HashSet<PurchasedOrder>();
+            this.SoldOrders = new HashSet<SoldOrder>();
         }
     
         public int ID { get; set; }
@@ -27,6 +28,7 @@ namespace SWD2015.Models
         public string PhoneNumber { get; set; }
         public bool IsActive { get; set; }
     
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<PurchasedOrder> PurchasedOrders { get; set; }
+        public virtual ICollection<SoldOrder> SoldOrders { get; set; }
     }
 }

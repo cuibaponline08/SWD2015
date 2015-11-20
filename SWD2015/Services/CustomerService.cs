@@ -18,10 +18,10 @@ namespace SWD2015.Services
             return customer;
         }
 
-        //public IQueryable<Models.Customer> GetAllCustomers()
-        //{
-        //    return _customerRepository.GetAll();
-        //}
+        public IQueryable<Models.Customer> GetAllCustomers()
+        {
+            return _customerRepository.GetAll();
+        }
 
         public Models.Customer GetCustomerByID(int customerID)
         {

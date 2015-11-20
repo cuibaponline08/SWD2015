@@ -36,53 +36,53 @@ namespace SWD2015.Controllers
             return Ok(employee);
         }
 
-        // PUT api/Employee/5
-        public IHttpActionResult PutEmployee(int id, Employee employee)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //// PUT api/Employee/5
+        //public IHttpActionResult PutEmployee(int id, Employee employee)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            if (id != employee.ID)
-            {
-                return BadRequest();
-            }
+        //    if (id != employee.ID)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            //_employeeService.
+        //    //_employeeService.
 
-            return StatusCode(HttpStatusCode.NoContent);
-        }
+        //    return StatusCode(HttpStatusCode.NoContent);
+        //}
 
-        // POST api/Employee
-        [ResponseType(typeof(Employee))]
-        public IHttpActionResult PostEmployee(Employee employee)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //// POST api/Employee
+        //[ResponseType(typeof(Employee))]
+        //public IHttpActionResult PostEmployee(Employee employee)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            //db.Employees.Add(employee);
-            //db.SaveChanges();
+        //    //db.Employees.Add(employee);
+        //    //db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = employee.ID }, employee);
-        }
+        //    return CreatedAtRoute("DefaultApi", new { id = employee.ID }, employee);
+        //}
 
-        // DELETE api/Employee/5
-        [ResponseType(typeof(Employee))]
-        public IHttpActionResult DeleteEmployee(int id)
-        {
-            Employee employee = _employeeService.GetEmployeeByID(id);
-            if (employee == null)
-            {
-                return NotFound();
-            }
+        //// DELETE api/Employee/5
+        //[ResponseType(typeof(Employee))]
+        //public IHttpActionResult DeleteEmployee(int id)
+        //{
+        //    Employee employee = _employeeService.GetEmployeeByID(id);
+        //    if (employee == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            //db.Employees.Remove(employee);
-            //db.SaveChanges();
+        //    //db.Employees.Remove(employee);
+        //    //db.SaveChanges();
 
-            return Ok(employee);
-        }
+        //    return Ok(employee);
+        //}
     }
 }
