@@ -1,4 +1,6 @@
-﻿using SWD2015.Repositories;
+﻿using SWD2015.Infrastructure;
+using SWD2015.Models;
+using SWD2015.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +10,8 @@ namespace SWD2015.Services
 {
     public class OrderDetailService : IOrderDetailService
     {
-        private OrderDetailRepository _orderDetailRepository = new OrderDetailRepository();
+        private IRepository<OrderDetail> _orderDetailRepository = new OrderDetailRepository();
+        private IRepository<SoldOrder> _soldOrderRepository = new SoldOrderRepository();
 
         public IQueryable<Models.OrderDetail> GetAllOrderDetailsByOrderID(int orderID)
         {
@@ -56,6 +59,12 @@ namespace SWD2015.Services
                 return true;
             }
             return false;
+        }
+
+        public IQueryable<Models.OrderDetail> GetAllSoldOrdersByCustomerID(int customerID)
+        {
+            //var listOrder = _soldOrderRepository.GetMany(o => o.CustomerID == customerID);
+            return _orderDetailRepository.GetMany(od => od.SoldOrder.CustomerID == customerID);
         }
     }
 }

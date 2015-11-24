@@ -10,10 +10,10 @@
     <Property Name="FullName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Gender" Type="nvarchar" MaxLength="20" />
     <Property Name="Birthday" Type="date" />
-    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="25" Nullable="false" />
-    <Property Name="isGuest" Type="bit" Nullable="false" />
-    <Property Name="ImageURL" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="25" />
+    <Property Name="isGuest" Type="bit" />
+    <Property Name="ImageID" Type="int" />
   </EntityType>
   <EntityType Name="Employee">
     <Key>
@@ -26,6 +26,14 @@
     <Property Name="Address" Type="nvarchar(max)" />
     <Property Name="PhoneNumber" Type="nvarchar" MaxLength="25" Nullable="false" />
     <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AlbumID" Type="int" Nullable="false" />
+    <Property Name="ImageURL" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Order_Status">
     <Key>
@@ -55,14 +63,22 @@
     <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Category" Type="int" Nullable="false" />
     <Property Name="CreateDate" Type="date" Nullable="false" />
-    <Property Name="ImageURL" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Product_Category">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="UpperCategory" Type="int" />
+  </EntityType>
+  <EntityType Name="Product_Image">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="ImageID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Product_Status">
     <Key>
@@ -119,6 +135,18 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <Association Name="FK_Customer_Image">
+    <End Role="Image" Type="Self.Image" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="ImageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_OrderDetail_Product">
     <End Role="Product" Type="Self.Product" Multiplicity="1" />
     <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
@@ -140,6 +168,42 @@
       </Principal>
       <Dependent Role="OrderDetail">
         <PropertyRef Name="SoldOrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Category_Product_Category">
+    <End Role="Product_Category" Type="Self.Product_Category" Multiplicity="0..1" />
+    <End Role="Product_Category1" Type="Self.Product_Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product_Category">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Product_Category1">
+        <PropertyRef Name="UpperCategory" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Image_Image">
+    <End Role="Image" Type="Self.Image" Multiplicity="1" />
+    <End Role="Product_Image" Type="Self.Product_Image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Product_Image">
+        <PropertyRef Name="ImageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Image_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Product_Image" Type="Self.Product_Image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Product_Image">
+        <PropertyRef Name="ProductID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -266,15 +330,21 @@
   <EntityContainer Name="DB_9DFD26_SWD2015ModelStoreContainer">
     <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Image" EntityType="Self.Image" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Order_Status" EntityType="Self.Order_Status" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product_Category" EntityType="Self.Product_Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product_Image" EntityType="Self.Product_Image" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product_Status" EntityType="Self.Product_Status" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PurchasedOrder" EntityType="Self.PurchasedOrder" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SoldOrder" EntityType="Self.SoldOrder" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Stock" EntityType="Self.Stock" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Customer_Image" Association="Self.FK_Customer_Image">
+      <End Role="Image" EntitySet="Image" />
+      <End Role="Customer" EntitySet="Customer" />
+    </AssociationSet>
     <AssociationSet Name="FK_OrderDetail_Product" Association="Self.FK_OrderDetail_Product">
       <End Role="Product" EntitySet="Product" />
       <End Role="OrderDetail" EntitySet="OrderDetail" />
@@ -282,6 +352,18 @@
     <AssociationSet Name="FK_OrderDetail_SoldOrder" Association="Self.FK_OrderDetail_SoldOrder">
       <End Role="SoldOrder" EntitySet="SoldOrder" />
       <End Role="OrderDetail" EntitySet="OrderDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Category_Product_Category" Association="Self.FK_Product_Category_Product_Category">
+      <End Role="Product_Category" EntitySet="Product_Category" />
+      <End Role="Product_Category1" EntitySet="Product_Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Image_Image" Association="Self.FK_Product_Image_Image">
+      <End Role="Image" EntitySet="Image" />
+      <End Role="Product_Image" EntitySet="Product_Image" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Image_Product" Association="Self.FK_Product_Image_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Product_Image" EntitySet="Product_Image" />
     </AssociationSet>
     <AssociationSet Name="FK_Product_Product_Category" Association="Self.FK_Product_Product_Category">
       <End Role="Product_Category" EntitySet="Product_Category" />

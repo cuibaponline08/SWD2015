@@ -11,10 +11,12 @@ namespace SWD2015.Services
     {
         IQueryable<Product> GetAllProducts();
         Product GetProductByID(int id);
+        IQueryable<Product> GetByProductID(int id);
         bool AddProduct(Product product);
         bool EditProduct(Product product);
         bool DeleteProduct(Product product);
         IQueryable<Product> GetNewProducts();
         IQueryable<Product> GetFavouriteProducts();
+        IQueryable<Product> SearchProduct(string keywords, int categoryID);
     }
 }

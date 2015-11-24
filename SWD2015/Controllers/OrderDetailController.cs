@@ -16,12 +16,27 @@ namespace SWD2015.Controllers
     public class OrderDetailController : ApiController
     {
         private IOrderDetailService _oderDetailService = new OrderDetailService();
+        private ISoldOrderService _soldOderService = new SoldOrderService();
+        private IProductService _productService = new ProductService();
 
         // GET api/OrderDetail
         public IQueryable<OrderDetail> GetAllOrderDetails()
         {
             // TODO
             return _oderDetailService.GetAllOrderDetailsByOrderID(1);
+        }
+
+        [Route("api/OrderDetail/GetAllSoldOrderDetailsByCustomerID/{customerID}")]
+        public IQueryable GetAllSoldOrdersByCustomerID(int customerID)
+        {
+            return _oderDetailService.GetAllSoldOrdersByCustomerID(customerID).Select(od => new Models.ViewModels.HistoryOrderDetailViewModel()
+            {
+                OrderID = od.SoldOrderID,
+                ProductName = od.Product.Name,
+                CreateDate = od.SoldOrder.CreateDate,
+                Total = od.SoldOrder.Total,
+                OrderStatus = od.SoldOrder.Order_Status.Name,
+            });
         }
 
         // GET api/OrderDetail/5
@@ -36,6 +51,7 @@ namespace SWD2015.Controllers
 
             return Ok(orderdetail);
         }
+
 
         // GET api/OrderDetail
         // GET All Order Detail by its OrderID

@@ -4,6 +4,7 @@ using SWD2015.Models.POCOs;
 using SWD2015.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -16,7 +17,8 @@ namespace SWD2015.Services
 
         public IQueryable<Models.Product> GetAllProducts()
         {
-            return _productRepository.GetAll();
+            //GET all product amount > 0 and Available to sales
+            return _productRepository.GetMany(p => p.Stocks.Where(s => s.Status == DataFactory.AVAILABLE_PRODUCT && s.Amount > 0).FirstOrDefault() != null);
         }
 
         public Models.Product GetProductByID(int id)
@@ -44,8 +46,10 @@ namespace SWD2015.Services
         public IQueryable<Product> GetNewProducts()
         {
             //return _productRepository.GetMany(p => (DateTime.Now.Date - p.CreateDate.Date).Days <= 14);
-            return _productRepository.GetMany(p => (DateTime.Now.Date - p.CreateDate.Date).Days <= DataFactory.DAYSFORNEWPRODUCT && p.Stocks.
-                Where(s => s.Status == DataFactory.AVAILABLEPRODUCT && s.Amount > 0) != null);
+            DateTime today = new DateTime();
+            today = DateTime.Now.Date;
+            return _productRepository.GetMany(p => DbFunctions.DiffDays(today, p.CreateDate) <= DataFactory.DAYS_FOR_NEW_PRODUCT).
+                OrderByDescending(p => p.CreateDate).Take(15); //TODO: Product's amount msut be > 0
         }
 
         // Get List favourite Products in 30 days
@@ -79,6 +83,18 @@ namespace SWD2015.Services
         public bool DeleteProduct(Product product)
         {
             throw new NotImplementedException();
+        }
+
+
+        public IQueryable<Product> GetByProductID(int id)
+        {
+            return _productRepository.GetMany(p => p.ID == id);
+        }
+
+
+        public IQueryable<Product> SearchProduct(string keywords, int categoryID)
+        {
+            return _productRepository.GetMany(p => p.Category == categoryID && p.Name.Contains(keywords));
         }
     }
 }

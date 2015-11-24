@@ -17,12 +17,13 @@ namespace SWD2015.Controllers
     public class SoldOrderController : ApiController
     {
         private ISoldOrderService _soldOrderService = new SoldOrderService();
+        private IOrderStatusService _orderStatusService = new OrderStatusService();
 
         // GET api/SoldOrder/GetAllSoldOrders
         [Route("api/SoldOrder/GetAllSoldOrders")]
         public IQueryable GetOrders()
         {
-            var rs = _soldOrderService.GetAllSoldOrders().OrderBy(o => o.CreateDate).Select(o => new IConvertible[]{
+            var rs = _soldOrderService.GetAllSoldOrders().OrderBy(o => o.CreateDate).Select(o => new {
                 o.ID,
                 o.CustomerID,
                 o.CreateDate,
@@ -33,7 +34,7 @@ namespace SWD2015.Controllers
             return rs;
         }
 
-        // GET api/Order/GetOrderByID/{id}
+        // GET api/SoldOrder/GetOrderByID/{id}
         [Route("api/SoldOrder/GetSoldOrderByID/{id}")]
         [ResponseType(typeof(OrderPOCO))]
         public IHttpActionResult GetSoldOrderByID(int id)
@@ -43,13 +44,14 @@ namespace SWD2015.Controllers
             {
                 return NotFound();
             }
+            var statusString = _orderStatusService.GetOrderStatusByID(soldOrder.Status).Name;
 
             OrderPOCO poco = new OrderPOCO()
             {
                 ID = soldOrder.ID,
                 CustomerID = soldOrder.CustomerID,
                 CreateDate = soldOrder.CreateDate,
-                Status = soldOrder.Order_Status.Name,
+                Status = statusString,
                 Address = soldOrder.Address,
                 Total = soldOrder.Total
             };
@@ -59,7 +61,6 @@ namespace SWD2015.Controllers
 
         // GET api/SoldOrder/GetSoldOrderForHistoryByID/{customerID}
         [Route("api/SoldOrder/GetSoldOrderForHistoryByID/{customerID}")]
-        //[ResponseType(typeof(SoldOrder))]
         public IQueryable GetSoldOrderForHistoryByID(int customerID)
         {
             var rs = _soldOrderService.GetAllSoldOrders().Where(o => o.CustomerID == customerID).OrderBy(o => o.CreateDate).Select(o => new IConvertible[]{

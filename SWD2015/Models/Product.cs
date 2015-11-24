@@ -17,6 +17,7 @@ namespace SWD2015.Models
         public Product()
         {
             this.OrderDetails = new HashSet<OrderDetail>();
+            this.Product_Image = new HashSet<Product_Image>();
             this.Stocks = new HashSet<Stock>();
         }
     
@@ -26,9 +27,9 @@ namespace SWD2015.Models
         public string Description { get; set; }
         public int Category { get; set; }
         public System.DateTime CreateDate { get; set; }
-        public string ImageURL { get; set; }
     
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual ICollection<Product_Image> Product_Image { get; set; }
         public virtual Product_Category Product_Category { get; set; }
         public virtual ICollection<Stock> Stocks { get; set; }
     }

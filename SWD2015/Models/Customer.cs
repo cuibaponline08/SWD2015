@@ -28,9 +28,10 @@ namespace SWD2015.Models
         public Nullable<System.DateTime> Birthday { get; set; }
         public string Address { get; set; }
         public string PhoneNumber { get; set; }
-        public bool isGuest { get; set; }
-        public string ImageURL { get; set; }
+        public Nullable<bool> isGuest { get; set; }
+        public Nullable<int> ImageID { get; set; }
     
+        public virtual Image Image { get; set; }
         public virtual ICollection<PurchasedOrder> PurchasedOrders { get; set; }
         public virtual ICollection<SoldOrder> SoldOrders { get; set; }
     }

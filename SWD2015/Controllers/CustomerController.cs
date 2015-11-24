@@ -17,20 +17,40 @@ namespace SWD2015.Controllers
     public class CustomerController : ApiController
     {
         private ICustomerService _customerService = new CustomerService();
+        private IImageService _imageService = new ImageService();
 
         [Route("api/Customer/CheckLogin/{email}/{password}")]
-        [ResponseType(typeof(Customer))]
+        [ResponseType(typeof(CustomerPOCO))]
         public IHttpActionResult CheckLogin(string email, string password)
         {
-            //var rs = _customerService.GetCustomerByID(id);
-            //string name = rs.FullName;
             Customer customer = _customerService.CheckLogin(email, password);
             if (customer == null)
             {
                 return NotFound();
             }
 
-            return Ok(customer);
+            //var stringURL = "";
+            //if (customer.ImageID != null)
+            //{
+            //    var image = _imageService.GetImageByID(customer.ImageID.Value);
+            //    if (image != null)
+            //    {
+            //        stringURL = image.ImageURL;
+            //    }
+            //}
+            var result = new
+            {
+                ID  = customer.ID,
+                FullName = customer.FullName,
+                Email = customer.Email,
+                PhoneNumber = customer.PhoneNumber,
+                Birthday = customer.Birthday,
+                Gender = customer.Gender,
+                Address = customer.Address,
+                ImageURL = customer.Image != null ? customer.Image.ImageURL : null
+            };
+
+            return Ok(result);
         }
 
         // GET api/customer/GetCustomers
@@ -38,6 +58,7 @@ namespace SWD2015.Controllers
         public IQueryable GetCustomers()
         {
             return _customerService.GetAllCustomers().Select(c => new CustomerPOCO(){
+                ID = c.ID,
                 FullName = c.FullName,
                 Email = c.Email,
                 PhoneNumber = c.PhoneNumber,
@@ -46,7 +67,7 @@ namespace SWD2015.Controllers
                 Gender = c.Gender,
                 Address = c.Address,
                 //c.isGuest == true ? "Guest": "Registered",
-                ImageURL = c.ImageURL
+                ImageURL = c.Image.ImageURL
             }).AsQueryable();
         }
 
@@ -60,16 +81,26 @@ namespace SWD2015.Controllers
             {
                 return NotFound();
             }
+            var stringURL = "";
+            if (customer.ImageID != null)
+            {
+                var image = _imageService.GetImageByID(customer.ImageID.Value);
+                if (image != null)
+                {
+                    stringURL = image.ImageURL;
+                }
+            }
 
             CustomerPOCO poco = new CustomerPOCO()
             {
+                ID = customer.ID,
                 FullName = customer.FullName,
                 Email = customer.Email,
                 PhoneNumber = customer.PhoneNumber,
                 Birthday = customer.Birthday,
                 Gender = customer.Gender,
                 Address = customer.Address,
-                ImageURL = customer.ImageURL
+                ImageURL = customer.Image != null ? customer.Image.ImageURL : null
             };
 
             return Ok(poco);
@@ -79,45 +110,50 @@ namespace SWD2015.Controllers
         //[Route("api/customer/GetCustomer/{id}")]
         [Route("api/customer/UpdateCustomerDetail/{id}")]
         [ResponseType(typeof(Customer))]
-        public IHttpActionResult PutCustomer(int id, CustomerPOCO poco)
+        public IHttpActionResult PutCustomer(int id, [FromBody] Customer customer)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            Customer customer = _customerService.GetCustomerByID(id);
-            if (customer == null)
+            Customer c = _customerService.GetCustomerByID(id);
+            if (c == null)
             {
                 return BadRequest();
             }
 
-            customer.FullName = poco.FullName;
-            customer.Email = poco.Email;
-            customer.PhoneNumber = poco.PhoneNumber;
-            customer.Birthday = poco.Birthday;
-            customer.Gender = poco.Gender;
-            customer.Address = poco.Address;
-            customer.ImageURL = poco.ImageURL;
+            c.FullName = customer.FullName;
+            c.Email = customer.Email;
+            customer.PhoneNumber = customer.PhoneNumber;
+            c.Birthday = customer.Birthday;
+            c.Gender = customer.Gender;
+            c.Address = customer.Address;
+            c.ImageID = 1; //TODO
 
             _customerService.UpdateCustomer(customer);
 
             return Ok(customer);
         }
 
-        //// POST api/Customer
-        //[ResponseType(typeof(Customer))]
-        //public IHttpActionResult PostCustomer(Customer customer)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
+        // POST api/Customer
+        [Route("api/customer/CreateAccount")]
+        [ResponseType(typeof(CustomerPOCO))]
+        public IHttpActionResult PostCustomer([FromBody] Customer customer)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-        //    _customerService.AddCustomer(customer);
+            var success = _customerService.AddCustomer(customer);
 
-        //    return CreatedAtRoute("DefaultApi", new { id = customer.ID }, customer);
-        //}
+            if (!success)
+            {
+                return BadRequest(ModelState);
+            }
+            return CreatedAtRoute("DefaultApi", new { id = customer.ID }, customer);
+        }
 
         //// DELETE api/Customer/5
         //[ResponseType(typeof(Customer))]

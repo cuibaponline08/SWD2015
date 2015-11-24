@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using SWD2015.Models;
+using SWD2015.Models.ViewModels;
 
 namespace SWD2015.Controllers
 {
@@ -29,14 +30,16 @@ namespace SWD2015.Controllers
             return rs;
         }
 
-        [Route("api/SoldOrder/GetPurchasedOrderForHistoryByID/{customerID}")]
-        public IQueryable GetPurchasedOrderForHistoryByID(int customerID)
+        [Route("api/PurchasedOrder/GetAllPurchasedOrderDetailsByCustomerID/{customerID}")]
+        public IQueryable GetAllPurchasedOrderDetailsByCustomerID(int customerID)
         {
-            return _purchasedOrderService.GetAllPurchasedOrders().Where(o => o.CustomerID == customerID).OrderBy(o => o.CreateDate).Select(o => new IConvertible[]{
-                o.ID,
-                o.CreateDate,
-                o.Total,
-                o.Order_Status.Name
+            return _purchasedOrderService.GetAllPurchasedOrders().
+                Where(o => o.CustomerID == customerID).OrderBy(o => o.CreateDate).Select(o => new HistoryOrderDetailViewModel(){
+                OrderID = o.ID,
+                ProductName = o.ProductName,
+                CreateDate = o.CreateDate,
+                Total = o.Total,
+                OrderStatus = o.Order_Status.Name
             });
         }
 

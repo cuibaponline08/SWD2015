@@ -17,13 +17,17 @@ namespace SWD2015.Models
         public Product_Category()
         {
             this.Products = new HashSet<Product>();
+            this.Product_Category1 = new HashSet<Product_Category>();
             this.PurchasedOrders = new HashSet<PurchasedOrder>();
         }
     
         public int ID { get; set; }
-        public string Name { get; set; }
+        public string CategoryName { get; set; }
+        public Nullable<int> UpperCategory { get; set; }
     
         public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Product_Category> Product_Category1 { get; set; }
+        public virtual Product_Category Product_Category2 { get; set; }
         public virtual ICollection<PurchasedOrder> PurchasedOrders { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace SWD2015.Models.POCOs
         public string Description { get; set; }
         public string CategoryName { get; set; }
         public System.DateTime CreateDate { get; set; }
-        public string ImageURL { get; set; }
+        public ICollection<Product_Image> ImageURL { get; set; }
         public string Status { get; set; }
     }
 }

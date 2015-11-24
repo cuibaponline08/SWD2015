@@ -4,7 +4,7 @@
     <EntitySetMapping Name="Customers">
       <EntityTypeMapping TypeName="DB_9DFD26_SWD2015Model.Customer">
         <MappingFragment StoreEntitySet="Customer">
-          <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
           <ScalarProperty Name="isGuest" ColumnName="isGuest" />
           <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
           <ScalarProperty Name="Address" ColumnName="Address" />
@@ -26,6 +26,15 @@
           <ScalarProperty Name="Birthday" ColumnName="Birthday" />
           <ScalarProperty Name="Gender" ColumnName="Gender" />
           <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Images">
+      <EntityTypeMapping TypeName="DB_9DFD26_SWD2015Model.Image">
+        <MappingFragment StoreEntitySet="Image">
+          <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+          <ScalarProperty Name="AlbumID" ColumnName="AlbumID" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -53,7 +62,6 @@
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="DB_9DFD26_SWD2015Model.Product">
         <MappingFragment StoreEntitySet="Product">
-          <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
           <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
           <ScalarProperty Name="Category" ColumnName="Category" />
           <ScalarProperty Name="Description" ColumnName="Description" />
@@ -66,7 +74,17 @@
     <EntitySetMapping Name="Product_Category">
       <EntityTypeMapping TypeName="DB_9DFD26_SWD2015Model.Product_Category">
         <MappingFragment StoreEntitySet="Product_Category">
-          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UpperCategory" ColumnName="UpperCategory" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product_Image">
+      <EntityTypeMapping TypeName="DB_9DFD26_SWD2015Model.Product_Image">
+        <MappingFragment StoreEntitySet="Product_Image">
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

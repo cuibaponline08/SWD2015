@@ -10,6 +10,7 @@ namespace SWD2015.Services
     public interface IOrderDetailService
     {
         IQueryable<OrderDetail> GetAllOrderDetailsByOrderID(int orderID);
+        IQueryable<OrderDetail> GetAllSoldOrdersByCustomerID(int customerID);
         OrderDetail GetOrderDetailByID(int orderDetailID);
         bool AddOrderDetail(OrderDetail orderDetail);
         bool UpdateOrderDetail(OrderDetail orderDetail);

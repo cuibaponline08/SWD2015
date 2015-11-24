@@ -5,27 +5,33 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="a03d695bc26b4528af18849717d1cbbe" Name="Diagram1" ZoomLevel="90">
-        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Customer" Width="1.5" PointX="0.75" PointY="8.5" />
-        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Employee" Width="1.5" PointX="0.75" PointY="4.875" />
-        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Order_Status" Width="1.5" PointX="0.75" PointY="12.625" />
-        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.OrderDetail" Width="1.5" PointX="8.25" PointY="5" />
-        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Product" Width="1.5" PointX="6" PointY="0.75" />
-        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Product_Category" Width="1.5" PointX="0.75" PointY="2" />
-        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Product_Status" Width="1.5" PointX="6" PointY="8.625" />
-        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.PurchasedOrder" Width="1.5" PointX="3" PointY="4.125" />
-        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.SoldOrder" Width="1.5" PointX="6" PointY="4.625" />
-        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Stock" Width="1.5" PointX="8.25" PointY="1.125" />
-        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.sysdiagram" Width="1.5" PointX="2.75" PointY="9.75" />
+        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Customer" Width="1.5" PointX="3" PointY="7.625" />
+        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Employee" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Image" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Order_Status" Width="1.5" PointX="3" PointY="16.25" />
+        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.OrderDetail" Width="1.5" PointX="10.5" PointY="8.125" />
+        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Product" Width="1.5" PointX="0.75" PointY="1.25" />
+        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Product_Category" Width="1.5" PointX="1.5" PointY="12.5" />
+        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Product_Image" Width="1.5" PointX="3" PointY="4.75" />
+        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Product_Status" Width="1.5" PointX="5.75" PointY="1.25" />
+        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.PurchasedOrder" Width="1.5" PointX="5.25" PointY="7.375" />
+        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.SoldOrder" Width="1.5" PointX="8.25" PointY="7.875" />
+        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.Stock" Width="1.5" PointX="8" PointY="1.625" />
+        <EntityTypeShape EntityType="DB_9DFD26_SWD2015Model.sysdiagram" Width="1.5" PointX="7.75" PointY="4.75" />
+        <AssociationConnector Association="DB_9DFD26_SWD2015Model.FK_Customer_Image" />
         <AssociationConnector Association="DB_9DFD26_SWD2015Model.FK_PurchasedOrder_Customer" />
         <AssociationConnector Association="DB_9DFD26_SWD2015Model.FK_SoldOrder_Customer" />
         <AssociationConnector Association="DB_9DFD26_SWD2015Model.FK_PurchasedOrder_Employee" />
         <AssociationConnector Association="DB_9DFD26_SWD2015Model.FK_SoldOrder_Employee" />
+        <AssociationConnector Association="DB_9DFD26_SWD2015Model.FK_Product_Image_Image" />
         <AssociationConnector Association="DB_9DFD26_SWD2015Model.FK_PurchasedOrder_Order_Status" />
         <AssociationConnector Association="DB_9DFD26_SWD2015Model.FK_SoldOrder_Order_Status" />
         <AssociationConnector Association="DB_9DFD26_SWD2015Model.FK_OrderDetail_Product" />
         <AssociationConnector Association="DB_9DFD26_SWD2015Model.FK_OrderDetail_SoldOrder" />
+        <AssociationConnector Association="DB_9DFD26_SWD2015Model.FK_Product_Image_Product" />
         <AssociationConnector Association="DB_9DFD26_SWD2015Model.FK_Product_Product_Category" />
         <AssociationConnector Association="DB_9DFD26_SWD2015Model.FK_Stock_Product" />
+        <AssociationConnector Association="DB_9DFD26_SWD2015Model.FK_Product_Category_Product_Category" />
         <AssociationConnector Association="DB_9DFD26_SWD2015Model.FK_PurchasedOrder_Product_Category" />
         <AssociationConnector Association="DB_9DFD26_SWD2015Model.FK_Stock_Product_Status" />
       </Diagram>

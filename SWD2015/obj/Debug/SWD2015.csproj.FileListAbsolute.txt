@@ -40,3 +40,4 @@ D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\bin\EntityFramework.Sql
 D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\bin\KellermanSoftware.Compare-NET-Objects.xml
 D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\bin\nunit.framework.xml
 D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\bin\SWD2015.XML
+D:\Programming\FPT\FALL_2015\SWD\Project\SWD2015\SWD2015\obj\Debug\SWD2015.csprojResolveAssemblyReference.cache
