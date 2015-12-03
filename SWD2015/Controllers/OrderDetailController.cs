@@ -16,20 +16,40 @@ namespace SWD2015.Controllers
     public class OrderDetailController : ApiController
     {
         private IOrderDetailService _oderDetailService = new OrderDetailService();
-        private ISoldOrderService _soldOderService = new SoldOrderService();
-        private IProductService _productService = new ProductService();
+        private ICustomerService _customerService = new CustomerService();
+        private ISoldOrderService _soldOrderService = new SoldOrderService();
 
         // GET api/OrderDetail
-        public IQueryable<OrderDetail> GetAllOrderDetails()
+        [Route("api/OrderDetail/GetAllOrderDetailsByOrderID/{orderID}")]
+        public IQueryable<OrderDetail> GetAllOrderDetailsByOrderID(int orderID)
         {
             // TODO
-            return _oderDetailService.GetAllOrderDetailsByOrderID(1);
+            return _oderDetailService.GetAllOrderDetailsByOrderID(orderID);
         }
 
-        [Route("api/OrderDetail/GetAllSoldOrderDetailsByCustomerID/{customerID}")]
-        public IQueryable GetAllSoldOrdersByCustomerID(int customerID)
+        // PUT api/OrderDetail/5
+        public IHttpActionResult PutOrderDetail(int id, OrderDetail orderdetail)
         {
-            return _oderDetailService.GetAllSoldOrdersByCustomerID(customerID).Select(od => new Models.ViewModels.HistoryOrderDetailViewModel()
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (id != orderdetail.ID)
+            {
+                return BadRequest();
+            }
+
+            _oderDetailService.UpdateOrderDetail(orderdetail);
+
+            return StatusCode(HttpStatusCode.NoContent);
+        }
+
+        // POST api/OrderDetail
+        [ResponseType(typeof(OrderDetail))]
+        public IHttpActionResult PostOrderDetail(OrderDetail orderdetail)
+        {
+            return _oderDetailService.GetAllSoldOrdersByCustomerID(customerID).Select(od => new
             {
                 OrderID = od.SoldOrderID,
                 ProductName = od.Product.Name,
@@ -39,9 +59,9 @@ namespace SWD2015.Controllers
             });
         }
 
-        // GET api/OrderDetail/5
+        // DELETE api/OrderDetail/5
         [ResponseType(typeof(OrderDetail))]
-        public IHttpActionResult GetOrderDetailByID(int id)
+        public IHttpActionResult DeleteOrderDetail(int id)
         {
             OrderDetail orderdetail = _oderDetailService.GetOrderDetailByID(id);
             if (orderdetail == null)
@@ -49,62 +69,17 @@ namespace SWD2015.Controllers
                 return NotFound();
             }
 
+            _oderDetailService.DeleteOrderDetail(orderdetail);
+
             return Ok(orderdetail);
         }
 
-
-        // GET api/OrderDetail
-        // GET All Order Detail by its OrderID
-        //public IQueryable<OrderDetail> GetAllAvailableOrderDetailsByOrderID(int orderID)
-        //{
-        //    return _oderDetailService.GetAllOrderDetailsByOrderID(orderID);
-        //}
-
-        //// PUT api/OrderDetail/5
-        //public IHttpActionResult PutOrderDetail(int id, OrderDetail orderdetail)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-
-        //    if (id != orderdetail.ID)
-        //    {
-        //        return BadRequest();
-        //    }
-
-        //    _oderDetailService.UpdateOrderDetail(orderdetail);
-
-        //    return StatusCode(HttpStatusCode.NoContent);
-        //}
-
-        //// POST api/OrderDetail
-        //[ResponseType(typeof(OrderDetail))]
-        //public IHttpActionResult PostOrderDetail(OrderDetail orderdetail)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-
-        //    _oderDetailService.AddOrderDetail(orderdetail);
-
-        //    return CreatedAtRoute("DefaultApi", new { id = orderdetail.ID }, orderdetail);
-        //}
-
-        //// DELETE api/OrderDetail/5
-        //[ResponseType(typeof(OrderDetail))]
-        //public IHttpActionResult DeleteOrderDetail(int id)
-        //{
-        //    OrderDetail orderdetail = _oderDetailService.GetOrderDetailByID(id);
-        //    if (orderdetail == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    _oderDetailService.DeleteOrderDetail(orderdetail);
-
-        //    return Ok(orderdetail);
-        //}
+        // GET api/OrderDetail/CountSoldProduct
+        [HttpGet]
+        [Route("api/OrderDetail/CountSoldProduct")]
+        public IQueryable CountSoldProduct()
+        {
+            return _oderDetailService.CountSoldProduct();
+        }
     }
 }

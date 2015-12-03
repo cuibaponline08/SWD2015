@@ -16,7 +16,7 @@ namespace SWD2015.Services
         bool EditProduct(Product product);
         bool DeleteProduct(Product product);
         IQueryable<Product> GetNewProducts();
-        IQueryable<Product> GetFavouriteProducts();
+        IQueryable<Product> GetHotProducts();
         IQueryable<Product> SearchProduct(string keywords, int categoryID);
     }
 }

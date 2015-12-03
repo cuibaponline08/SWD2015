@@ -396,5 +396,11 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="M:SWD2015.Controllers.PurchasedOrderController.GetPurchasedOrders">
+            <summary>
+            API for GET all Purchased Orders in CMS and Android
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>

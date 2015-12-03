@@ -1,6 +1,5 @@
 ﻿using SWD2015.Infrastructure;
 using SWD2015.Models;
-using SWD2015.Models.POCOs;
 using SWD2015.Repositories;
 using System;
 using System.Collections.Generic;
@@ -48,25 +47,22 @@ namespace SWD2015.Services
             //return _productRepository.GetMany(p => (DateTime.Now.Date - p.CreateDate.Date).Days <= 14);
             DateTime today = new DateTime();
             today = DateTime.Now.Date;
-            return _productRepository.GetMany(p => DbFunctions.DiffDays(today, p.CreateDate) <= DataFactory.DAYS_FOR_NEW_PRODUCT).
-                OrderByDescending(p => p.CreateDate).Take(15); //TODO: Product's amount msut be > 0
+            return _productRepository.GetMany(p => DbFunctions.
+                DiffDays(today, p.CreateDate) <= DataFactory.DAYS_FOR_NEW_PRODUCT &&
+                p.Stocks.Where(s => s.Amount > 0 && s.Status == DataFactory.AVAILABLE_PRODUCT).FirstOrDefault() != null).
+                OrderByDescending(p => p.CreateDate).Take(15);
         }
-
-        // Get List favourite Products in 30 days
-        public IQueryable<Product> GetFavouriteProducts()
+        // Get List Hot Products in 30 days
+        public IQueryable<Product> GetHotProducts()
         {
-            //var rs = _orderDetailRepository.GetMany(od => (DateTime.Now.Date - od.Order.CreateDate.Date).Days <= 30);
-            //return _productRepository.GetMany(p => p.Status == 1 && _orderRepository.Get(o => (DateTime.Now.Date - o.CreateDate.Date).Days <= 30) != null).OrderByDescending(p => p.Count);
-            //var aaa = _orderRepository.GetAll().FirstOrDefault().CreateDate;
-            //var rs = _orderRepository.GetMany(o => DateTime.Now.Date < o.CreateDate || DateTime.Now.Date >= o.CreateDate).ToList();
-            //var rs = _orderRepository.GetMany(o => (DateTime.Now - o.CreateDate).Days <= 100000000).ToList();
-            //var rs = _orderRepository.Get
-            //return _productRepository.GetMany(p => p.Status == 1
-            //    && _orderRepository.Get(o => (DateTime.Now - o.CreateDate).Days <= 30) != null
-            //    ).OrderByDescending(p => p.TotalSell);
-            //var oderDetail = _orderDetailRepository.GetAll().OrderByDescending(od => od.Quantity);
-            //var product = _productRepository.Get
-            return _productRepository.GetAll();
+            DateTime today = new DateTime();
+            today = DateTime.Now.Date;
+            var listProductID = _orderDetailRepository.GetMany(od => DbFunctions.
+                DiffDays(today, od.SoldOrder.CreateDate) <= DataFactory.DAYS_FOR_HOT_PRODUCT &&
+                od.Product.Stocks.Where(s => s.Amount > 0 && s.Status == 1).FirstOrDefault() != null).
+                Take(15).Select(od => od.ProductID).ToList();
+
+            return _productRepository.GetMany(p => listProductID.Contains(p.ID));
         }
 
         // Private
@@ -77,12 +73,26 @@ namespace SWD2015.Services
 
         public bool EditProduct(Product product)
         {
-            throw new NotImplementedException();
+            var p = _productRepository.GetById(product.ID);
+            if (p != null)
+            {
+                _productRepository.Update(p);
+                _productRepository.Save();
+                return true;
+            }
+            return false;
         }
 
         public bool DeleteProduct(Product product)
         {
-            throw new NotImplementedException();
+            var p = _productRepository.GetById(product.ID);
+            if (p != null)
+            {
+                _productRepository.Delete(p);
+                _productRepository.Save();
+                return true;
+            }
+            return false;
         }
 
 
@@ -94,7 +104,22 @@ namespace SWD2015.Services
 
         public IQueryable<Product> SearchProduct(string keywords, int categoryID)
         {
-            return _productRepository.GetMany(p => p.Category == categoryID && p.Name.Contains(keywords));
+            IQueryable<Product> rs;
+            List<int> superCategory = new List<int> { 1, 6, 10, 14, 18, 21, 25 };
+            if (categoryID == 0)
+            {
+                rs = _productRepository.GetMany(p => p.Name.Contains(keywords) && p.Stocks.Where(s => s.Amount > 0 && s.Status == 1).FirstOrDefault() != null);
+            }
+            else if (superCategory.Contains(categoryID))
+            {
+                rs = _productRepository.GetMany(p => p.Product_Category.Product_Category2.ID == categoryID && p.Name.Contains(keywords) && p.Stocks.Where(s => s.Amount > 0 && s.Status == 1).FirstOrDefault() != null);
+            }
+            else
+            {
+                rs = _productRepository.GetMany(p => p.Category == categoryID && p.Name.Contains(keywords) && p.Stocks.Where(s => s.Amount > 0 && s.Status == 1).FirstOrDefault() != null);
+            }
+
+            return rs;
         }
     }
 }

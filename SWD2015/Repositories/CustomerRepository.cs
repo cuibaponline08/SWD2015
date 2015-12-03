@@ -9,5 +9,6 @@ namespace SWD2015.Repositories
 {
     public class CustomerRepository : Repository<Customer>
     {
+        
     }
 }

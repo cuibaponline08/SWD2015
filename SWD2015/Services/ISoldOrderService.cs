@@ -9,9 +9,12 @@ namespace SWD2015.Services
     public interface ISoldOrderService
     {
         IQueryable<SoldOrder> GetAllSoldOrders();
+        IQueryable GetMonthlyIncome();
         SoldOrder GetSoldOrderByID(int soldOrderID);
-        bool AddSoldOrder(SoldOrder soldOrder);
+        SoldOrder AddSoldOrder(SoldOrder soldOrder);
         bool UpdateSoldOrder(SoldOrder soldOrder);
         bool DeleteSoldOrder(SoldOrder soldOrder);
+        int CountNewSoldOrder();
+        double CalcualteIncome();
     }
 }

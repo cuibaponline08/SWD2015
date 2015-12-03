@@ -11,5 +11,12 @@ namespace SWD2015.Services
     {
         IQueryable<PurchasedOrder> GetAllPurchasedOrders();
         PurchasedOrder GetPurchasedOrderByID(int purchasedOrderID);
+        IQueryable CountPurchasedProduct();
+        int CountNewPurchasedOrder();
+        double CalculateInventory();
+        bool AddPurchasedOrder(PurchasedOrder purchasedOrder);
+        PurchasedOrder UpdatePurchasedOrder(PurchasedOrder purchasedOrder);
+        IQueryable GetMonthlyInventory();
+
     }
 }

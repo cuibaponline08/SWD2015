@@ -28,17 +28,19 @@ namespace SWD2015.Services
             return _customerRepository.GetById(customerID);
         }
 
-        public bool AddCustomer(Models.Customer customer)
+        public Customer AddCustomer(Models.Customer customer)
         {
             try
             {
                 _customerRepository.Add(customer);
                 _customerRepository.Save();
-                return true;
+
+                var newCustomer = _customerRepository.GetDatabaseValues(customer);
+                return newCustomer;
             }
             catch (Exception)
             {
-                return false;
+                return null;
             }
         }
 
@@ -47,7 +49,7 @@ namespace SWD2015.Services
             var c = _customerRepository.GetById(customer.ID);
             if (c != null)
             {
-                _customerRepository.Update(customer);
+                _customerRepository.Update(c);
                 _customerRepository.Save();
                 return true;
             }
@@ -59,7 +61,7 @@ namespace SWD2015.Services
             var c = _customerRepository.GetById(customer.ID);
             if (c != null)
             {
-                _customerRepository.Delete(customer);
+                _customerRepository.Delete(c);
                 _customerRepository.Save();
                 return true;
             }

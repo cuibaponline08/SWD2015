@@ -18,6 +18,11 @@ namespace SWD2015.Services
             return _orderDetailRepository.GetMany(o => o.SoldOrderID == orderID && o.IsDelete == false);
         }
 
+        public IQueryable<OrderDetail> GetAllActivedOrderDetails()
+        {
+            return _orderDetailRepository.GetMany(od => od.SoldOrder.Status == DataFactory.SOLD_ORDER_STATUS_ID);
+        }
+
         public Models.OrderDetail GetOrderDetailByID(int orderDetailID)
         {
             return _orderDetailRepository.GetById(orderDetailID);
@@ -42,7 +47,7 @@ namespace SWD2015.Services
             var od = _orderDetailRepository.GetById(orderDetail.ID);
             if (od != null)
             {
-                _orderDetailRepository.Update(orderDetail);
+                _orderDetailRepository.Update(od);
                 _orderDetailRepository.Save();
                 return true;
             }
@@ -54,7 +59,7 @@ namespace SWD2015.Services
             var od = _orderDetailRepository.GetById(orderDetail.ID);
             if (od != null)
             {
-                _orderDetailRepository.Delete(orderDetail);
+                _orderDetailRepository.Delete(od);
                 _orderDetailRepository.Save();
                 return true;
             }
@@ -65,6 +70,18 @@ namespace SWD2015.Services
         {
             //var listOrder = _soldOrderRepository.GetMany(o => o.CustomerID == customerID);
             return _orderDetailRepository.GetMany(od => od.SoldOrder.CustomerID == customerID);
+        }
+
+
+        public IQueryable CountSoldProduct()
+        {
+            var rs = _orderDetailRepository.GetAll().Where(od => od.SoldOrder.Status == DataFactory.SOLD_ORDER_STATUS_ID).GroupBy(od => od.Product.Product_Category.Product_Category2.ID).Select(group => new
+            {
+                SuperCategory = group.Key,
+                Count = group.Count()
+            }).OrderBy(x => x.SuperCategory);
+
+            return rs;
         }
     }
 }

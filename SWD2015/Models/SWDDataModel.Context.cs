@@ -18,7 +18,6 @@ namespace SWD2015.Models
         public DB_9DFD26_SWD2015Entities()
             : base("name=DB_9DFD26_SWD2015Entities")
         {
-            Configuration.LazyLoadingEnabled = true;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -36,6 +35,7 @@ namespace SWD2015.Models
         public DbSet<Product_Image> Product_Image { get; set; }
         public DbSet<Product_Status> Product_Status { get; set; }
         public DbSet<PurchasedOrder> PurchasedOrders { get; set; }
+        public DbSet<PurchasedOrder_Image> PurchasedOrder_Image { get; set; }
         public DbSet<SoldOrder> SoldOrders { get; set; }
         public DbSet<Stock> Stocks { get; set; }
         public DbSet<sysdiagram> sysdiagrams { get; set; }

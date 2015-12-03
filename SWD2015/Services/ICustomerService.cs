@@ -12,7 +12,7 @@ namespace SWD2015.Services
         Customer CheckLogin(string email, string password);
         IQueryable<Customer> GetAllCustomers();
         Customer GetCustomerByID(int customerID);
-        bool AddCustomer(Customer customer);
+        Customer AddCustomer(Customer customer);
         bool UpdateCustomer(Customer customer);
         bool DeleteCustomer(Customer customer);
     }

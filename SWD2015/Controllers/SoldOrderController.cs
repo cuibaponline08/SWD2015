@@ -10,33 +10,31 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using SWD2015.Models;
 using SWD2015.Services;
-using SWD2015.Models.POCOs;
 
 namespace SWD2015.Controllers
 {
     public class SoldOrderController : ApiController
     {
         private ISoldOrderService _soldOrderService = new SoldOrderService();
-        private IOrderStatusService _orderStatusService = new OrderStatusService();
 
         // GET api/SoldOrder/GetAllSoldOrders
         [Route("api/SoldOrder/GetAllSoldOrders")]
         public IQueryable GetOrders()
         {
             var rs = _soldOrderService.GetAllSoldOrders().OrderBy(o => o.CreateDate).Select(o => new {
-                o.ID,
-                o.CustomerID,
-                o.CreateDate,
-                o.Order_Status.Name,
+                OrderID = o.ID,
+                CustomerName = o.Customer.FullName,
+                CreateDate = o.CreateDate,
                 o.Address,
-                o.Total
+                o.Total,
+                Status = o.Order_Status.Name,
             }).AsQueryable();
             return rs;
         }
 
-        // GET api/SoldOrder/GetOrderByID/{id}
+        // GET api/SoldOrder/GetSoldOrderByID/{id}
         [Route("api/SoldOrder/GetSoldOrderByID/{id}")]
-        [ResponseType(typeof(OrderPOCO))]
+        [ResponseType(typeof(SoldOrder))]
         public IHttpActionResult GetSoldOrderByID(int id)
         {
             SoldOrder soldOrder = _soldOrderService.GetSoldOrderByID(id);
@@ -44,79 +42,75 @@ namespace SWD2015.Controllers
             {
                 return NotFound();
             }
-            var statusString = _orderStatusService.GetOrderStatusByID(soldOrder.Status).Name;
+            //var statusString = _orderStatusService.GetOrderStatusByID(soldOrder.Status).Name;
 
-            OrderPOCO poco = new OrderPOCO()
+            var result = new
             {
                 ID = soldOrder.ID,
                 CustomerID = soldOrder.CustomerID,
-                CreateDate = soldOrder.CreateDate,
-                Status = statusString,
+                CreateDate = String.Format("{0:d/M/yyyy HH:mm:ss}", soldOrder.CreateDate),
+                Status = soldOrder.Order_Status.Name,
                 Address = soldOrder.Address,
                 Total = soldOrder.Total
             };
 
-            return Ok(poco);
+            return Ok(result);
         }
 
         // GET api/SoldOrder/GetSoldOrderForHistoryByID/{customerID}
         [Route("api/SoldOrder/GetSoldOrderForHistoryByID/{customerID}")]
         public IQueryable GetSoldOrderForHistoryByID(int customerID)
         {
-            var rs = _soldOrderService.GetAllSoldOrders().Where(o => o.CustomerID == customerID).OrderBy(o => o.CreateDate).Select(o => new IConvertible[]{
+            var rs = _soldOrderService.GetAllSoldOrders().AsEnumerable().Where(o => o.CustomerID == customerID).OrderBy(o => o.CreateDate).Select(o => new
+            {
                 o.ID,
-                o.CreateDate,
+                CreateDate = String.Format("{0:d/M/yyyy HH:mm:ss}", o.CreateDate),
                 o.Total,
                 o.Order_Status.Name
             }).AsQueryable();
             return rs;
         }
 
-        //// PUT api/Order/5
-        //public IHttpActionResult PutOrder(int id, SoldOrder soldOrder)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
+        [HttpGet]
+        [Route("api/SoldOrder/CountNewSoldOrderAndInCome")]
+        public IHttpActionResult CountNewSoldOrderAndInCome()
+        {
+            var newSoldOrder = _soldOrderService.CountNewSoldOrder();
+            var income = _soldOrderService.CalcualteIncome();
 
-        //    if (id != soldOrder.ID)
-        //    {
-        //        return BadRequest();
-        //    }
+            var result = new
+            {
+                NewSoldOrder = newSoldOrder,
+                Income = income
+            };
 
-        //    _soldOrderService.UpdateSoldOrder(soldOrder);
+            return Ok(result);
+        }
 
-        //    return StatusCode(HttpStatusCode.NoContent);
-        //}
+        [HttpGet]
+        [Route("api/SoldOrder/GetMonthlyIncome")]
+        public IQueryable GetMonthlyIncome()
+        {
+            return _soldOrderService.GetMonthlyIncome();
+        }
 
-        //// POST api/Order
+        //[HttpPost]
+        //[Route("api/SoldOrder/CreateSoldOrder")]
         //[ResponseType(typeof(SoldOrder))]
-        //public IHttpActionResult PostOrder(SoldOrder soldOrder)
+        //public IHttpActionResult PostCustomer([FromBody] SoldOrder soldOrder)
         //{
         //    if (!ModelState.IsValid)
         //    {
         //        return BadRequest(ModelState);
         //    }
 
-        //    _soldOrderService.AddSoldOrder(soldOrder);
+        //    var success = _soldOrderService.AddSoldOrder(soldOrder);
 
+        //    if (!success)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
         //    return CreatedAtRoute("DefaultApi", new { id = soldOrder.ID }, soldOrder);
-        //}
-
-        //// DELETE api/Order/5
-        //[ResponseType(typeof(SoldOrder))]
-        //public IHttpActionResult DeleteOrder(int id)
-        //{
-        //    SoldOrder soldOrder = _soldOrderService.GetSoldOrderByID(id);
-        //    if (soldOrder == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    _soldOrderService.DeleteSoldOrder(soldOrder);
-
-        //    return Ok(soldOrder);
         //}
     }
 }

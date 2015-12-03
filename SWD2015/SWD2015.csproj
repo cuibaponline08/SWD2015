@@ -29,7 +29,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>App_Data\SWD2015.XML</DocumentationFile>
+    <DocumentationFile>App_Data\XmlDocument.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -129,7 +129,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="Image\Banner\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -151,18 +151,18 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ImageController.cs" />
-    <Compile Include="Controllers\PurchasedOrderController.cs" />
-    <Compile Include="Controllers\SoldOrderController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\OrderDetailController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductStatusController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\DataFactory.cs" />
+    <Compile Include="Infrastructure\DatabaseFactory.cs" />
+    <Compile Include="Infrastructure\Disposable.cs" />
     <Compile Include="Infrastructure\IDatabaseFactory.cs" />
     <Compile Include="Infrastructure\Repository.cs" />
     <Compile Include="Models\Customer.cs">
@@ -171,35 +171,23 @@
     <Compile Include="Models\Employee.cs">
       <DependentUpon>SWDDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Image.cs">
+    <Compile Include="Models\Order.cs">
       <DependentUpon>SWDDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\OrderDetail.cs">
       <DependentUpon>SWDDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\OrderDetailViewModel.cs" />
     <Compile Include="Models\Order_Status.cs">
       <DependentUpon>SWDDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\POCOs\CustomerPOCO.cs" />
-    <Compile Include="Models\POCOs\OrderPOCO.cs" />
-    <Compile Include="Models\POCOs\ProductPOCO.cs" />
-    <Compile Include="Models\POCOs\ProductSoldPOCO.cs" />
     <Compile Include="Models\Product.cs">
       <DependentUpon>SWDDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Product_Category.cs">
       <DependentUpon>SWDDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Product_Image.cs">
-      <DependentUpon>SWDDataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Product_Status.cs">
-      <DependentUpon>SWDDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PurchasedOrder.cs">
-      <DependentUpon>SWDDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SoldOrder.cs">
       <DependentUpon>SWDDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Stock.cs">
@@ -220,55 +208,35 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SWDDataModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\SWDDataModel1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SWDDataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>SWDDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ViewModels\HistoryOrderDetailViewModel.cs" />
-    <Compile Include="Models\ViewModels\NewProductViewModel.cs" />
+    <Compile Include="Models\Warehouse.cs">
+      <DependentUpon>SWDDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Infrastructure\IRepository.cs" />
     <Compile Include="Repositories\CustomerRepository.cs" />
     <Compile Include="Repositories\EmployeeRepository.cs" />
-    <Compile Include="Repositories\ImageRepository.cs" />
     <Compile Include="Repositories\OrderDetailRepository.cs" />
-    <Compile Include="Repositories\OrderStatusRepository.cs" />
-    <Compile Include="Repositories\ProductCategoryRepository.cs" />
-    <Compile Include="Repositories\ProductImageRepository.cs" />
-    <Compile Include="Repositories\PurchasedOrderRepository.cs" />
-    <Compile Include="Repositories\SoldOrderRepository.cs" />
+    <Compile Include="Repositories\OrderRepository.cs" />
     <Compile Include="Repositories\ProductRepository.cs" />
     <Compile Include="Repositories\ProductStatusRepository.cs" />
-    <Compile Include="Repositories\StockRepository.cs" />
-    <Compile Include="Services\StockService.cs" />
     <Compile Include="Services\EmployeeService.cs" />
     <Compile Include="Services\ICustomerService.cs" />
     <Compile Include="Services\IEmployeeService.cs" />
-    <Compile Include="Services\IImageService.cs" />
-    <Compile Include="Services\ImageService.cs" />
     <Compile Include="Services\IOrderDetailService.cs" />
-    <Compile Include="Services\IOrderStatusService.cs" />
-    <Compile Include="Services\IProductCategoryService.cs" />
-    <Compile Include="Services\IProductImageService.cs" />
-    <Compile Include="Services\IPurchasedOrderService.cs" />
-    <Compile Include="Services\ISoldOrderService.cs" />
+    <Compile Include="Services\IOrderService.cs" />
     <Compile Include="Services\IProductService.cs" />
     <Compile Include="Services\IProductStatusService.cs" />
-    <Compile Include="Services\IStockService.cs" />
     <Compile Include="Services\OrderDetailService.cs" />
-    <Compile Include="Services\OrderStatusService.cs" />
-    <Compile Include="Services\ProductCategoryService.cs" />
-    <Compile Include="Services\ProductImageService.cs" />
-    <Compile Include="Services\PurchasedOrderService.cs" />
-    <Compile Include="Services\SoldOrderService.cs" />
+    <Compile Include="Services\OrderService.cs" />
     <Compile Include="Services\ProductService.cs" />
     <Compile Include="Services\ProductStatusService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\SWD2015.XML" />
+    <Content Include="App_Data\XmlDocument.xml" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -304,9 +272,11 @@
     <Content Include="Models\SWDDataModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SWDDataModel.edmx</DependentUpon>
-      <LastGenOutput>SWDDataModel1.cs</LastGenOutput>
+      <LastGenOutput>SWDDataModel.cs</LastGenOutput>
     </Content>
     <None Include="Properties\PublishProfiles\SWD2015.pubxml" />
+    <None Include="Properties\PublishProfiles\swd2015api - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\swd2015api - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

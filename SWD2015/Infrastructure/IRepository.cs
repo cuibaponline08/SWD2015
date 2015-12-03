@@ -22,6 +22,8 @@ namespace SWD2015.Infrastructure
         IQueryable<T> GetAll();
 
         IQueryable<T> GetMany(Expression<Func<T, bool>> where);
+
+        T GetDatabaseValues(T entity);
         void Save();
     }
 }

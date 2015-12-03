@@ -18,6 +18,7 @@ namespace SWD2015.Models
         {
             this.Customers = new HashSet<Customer>();
             this.Product_Image = new HashSet<Product_Image>();
+            this.PurchasedOrder_Image = new HashSet<PurchasedOrder_Image>();
         }
     
         public int ID { get; set; }
@@ -26,5 +27,6 @@ namespace SWD2015.Models
     
         public virtual ICollection<Customer> Customers { get; set; }
         public virtual ICollection<Product_Image> Product_Image { get; set; }
+        public virtual ICollection<PurchasedOrder_Image> PurchasedOrder_Image { get; set; }
     }
 }

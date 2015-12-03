@@ -43,10 +43,12 @@ namespace SWD2015.Services
 
         public bool EditProductStatus(Product_Status productStatus)
         {
-            var pS = _productStatusRepository.GetById(productStatus.ID);
-            if (pS != null)
+            var ps = _productStatusRepository.GetById(productStatus.ID);
+            if (ps != null)
             {
-                _productStatusRepository.Update(productStatus);
+                _productStatusRepository.Update(ps);
+                _productStatusRepository.Save();
+
                 return true;
             }
             return false;
@@ -54,10 +56,12 @@ namespace SWD2015.Services
 
         public bool DeleteProductStatus(int productStatusID)
         {
-            var pS = _productStatusRepository.GetById(productStatusID);
-            if (pS != null)
+            var ps = _productStatusRepository.GetById(productStatusID);
+            if (ps != null)
             {
-                _productStatusRepository.Delete(pS);
+                _productStatusRepository.Delete(ps);
+                _productStatusRepository.Save();
+
                 return true;
             }
             return false;

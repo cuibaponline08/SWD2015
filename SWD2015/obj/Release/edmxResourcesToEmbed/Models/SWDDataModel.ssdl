@@ -91,7 +91,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CustomerID" Type="int" Nullable="false" />
     <Property Name="EmployeeID" Type="int" Nullable="false" />
     <Property Name="CreateDate" Type="datetime" Nullable="false" />
@@ -99,10 +99,16 @@
     <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Total" Type="float" Nullable="false" />
     <Property Name="ProductName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Price" Type="float" Nullable="false" />
     <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Category" Type="int" Nullable="false" />
-    <Property Name="ImageURL" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PurchasedOrder_Image">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PurchasedOrderID" Type="int" Nullable="false" />
+    <Property Name="ImageID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="SoldOrder">
     <Key>
@@ -243,6 +249,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_PurchasedOrder_Image_Image">
+    <End Role="Image" Type="Self.Image" Multiplicity="1" />
+    <End Role="PurchasedOrder_Image" Type="Self.PurchasedOrder_Image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PurchasedOrder_Image">
+        <PropertyRef Name="ImageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchasedOrder_Image_PurchasedOrder">
+    <End Role="PurchasedOrder" Type="Self.PurchasedOrder" Multiplicity="1" />
+    <End Role="PurchasedOrder_Image" Type="Self.PurchasedOrder_Image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PurchasedOrder">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PurchasedOrder_Image">
+        <PropertyRef Name="PurchasedOrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_PurchasedOrder_Order_Status">
     <End Role="Order_Status" Type="Self.Order_Status" Multiplicity="1" />
     <End Role="PurchasedOrder" Type="Self.PurchasedOrder" Multiplicity="*" />
@@ -338,6 +368,7 @@
     <EntitySet Name="Product_Image" EntityType="Self.Product_Image" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product_Status" EntityType="Self.Product_Status" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PurchasedOrder" EntityType="Self.PurchasedOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PurchasedOrder_Image" EntityType="Self.PurchasedOrder_Image" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SoldOrder" EntityType="Self.SoldOrder" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Stock" EntityType="Self.Stock" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -376,6 +407,14 @@
     <AssociationSet Name="FK_PurchasedOrder_Employee" Association="Self.FK_PurchasedOrder_Employee">
       <End Role="Employee" EntitySet="Employee" />
       <End Role="PurchasedOrder" EntitySet="PurchasedOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchasedOrder_Image_Image" Association="Self.FK_PurchasedOrder_Image_Image">
+      <End Role="Image" EntitySet="Image" />
+      <End Role="PurchasedOrder_Image" EntitySet="PurchasedOrder_Image" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchasedOrder_Image_PurchasedOrder" Association="Self.FK_PurchasedOrder_Image_PurchasedOrder">
+      <End Role="PurchasedOrder" EntitySet="PurchasedOrder" />
+      <End Role="PurchasedOrder_Image" EntitySet="PurchasedOrder_Image" />
     </AssociationSet>
     <AssociationSet Name="FK_PurchasedOrder_Order_Status" Association="Self.FK_PurchasedOrder_Order_Status">
       <End Role="Order_Status" EntitySet="Order_Status" />

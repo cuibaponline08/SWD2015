@@ -9,6 +9,6 @@ namespace SWD2015.Services
 {
     public interface IImageService
     {
-        Image GetImageByID(int imageID);
+        IQueryable GetAllBanners();
     }
 }

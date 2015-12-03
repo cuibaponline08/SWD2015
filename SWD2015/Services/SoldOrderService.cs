@@ -10,23 +10,34 @@ namespace SWD2015.Services
 {
     public class SoldOrderService : ISoldOrderService
     {
-        private IRepository<SoldOrder> _SoldOrderRepository = new SoldOrderRepository();
+        private IRepository<SoldOrder> _soldOrderRepository = new SoldOrderRepository();
         public IQueryable<Models.SoldOrder> GetAllSoldOrders()
         {
-            var rs = _SoldOrderRepository.GetAll().Where(so => so.Status >= 0);
+            var rs = _soldOrderRepository.GetAll().Where(so => so.Status >= 0);
             return rs;
         }
 
         public Models.SoldOrder GetSoldOrderByID(int soldOrderID)
         {
-            var SoldOrder = _SoldOrderRepository.GetById(soldOrderID);
-            _SoldOrderRepository.Save();
+            var SoldOrder = _soldOrderRepository.GetById(soldOrderID);
+            _soldOrderRepository.Save();
             return SoldOrder;
         }
 
-        public bool AddSoldOrder(Models.SoldOrder soldOrder)
+        public SoldOrder AddSoldOrder(SoldOrder soldOrder)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _soldOrderRepository.Add(soldOrder);
+                _soldOrderRepository.Save();
+
+                var newSoldOrder = _soldOrderRepository.GetDatabaseValues(soldOrder);
+                return newSoldOrder;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public bool UpdateSoldOrder(Models.SoldOrder soldOrder)
@@ -37,6 +48,27 @@ namespace SWD2015.Services
         public bool DeleteSoldOrder(Models.SoldOrder soldOrder)
         {
             throw new NotImplementedException();
+        }
+
+
+        public int CountNewSoldOrder()
+        {
+            return _soldOrderRepository.GetMany(so => so.Status == DataFactory.NEW_SOLD_ORDER_STATUS_ID).Count();
+        }
+
+        public double CalcualteIncome()
+        {
+            return _soldOrderRepository.GetMany(so => so.Status == DataFactory.SOLD_ORDER_STATUS_ID && so.CreateDate.Year == 2015).Sum(so => so.Total);
+        }
+
+        public IQueryable GetMonthlyIncome()
+        {
+            return _soldOrderRepository.GetMany(so => so.Status == DataFactory.SOLD_ORDER_STATUS_ID && so.CreateDate.Year == 2015).GroupBy(so => so.CreateDate.Month).
+                Select(group => new
+                {
+                    //Month = group.Key,
+                    Money = group.Sum(so => so.Total),
+                });
         }
     }
 }

@@ -11,9 +11,10 @@ namespace SWD2015.Services
     public class ImageService : IImageService
     {
         private IRepository<Image> _imageRepository = new ImageRepository();
-        public Image GetImageByID(int imageID)
+
+        public IQueryable GetAllBanners()
         {
-            return _imageRepository.Get(i => i.ID == imageID);
+            return _imageRepository.GetMany(i => i.AlbumID == 2).Select(i => new { i.ImageURL });
         }
     }
 }

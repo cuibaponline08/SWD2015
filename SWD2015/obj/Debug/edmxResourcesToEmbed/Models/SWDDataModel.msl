@@ -100,10 +100,8 @@
     <EntitySetMapping Name="PurchasedOrders">
       <EntityTypeMapping TypeName="DB_9DFD26_SWD2015Model.PurchasedOrder">
         <MappingFragment StoreEntitySet="PurchasedOrder">
-          <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
           <ScalarProperty Name="Category" ColumnName="Category" />
           <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="ProductName" ColumnName="ProductName" />
           <ScalarProperty Name="Total" ColumnName="Total" />
           <ScalarProperty Name="Address" ColumnName="Address" />
@@ -111,6 +109,15 @@
           <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
           <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
           <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PurchasedOrder_Image">
+      <EntityTypeMapping TypeName="DB_9DFD26_SWD2015Model.PurchasedOrder_Image">
+        <MappingFragment StoreEntitySet="PurchasedOrder_Image">
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="PurchasedOrderID" ColumnName="PurchasedOrderID" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

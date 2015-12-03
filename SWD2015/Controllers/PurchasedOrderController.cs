@@ -1,46 +1,88 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using SWD2015.Models;
-using SWD2015.Models.ViewModels;
 
 namespace SWD2015.Controllers
 {
     public class PurchasedOrderController : ApiController
     {
-        //private DB_9DFD26_SWD2015Entities db = new DB_9DFD26_SWD2015Entities();
-        private Services.IPurchasedOrderService _purchasedOrderService = new Services.PurchasedOrderService();
+        private readonly Services.IPurchasedOrderService _purchasedOrderService = new Services.PurchasedOrderService();
 
         // GET api/PurchasedOrder
+        /// <summary>
+        /// API for GET all Purchased Orders in CMS and Android
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("api/PurchasedOrder/GetAllPurchasedOrders")]
         public IQueryable GetPurchasedOrders()
         {
-            var rs = _purchasedOrderService.GetAllPurchasedOrders().OrderBy(o => o.CreateDate).Select(o => new IConvertible[]{
+            var rs = _purchasedOrderService.GetAllPurchasedOrders().OrderBy(o => o.CreateDate).Select(o => new {
                 o.ID,
-                o.CreateDate,
+                o.ProductName,
+                CustomerName = o.Customer.FullName,
+                CreateDate = o.CreateDate,
+                o.Address,
                 o.Total,
-                o.Order_Status.Name
+                OrderStatus = o.Order_Status.Name
             }).AsQueryable();
             return rs;
         }
 
+        [HttpGet]
+        [Route("api/PurchasedOrder/SearchPurchasedOrders/{keywords}")]
+        public IQueryable SearchPurchasedOrders(string keywords)
+        {
+            var rs = _purchasedOrderService.GetAllPurchasedOrders().Where(po => po.Customer.FullName.Contains(keywords)).OrderBy(o => o.CreateDate).Select(o => new
+            {
+                o.ID,
+                o.ProductName,
+                CustomerName = o.Customer.FullName,
+                o.CreateDate,
+                o.Address,
+                o.Total,
+                OrderStatus = o.Order_Status.Name
+            }).AsQueryable();
+            return rs;
+        }
+
+        [HttpGet]
         [Route("api/PurchasedOrder/GetAllPurchasedOrderDetailsByCustomerID/{customerID}")]
         public IQueryable GetAllPurchasedOrderDetailsByCustomerID(int customerID)
         {
-            return _purchasedOrderService.GetAllPurchasedOrders().
-                Where(o => o.CustomerID == customerID).OrderBy(o => o.CreateDate).Select(o => new HistoryOrderDetailViewModel(){
+            return _purchasedOrderService.GetAllPurchasedOrders().AsEnumerable().
+                Where(o => o.CustomerID == customerID).OrderBy(o => o.CreateDate).Select(o => new {
                 OrderID = o.ID,
-                ProductName = o.ProductName,
-                CreateDate = o.CreateDate,
-                Total = o.Total,
+                o.ProductName,
+                CreateDate = String.Format("{0:d/M/yyyy HH:mm:ss}", o.CreateDate),
+                o.Total,
                 OrderStatus = o.Order_Status.Name
-            });
+            }).AsQueryable();
+        }
+
+        [HttpGet]
+        [Route("api/PurchasedOrder/CountPurchasedProduct")]
+        public IQueryable CountPurchasedProduct()
+        {
+            return _purchasedOrderService.CountPurchasedProduct();
+        }
+
+        [HttpGet]
+        [Route("api/PurchasedOrder/CountNewPurchasedOrderAndInventory")]
+        public IHttpActionResult CountNewPurchasedOrderAndInventory()
+        {
+            var newPurchasedOrder = _purchasedOrderService.CountNewPurchasedOrder();
+            var inventory = _purchasedOrderService.CalculateInventory();
+
+            var result = new {
+                NewPurchasedOrder = newPurchasedOrder,
+                Inventory = inventory
+            };
+
+            return Ok(result);
         }
 
         // GET api/PurchasedOrder/5
@@ -53,101 +95,78 @@ namespace SWD2015.Controllers
                 return NotFound();
             }
 
-            return Ok(purchasedorder);
+            var result = new
+            {
+                purchasedorder.ID,
+                CustomerName = purchasedorder.Customer.FullName,
+                EmployeeName = purchasedorder.Employee.Name,
+                purchasedorder.CustomerID,
+                purchasedorder.EmployeeID,
+                purchasedorder.CreateDate,
+                OrderStatus = purchasedorder.Order_Status.Name,
+                Status = purchasedorder.OrderStatus,
+                purchasedorder.Address,
+                purchasedorder.Total,
+                purchasedorder.ProductName,
+                purchasedorder.Description,
+                purchasedorder.Product_Category.CategoryName,
+                CategoryID = purchasedorder.Category
+            };
+
+            return Ok(result);
         }
 
-        //// PUT api/PurchasedOrder/5
-        //public IHttpActionResult PutPurchasedOrder(int id, PurchasedOrder purchasedorder)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
+        // POST api/PurchasedOrder
+        [Route("api/PurchasedOrder/AddPurchasedOrder")]
+        [ResponseType(typeof(PurchasedOrder))]
+        public IHttpActionResult PostPurchasedOrder(PurchasedOrder purchasedorder)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-        //    if (id != purchasedorder.ID)
-        //    {
-        //        return BadRequest();
-        //    }
+            var success = _purchasedOrderService.AddPurchasedOrder(purchasedorder);
 
-        //    db.Entry(purchasedorder).State = EntityState.Modified;
+            if (!success)
+            {
+                return BadRequest(ModelState);
+            }
 
-        //    try
-        //    {
-        //        db.SaveChanges();
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        if (!PurchasedOrderExists(id))
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
+            return CreatedAtRoute("DefaultApi", new { id = purchasedorder.ID }, purchasedorder);
+        }
 
-        //    return StatusCode(HttpStatusCode.NoContent);
-        //}
+        [HttpGet]
+        [Route("api/PurchasedOrder/GetMonthlyInventory")]
+        public IQueryable GetMonthlyInventory()
+        {
+            return _purchasedOrderService.GetMonthlyInventory();
+        }
 
-        //// POST api/PurchasedOrder
-        //[ResponseType(typeof(PurchasedOrder))]
-        //public IHttpActionResult PostPurchasedOrder(PurchasedOrder purchasedorder)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
+        // PUT api/PurchasedOrder/UpdatePurchasedOrder?id=4
+        [Route("api/PurchasedOrder/UpdatePurchasedOrder")]
+        public IHttpActionResult PutPurchasedOrder(int id, PurchasedOrder purchasedOrder)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-        //    db.PurchasedOrders.Add(purchasedorder);
+            if (id != purchasedOrder.ID)
+            {
+                return BadRequest();
+            }
 
-        //    try
-        //    {
-        //        db.SaveChanges();
-        //    }
-        //    catch (DbUpdateException)
-        //    {
-        //        if (PurchasedOrderExists(purchasedorder.ID))
-        //        {
-        //            return Conflict();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
+            try
+            {
+                var result = _purchasedOrderService.UpdatePurchasedOrder(purchasedOrder);
+            }
+            catch (Exception)
+            {
+                return NotFound();
+            }
 
-        //    return CreatedAtRoute("DefaultApi", new { id = purchasedorder.ID }, purchasedorder);
-        //}
-
-        //// DELETE api/PurchasedOrder/5
-        //[ResponseType(typeof(PurchasedOrder))]
-        //public IHttpActionResult DeletePurchasedOrder(int id)
-        //{
-        //    PurchasedOrder purchasedorder = db.PurchasedOrders.Find(id);
-        //    if (purchasedorder == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    db.PurchasedOrders.Remove(purchasedorder);
-        //    db.SaveChanges();
-
-        //    return Ok(purchasedorder);
-        //}
-
-        //protected override void Dispose(bool disposing)
-        //{
-        //    if (disposing)
-        //    {
-        //        db.Dispose();
-        //    }
-        //    base.Dispose(disposing);
-        //}
-
-        //private bool PurchasedOrderExists(int id)
-        //{
-        //    return db.PurchasedOrders.Count(e => e.ID == id) > 0;
-        //}
+            return StatusCode(HttpStatusCode.NoContent);
+        }
     }
 }

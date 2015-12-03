@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using System.Linq.Expressions;
+using System.Data.Entity.Infrastructure;
 
 namespace SWD2015.Infrastructure
 {
@@ -72,10 +73,16 @@ namespace SWD2015.Infrastructure
             return _dbset.Where(where);
         }
 
-
         public void Save()
         {
             _dataContext.SaveChanges();
+        }
+
+
+        public T GetDatabaseValues(T entity)
+        {
+            var result = _dataContext.Entry(entity).GetDatabaseValues();
+            return entity;
         }
     }
 }

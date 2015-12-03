@@ -14,6 +14,11 @@ namespace SWD2015.Models
     
     public partial class PurchasedOrder
     {
+        public PurchasedOrder()
+        {
+            this.PurchasedOrder_Image = new HashSet<PurchasedOrder_Image>();
+        }
+    
         public int ID { get; set; }
         public int CustomerID { get; set; }
         public int EmployeeID { get; set; }
@@ -22,14 +27,13 @@ namespace SWD2015.Models
         public string Address { get; set; }
         public double Total { get; set; }
         public string ProductName { get; set; }
-        public double Price { get; set; }
         public string Description { get; set; }
         public int Category { get; set; }
-        public string ImageURL { get; set; }
     
         public virtual Customer Customer { get; set; }
         public virtual Employee Employee { get; set; }
         public virtual Order_Status Order_Status { get; set; }
         public virtual Product_Category Product_Category { get; set; }
+        public virtual ICollection<PurchasedOrder_Image> PurchasedOrder_Image { get; set; }
     }
 }
